@@ -1,5 +1,5 @@
 WarmUpStateDuration,12
-CalibrateStateDuration,5
+CalibrateStateDuration,10
 RewardStateDuration,5
 ChallengeStateDuration,10
 RestStateDuration,5

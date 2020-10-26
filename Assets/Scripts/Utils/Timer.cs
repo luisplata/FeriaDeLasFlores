@@ -21,7 +21,7 @@ public class Timer : MonoBehaviour
 	private bool started = false;
 
 	// finished broadcast event
-	private TimerFinishedEvent timerFinishedEvent;
+	private TimerFinishedEvent timerFinishedEvent = new TimerFinishedEvent();
 	
 	#endregion
 	
@@ -71,12 +71,6 @@ public class Timer : MonoBehaviour
 
     #region Methods
 
-
-    public void Start()
-    {
-		timerFinishedEvent = new TimerFinishedEvent();
-    }
-
     void Update()
     {	
 		// update timer and check for finished
@@ -85,8 +79,8 @@ public class Timer : MonoBehaviour
 			elapsedSeconds += Time.deltaTime;
 			if (elapsedSeconds >= totalSeconds)
             {
-				timerFinishedEvent.Invoke();
 				running = false;
+				timerFinishedEvent.Invoke();
 			}
 		}
 	}
