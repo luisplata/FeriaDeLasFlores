@@ -5,7 +5,6 @@ using UnityEngine;
 public class EnvironmentMovement : IntEventInvoker
 {
     [SerializeField] private Floor[] floor = new Floor[2];
-
     private FloorChangeEvent floorChangeEvent = new FloorChangeEvent();
     public Floor NonVisibleFloor
     {
@@ -36,8 +35,6 @@ public class EnvironmentMovement : IntEventInvoker
 
         if(floor[1].transform.position.z <= positionToCompare)
         {
-            Debug.Log(floor[0].InitPosition);
-            Debug.Log(floor[1].InitPosition);
             if (!floor[0].gameObject.activeSelf)
             {
                 floor[0].gameObject.SetActive(true);
