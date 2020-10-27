@@ -11,5 +11,7 @@ public enum ConfigurationDataValueName
     CalibrateStateDuration,
     RewardStateDuration,
     ChallengeStateDuration,
-    RestStateDuration
+    RestStateDuration,
+    PlayerMovementSpeed,
+    PlayerMovementTolerance
 }

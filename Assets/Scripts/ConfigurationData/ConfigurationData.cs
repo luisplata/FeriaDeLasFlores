@@ -59,6 +59,22 @@ public class ConfigurationData
         get { return values[ConfigurationDataValueName.RestStateDuration]; }
     }
 
+    /// <summary>
+    /// Player movement speed
+    /// </summary>
+    public float PlayerMovementSpeed 
+    {
+        get {  return values[ConfigurationDataValueName.PlayerMovementSpeed]; }
+    }
+
+    /// <summary>
+    /// Player position tolerance to reach next position
+    /// </summary>
+    public float PlayerMovementTolerance
+    {
+        get { return values[ConfigurationDataValueName.PlayerMovementTolerance]; }
+    }
+
     #endregion
 
     #region Constructor
@@ -89,6 +105,7 @@ public class ConfigurationData
         }
         catch(Exception e)
         {
+            Debug.LogError(e);
             SetDeafultValues();
         }
         finally
@@ -112,6 +129,8 @@ public class ConfigurationData
         values.Add(ConfigurationDataValueName.RewardStateDuration, 5);
         values.Add(ConfigurationDataValueName.ChallengeStateDuration, 10);
         values.Add(ConfigurationDataValueName.RestStateDuration, 5);
+        values.Add(ConfigurationDataValueName.PlayerMovementSpeed, 10);
+        values.Add(ConfigurationDataValueName.PlayerMovementTolerance, 0.05f);
     }
 
     #endregion

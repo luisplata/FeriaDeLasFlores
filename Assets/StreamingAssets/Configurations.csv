@@ -3,3 +3,5 @@ CalibrateStateDuration,10
 RewardStateDuration,5
 ChallengeStateDuration,10
 RestStateDuration,5
+PlayerMovementSpeed,15
+PlayerMovementTolerance,0.05
