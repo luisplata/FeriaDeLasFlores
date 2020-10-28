@@ -9,15 +9,16 @@ public class InstanciadorDeFlores : MonoBehaviour
     [SerializeField] private List<GameObject> posicionesParaInstanciarFlores;
     [SerializeField] float escalar;
 
-    private void Awake()
+    private void OnEnable()
     {
+        Debug.Log("Se instancia para un nuevo flor");
         foreach(GameObject posicion in posicionesParaInstanciarFlores)
         {
-            GameObject flor = listaDeFLoresParaInstanciar[Random.Range(0, listaDeFLoresParaInstanciar.Count - 1)];
+            GameObject flor = listaDeFLoresParaInstanciar[Random.Range(0, listaDeFLoresParaInstanciar.Count)];
             flor = Instantiate(flor, posicion.transform);
             flor.transform.position = posicion.transform.position;
             flor.transform.localScale = new Vector3(escalar, escalar, escalar);
-            flor.GetComponent<MeshRenderer>().material = listaDeMaterialesParaLasFlores[Random.Range(0, listaDeMaterialesParaLasFlores.Count - 1)];
+            flor.GetComponent<MeshRenderer>().material = listaDeMaterialesParaLasFlores[Random.Range(0, listaDeMaterialesParaLasFlores.Count)];
         }
     }
 }

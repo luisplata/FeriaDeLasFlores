@@ -49,8 +49,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   listaDeFLoresParaInstanciar:
+  - {fileID: 400441689365493937, guid: 56e6cbe148a7ab54fa5f6f0155b25382, type: 3}
   - {fileID: 400441689365493937, guid: c579b923c7499f548932900bb6adbc45, type: 3}
-  - {fileID: 1363182048807313325, guid: 6f7893edd3416f54c87e82a5d8f0db8e, type: 3}
+  - {fileID: 400441689365493937, guid: 7d60cc40615d49a4eaead76900272a28, type: 3}
+  - {fileID: 400441689365493937, guid: 35d389678b2abee4ab1f91fadb30107e, type: 3}
+  - {fileID: 400441689365493937, guid: 4f8d9108278a1a242acb2e0d6392e79f, type: 3}
+  - {fileID: 400441689365493937, guid: c18b322f5d5b10440a7ba87f773fa433, type: 3}
   listaDeMaterialesParaLasFlores:
   - {fileID: 2100000, guid: a1c3d46e0e7166c40b96a491cea8bddd, type: 2}
   - {fileID: 2100000, guid: f14e56ecd13a1cc4482d1f30bd42f848, type: 2}
@@ -121,7 +125,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1435831282715254599}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -214,7 +218,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1435831282970488690}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -307,7 +311,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1435831283014685324}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -400,7 +404,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1435831283356214771}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1

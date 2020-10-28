@@ -27,17 +27,47 @@ public class ColocandoFlores : MonoBehaviour
     public void ColocarFlor(string tagDeLaFlor)
     {
         listasDeFlores.TryGetValue(tagDeLaFlor, out List<GameObject> listaRecuperada);
-
-        int posicionParaTomar = 0;
-        do
+        if (RevisarSiPuedoColocarUnaNuevaFlorDeEseTag(listaRecuperada))
         {
-            posicionParaTomar = Random.Range(0, listaRecuperada.Count - 1);
-        } while (posicionesYaTomadas.Contains(posicionParaTomar) && posicionesYaTomadas.Count < listaRecuperada.Count);
+            int posicionParaTomar = 0;
+            GameObject referencia = null;
 
-        posicionesYaTomadas.Add(posicionParaTomar);
+            try
+            {
+                posicionParaTomar = SiguienteNumeroDisponibleDeFlor(listaRecuperada);
+                referencia = listaRecuperada[posicionParaTomar];
+                referencia.GetComponent<MeshRenderer>().enabled = true;
+            }
+            catch(SinEspacioParaPonerMasFloresException e)
+            {
+                Debug.LogWarning("No puede pasar nada porque ya no hay espacio "+e.Message);
+            }
+        }
+    }
 
-        GameObject referencia = listaRecuperada[posicionParaTomar];
-        referencia.GetComponent<MeshRenderer>().enabled = true;
-        Debug.Log("Instancio");
+    private int SiguienteNumeroDisponibleDeFlor(List<GameObject> listaRecuperada)
+    {
+        int i = 0;
+        foreach(GameObject flor in listaRecuperada)
+        {
+            if (!flor.GetComponent<MeshRenderer>().enabled)
+            {
+                return i;
+            }
+            i++;
+        }
+        throw new SinEspacioParaPonerMasFloresException("No hay mas espacio para colocar mas flores");
+    }
+
+    private bool RevisarSiPuedoColocarUnaNuevaFlorDeEseTag(List<GameObject> listaRecuperada)
+    {
+        foreach(GameObject flor in listaRecuperada)
+        {
+            if (!flor.GetComponent<MeshRenderer>().enabled)
+            {
+                return true;
+            }
+        }
+        return false;
     }
 }
