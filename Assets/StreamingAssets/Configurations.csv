@@ -1,4 +1,4 @@
-WarmUpStateDuration,1
+WarmUpStateDuration,5
 CalibrateStateDuration,5
 RewardStateDuration,5
 ChallengeStateDuration,5
@@ -6,4 +6,4 @@ RestStateDuration,5
 PlayerMovementSpeed,15
 PlayerJumpHeight,3
 PlayerMovementTolerance,0.05
-FloorInitialMovementSpeed,-1
+FloorInitialMovementSpeed,-0.5

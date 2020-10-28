@@ -755,12 +755,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 563281871, guid: 05a82e6ddb7d25e4b8b7e59cbfdfe630, type: 3}
       propertyPath: obstaclesPrefabs.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 563281871, guid: 05a82e6ddb7d25e4b8b7e59cbfdfe630, type: 3}
       propertyPath: obstaclesPrefabs.Array.data[1]
       value: 
-      objectReference: {fileID: 1467043344677774392, guid: df7430f3f88bcd44eb23df10d8eaa284,
+      objectReference: {fileID: 1467043344677774392, guid: 2f4a281dee9ea0645b969bef54e4f409,
         type: 3}
     - target: {fileID: 563281871, guid: 05a82e6ddb7d25e4b8b7e59cbfdfe630, type: 3}
       propertyPath: obstaclesPrefabs.Array.data[0]
