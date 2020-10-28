@@ -3,4 +3,7 @@
 /// </summary>
 public enum AudioClipName
 {
+    Crash,
+    Jump,
+    FlowerPickup
 }

@@ -50,6 +50,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("Vertical") && isGrounded)
         {
             rigidBody.AddForce(Vector3.up * Mathf.Sqrt(jumpHeight * -2f * Physics.gravity.y), ForceMode.VelocityChange);
+            AudioManager.Play(AudioClipName.Jump);
         }
         else if (Input.GetButtonDown("Vertical") && !isGrounded)
         {
