@@ -5921,9 +5921,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b6597855395bc24babaca785285a2aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  floresDeColorAzul: []
-  floresInstanciadas: []
-  florAzul: {fileID: 0}
+  tagsDeFlores:
+  - FlorAmarilla
+  - FlorBlanca
+  - FlorVerde
+  - Pomelo
+  - PetaloRojo
+  - FlorRoja
 --- !u!1 &2280969360794047919
 GameObject:
   m_ObjectHideFlags: 0
