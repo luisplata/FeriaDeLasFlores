@@ -20,7 +20,7 @@ public class Floor : MonoBehaviour
         movementSpeed = ConfigurationUtils.FloorInitialMovementSpeed;
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         Vector3 position = transform.position;
         position.z += movementSpeed;

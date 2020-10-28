@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {   
     [SerializeField]
-    private float GroundDistance = 0.55f;
+    private float GroundDistance = 0.7f;
     [SerializeField]
     private LayerMask Ground;
 
@@ -61,7 +61,6 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Obstacle")
         {
-            Debug.Log("llegue2");
             rigidBody.velocity = Vector3.zero;
             transform.SetParent(collision.gameObject.transform.parent);
         }
