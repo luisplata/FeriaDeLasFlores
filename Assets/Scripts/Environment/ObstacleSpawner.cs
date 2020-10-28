@@ -7,6 +7,7 @@ public class ObstacleSpawner : MonoBehaviour
     [SerializeField] private EnvironmentMovement environmentMovement;
     [SerializeField] private GameObject[] spawnPositions = new GameObject[3];
     [SerializeField] private List<GameObject> obstaclesPrefabs = new List<GameObject>();
+    [SerializeField] private GameObject plano;
 
     private int poolObjectsInstances = 6;
     private float spawnSecondsMin = 1f;
