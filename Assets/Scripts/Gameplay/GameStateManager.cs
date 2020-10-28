@@ -8,7 +8,7 @@ public class GameStateManager : IntEventInvoker
     private static Dictionary<GameState, float> gameStateDuration = new Dictionary<GameState, float>();
 
     private GameState currentGameState;
-    private Timer currentStateTimer;
+    private CountdownTimer currentStateTimer;
 
     private GameStateChangedEvent gameStateChangedEvent = new GameStateChangedEvent();
 
@@ -30,7 +30,7 @@ public class GameStateManager : IntEventInvoker
         unityEvents.Add(EventName.GameStateChangedEvent, gameStateChangedEvent);
         EventManager.AddInvoker(EventName.GameStateChangedEvent, this);
 
-        currentStateTimer = gameObject.AddComponent<Timer>();
+        currentStateTimer = gameObject.AddComponent<CountdownTimer>();
         currentStateTimer.AddTimerFinishedEventListener(HandleGameStateFinished);
         RunStateTimer();
     }

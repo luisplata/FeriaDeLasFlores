@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.Events;
 
 /// <summary>
-/// A timer
+/// A countdown timer that invokes an event when finished
 /// </summary>
-public class Timer : MonoBehaviour
+public class CountdownTimer : MonoBehaviour
 {
 	#region Fields
 	

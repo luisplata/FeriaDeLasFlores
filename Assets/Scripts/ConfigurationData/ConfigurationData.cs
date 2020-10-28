@@ -68,11 +68,27 @@ public class ConfigurationData
     }
 
     /// <summary>
+    /// Player jump height
+    /// </summary>
+    public float PlayerJumpHeight
+    {
+        get { return values[ConfigurationDataValueName.PlayerJumpHeight]; }
+    }
+
+    /// <summary>
     /// Player position tolerance to reach next position
     /// </summary>
     public float PlayerMovementTolerance
     {
         get { return values[ConfigurationDataValueName.PlayerMovementTolerance]; }
+    }
+
+    /// <summary>
+    /// Initial floor movement speed
+    /// </summary>
+    public float FloorInitialMovementSpeed
+    {
+        get { return values[ConfigurationDataValueName.FloorInitialMovementSpeed]; }
     }
 
     #endregion
@@ -130,7 +146,9 @@ public class ConfigurationData
         values.Add(ConfigurationDataValueName.ChallengeStateDuration, 10);
         values.Add(ConfigurationDataValueName.RestStateDuration, 5);
         values.Add(ConfigurationDataValueName.PlayerMovementSpeed, 10);
+        values.Add(ConfigurationDataValueName.PlayerJumpHeight, 3);
         values.Add(ConfigurationDataValueName.PlayerMovementTolerance, 0.05f);
+        values.Add(ConfigurationDataValueName.FloorInitialMovementSpeed, -1f);
     }
 
     #endregion

@@ -5,6 +5,9 @@ using UnityEngine;
 public class EnvironmentMovement : IntEventInvoker
 {
     [SerializeField] private Floor[] floor = new Floor[2];
+
+    private float floor0ZInitialPosition;
+
     private FloorChangeEvent floorChangeEvent = new FloorChangeEvent();
     public Floor NonVisibleFloor
     {
@@ -20,6 +23,8 @@ public class EnvironmentMovement : IntEventInvoker
 
     private void Start()
     {
+        floor0ZInitialPosition = VisibleFloor.transform.position.z;
+
         unityEvents.Add(EventName.FloorChangeEvent, floorChangeEvent);
         EventManager.AddInvoker(EventName.FloorChangeEvent, this);
     }
@@ -30,7 +35,7 @@ public class EnvironmentMovement : IntEventInvoker
 
         if (!floor[0].gameObject.activeSelf)
         {
-            positionToCompare = 90f;
+            positionToCompare = floor0ZInitialPosition;
         }
 
         if(floor[1].transform.position.z <= positionToCompare)
@@ -38,7 +43,7 @@ public class EnvironmentMovement : IntEventInvoker
             if (!floor[0].gameObject.activeSelf)
             {
                 floor[0].gameObject.SetActive(true);
-                floor[0].InitPosition = new Vector3(0, 0, 90f);
+                floor[0].InitPosition = new Vector3(0, 0, floor0ZInitialPosition);
             }
 
             floor[0].transform.position = floor[1].InitPosition;

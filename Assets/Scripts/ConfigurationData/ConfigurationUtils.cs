@@ -69,11 +69,27 @@ public static class ConfigurationUtils
     }
 
     /// <summary>
+    /// Player jump height
+    /// </summary>
+    public static float PlayerJumpHeight
+    {
+        get { return configurationData.PlayerJumpHeight; }
+    }
+
+    /// <summary>
     /// Player position tolerance to reach next position
     /// </summary>
     public static float PlayerMovementTolerance
     {
         get { return configurationData.PlayerMovementTolerance; }
+    }
+
+    /// <summary>
+    /// Initial floor movement speed
+    /// </summary>
+    public static float FloorInitialMovementSpeed
+    {
+        get { return configurationData.FloorInitialMovementSpeed; }
     }
 
     #endregion

@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class EnvironmentChanger : MonoBehaviour
 {
     [SerializeField] private List<EnvironmentMovement> environments = new List<EnvironmentMovement>();
     private EnvironmentMovement currentEnvironment;
-    private EnvironmentMovement nextEnvironement;
+    private EnvironmentMovement nextEnvironment;
+    private Queue<EnvironmentMovement> nextEnvironements = new Queue<EnvironmentMovement>();
 
     private bool mustEndChange;
 
@@ -19,7 +21,8 @@ public class EnvironmentChanger : MonoBehaviour
 
     private void HandleGameStateChange(int gameStateInt)
     {
-        nextEnvironement = environments[gameStateInt];
+        nextEnvironements.Enqueue(environments[gameStateInt]);
+        nextEnvironment = nextEnvironements.Peek();
     }
 
     private void ChangeEnvironment(int unused)
@@ -29,19 +32,21 @@ public class EnvironmentChanger : MonoBehaviour
 
             currentEnvironment.gameObject.SetActive(false);
 
-            currentEnvironment = nextEnvironement;
-            nextEnvironement = null;
+            currentEnvironment = nextEnvironment;
+            nextEnvironements.Dequeue();
+            nextEnvironment = null;
             mustEndChange = false;
+            return;
         }
 
-        if (nextEnvironement == null)
+        if (!nextEnvironment)
         {
             return;
         }
 
-        nextEnvironement.gameObject.SetActive(true);
-        nextEnvironement.NonVisibleFloor.gameObject.SetActive(true);
-        nextEnvironement.VisibleFloor.gameObject.SetActive(false);
+        nextEnvironment.gameObject.SetActive(true);
+        nextEnvironment.VisibleFloor.gameObject.SetActive(false);
+        nextEnvironment.NonVisibleFloor.gameObject.SetActive(true);
 
         currentEnvironment.NonVisibleFloor.gameObject.SetActive(false);
 

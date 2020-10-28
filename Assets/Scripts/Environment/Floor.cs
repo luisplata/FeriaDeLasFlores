@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Floor : MonoBehaviour
 {
-    private float movementSpeed = -2f;
+    private float movementSpeed;
 
     private Vector3 initPosition;
 
@@ -17,6 +17,7 @@ public class Floor : MonoBehaviour
     private void Start()
     {
         initPosition = transform.position;
+        movementSpeed = ConfigurationUtils.FloorInitialMovementSpeed;
     }
 
     private void FixedUpdate()

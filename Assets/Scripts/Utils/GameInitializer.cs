@@ -6,6 +6,7 @@
 public class GameInitializer : MonoBehaviour
 {
     public const string HorizontalAxis = "Horizontal";
+    public const string VerticalAxis = "Vertical";
 
     public const string LineTag = "Line";
 

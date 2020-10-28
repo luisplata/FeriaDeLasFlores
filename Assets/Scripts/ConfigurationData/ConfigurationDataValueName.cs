@@ -13,5 +13,7 @@ public enum ConfigurationDataValueName
     ChallengeStateDuration,
     RestStateDuration,
     PlayerMovementSpeed,
-    PlayerMovementTolerance
+    PlayerJumpHeight,
+    PlayerMovementTolerance,
+    FloorInitialMovementSpeed
 }

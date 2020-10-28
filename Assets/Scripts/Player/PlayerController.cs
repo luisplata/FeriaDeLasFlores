@@ -1,76 +1,69 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
-/// <summary>
-/// Moves the player left and right by input
-/// </summary>
+
 public class PlayerController : MonoBehaviour
-{
-	private float movementTolerance;
-	private float movementSpeed;
+{   
+    [SerializeField]
+    private float GroundDistance = 0.55f;
+    [SerializeField]
+    private LayerMask Ground;
 
-	private Vector3[] linesPositions;
-	private int currentLineIndex;
-	private int targetLineIndex = -1;
+    private float speed = 5f;
+    private float jumpHeight = 2f;
+    
+    private Rigidbody rigidBody;
+    private Vector3 inputs = Vector3.zero;
+    public bool isGrounded = true;
+    private Transform groundChecker;
 
-	private CharacterController characterController;
-
-	void Start()
-	{
-		movementTolerance = ConfigurationUtils.PlayerMovementTolerance;
-		movementSpeed = ConfigurationUtils.PlayerMovementSpeed;
-		linesPositions = ConfigurationUtils.LinesPositions;
-		currentLineIndex = linesPositions.Length / 2;
-		transform.position = new Vector3(linesPositions[currentLineIndex].x, transform.position.y, transform.position.z);
-
-		characterController = gameObject.GetComponent<CharacterController>();
-	}
-
-	void Update()
-	{
-        if (targetLineIndex < 0)
-        {
-			CheckInput();
-		}
-        else
-        {
-			MovePlayer();
-		}
-	}
-
-	private void CheckInput()
-	{
-		float horizontalAxis = Input.GetAxis(GameInitializer.HorizontalAxis);
-        if (horizontalAxis != 0)
-        {
-			targetLineIndex = currentLineIndex + (int)Mathf.Sign(horizontalAxis);
-			if(targetLineIndex < 0 || targetLineIndex >= linesPositions.Length)
-            {
-				targetLineIndex = -1;
-				return;
-			}
-		}
-        else
-        {
-
-        }
-	}
-
-	private void MovePlayer()
+    void Start()
     {
-		Vector3 currentPosition = transform.position;
-		Vector3 moveDirection = new Vector3(linesPositions[targetLineIndex].x - currentPosition.x, 0, 0);
+        speed = ConfigurationUtils.PlayerMovementSpeed;
+        jumpHeight = ConfigurationUtils.PlayerJumpHeight;
 
-		if(moveDirection.magnitude > movementTolerance)
+        rigidBody = GetComponent<Rigidbody>();
+        groundChecker = transform.GetChild(0);
+    }
+
+    private void Update()
+    {
+        CheckGround();
+        CheckInputs();
+    }
+
+    private void FixedUpdate()
+    {
+        rigidBody.MovePosition(rigidBody.position + inputs * speed * Time.fixedDeltaTime);
+    }
+
+    private void CheckGround()
+    {
+        isGrounded = Physics.CheckSphere(groundChecker.position, GroundDistance, Ground, QueryTriggerInteraction.Ignore);
+    }
+
+    private void CheckInputs()
+    {
+        inputs = Vector3.zero;
+        inputs.x = Input.GetAxis("Horizontal");
+
+        if (Input.GetButtonDown("Vertical") && isGrounded)
         {
-			characterController.Move(moveDirection.normalized * movementSpeed * Time.deltaTime);
-		}
-        else{
-			transform.position = new Vector3(linesPositions[targetLineIndex].x, currentPosition.y, currentPosition.z);
-			currentLineIndex = targetLineIndex;
-			targetLineIndex = -1;
-		}
-	}
+            rigidBody.AddForce(Vector3.up * Mathf.Sqrt(jumpHeight * -2f * Physics.gravity.y), ForceMode.VelocityChange);
+        }
+        else if (Input.GetButtonDown("Vertical") && !isGrounded)
+        {
+            rigidBody.AddForce(Vector3.down * Mathf.Sqrt(1.5f * jumpHeight * -2f * Physics.gravity.y), ForceMode.VelocityChange);
+        }
+    }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.tag == "Obstacle")
+        {
+            Debug.Log("llegue2");
+            rigidBody.velocity = Vector3.zero;
+            transform.SetParent(collision.gameObject.transform.parent);
+        }
+    }
 }

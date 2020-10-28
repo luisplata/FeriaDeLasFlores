@@ -17,9 +17,9 @@ public class ObstacleSpawner : MonoBehaviour
     {
         public List<GameObject> objectPool;
         private ObstacleSpawner obstacleSpawner;
-        private Timer spawnTimer;
+        private CountdownTimer spawnTimer;
 
-        public ObstaclePool(ObstacleSpawner obstacleSpawner, List<GameObject> objectPool, Timer spawnTimer)
+        public ObstaclePool(ObstacleSpawner obstacleSpawner, List<GameObject> objectPool, CountdownTimer spawnTimer)
         {
             this.obstacleSpawner = obstacleSpawner;
             this.objectPool = objectPool;
@@ -65,7 +65,7 @@ public class ObstacleSpawner : MonoBehaviour
                 currentInstantiatedObject.SetActive(false);
                 objectPool.Add(currentInstantiatedObject);
             }
-            Timer spawnTimer = gameObject.AddComponent<Timer>();
+            CountdownTimer spawnTimer = gameObject.AddComponent<CountdownTimer>();
             ObstaclePool newObstacle = new ObstaclePool(this, objectPool, spawnTimer);
             obstacles.Add(newObstacle);
         }
