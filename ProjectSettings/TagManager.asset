@@ -7,6 +7,12 @@ TagManager:
   - FlorAzul
   - Line
   - Obstacle
+  - FlorBlanca
+  - FlorRoja
+  - FlorAmarilla
+  - FlorVerde
+  - Pomelo
+  - PetaloRojo
   layers:
   - Default
   - TransparentFX
