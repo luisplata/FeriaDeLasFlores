@@ -8,5 +8,6 @@ using UnityEngine;
 public enum EventName
 {
     GameStateChangedEvent,
-    FloorChangeEvent
+    FloorChangeEvent,
+    GameOverEvent
 }

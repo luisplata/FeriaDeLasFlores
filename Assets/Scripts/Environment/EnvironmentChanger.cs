@@ -12,21 +12,35 @@ public class EnvironmentChanger : MonoBehaviour
 
     private bool mustEndChange;
 
+    private bool gameOver = false;
+
     private void Start()
     {
         currentEnvironment = environments[0];
         EventManager.AddListener(EventName.GameStateChangedEvent, HandleGameStateChange);
         EventManager.AddListener(EventName.FloorChangeEvent, ChangeEnvironment);
+
+        EventManager.AddListener(EventName.GameOverEvent, HandleGameOverEvent);
     }
 
     private void HandleGameStateChange(int gameStateInt)
     {
+        if (gameOver)
+        {
+            return;
+        }
+
         nextEnvironements.Enqueue(environments[gameStateInt]);
         nextEnvironment = nextEnvironements.Peek();
     }
 
     private void ChangeEnvironment(int unused)
     {
+        if (gameOver)
+        {
+            return;
+        }
+
         if (mustEndChange)
         {
 
@@ -51,5 +65,10 @@ public class EnvironmentChanger : MonoBehaviour
         currentEnvironment.NonVisibleFloor.gameObject.SetActive(false);
 
         mustEndChange = true;
+    }
+
+    private void HandleGameOverEvent(int unused)
+    {
+        gameOver = true;
     }
 }

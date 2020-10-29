@@ -64,7 +64,7 @@ MonoBehaviour:
   - {fileID: 1435831283014685324}
   - {fileID: 1435831283356214771}
   - {fileID: 1435831282715254599}
-  escalar: 3
+  escalar: 1
 --- !u!114 &-1500939791385068819
 MonoBehaviour:
   m_ObjectHideFlags: 0

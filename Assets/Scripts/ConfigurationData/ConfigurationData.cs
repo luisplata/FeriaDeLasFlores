@@ -86,9 +86,9 @@ public class ConfigurationData
     /// <summary>
     /// Initial floor movement speed
     /// </summary>
-    public float FloorInitialMovementSpeed
+    public float FloorMovementSpeed
     {
-        get { return values[ConfigurationDataValueName.FloorInitialMovementSpeed]; }
+        get { return values[ConfigurationDataValueName.FloorMovementSpeed]; }
     }
 
     #endregion
@@ -148,7 +148,7 @@ public class ConfigurationData
         values.Add(ConfigurationDataValueName.PlayerMovementSpeed, 10);
         values.Add(ConfigurationDataValueName.PlayerJumpHeight, 3);
         values.Add(ConfigurationDataValueName.PlayerMovementTolerance, 0.05f);
-        values.Add(ConfigurationDataValueName.FloorInitialMovementSpeed, -1f);
+        values.Add(ConfigurationDataValueName.FloorMovementSpeed, -1f);
     }
 
     #endregion

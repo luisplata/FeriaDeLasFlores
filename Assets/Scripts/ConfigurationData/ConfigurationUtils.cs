@@ -86,9 +86,9 @@ public static class ConfigurationUtils
     /// <summary>
     /// Initial floor movement speed
     /// </summary>
-    public static float FloorInitialMovementSpeed
+    public static float FloorMovementSpeed
     {
-        get { return configurationData.FloorInitialMovementSpeed; }
+        get { return configurationData.FloorMovementSpeed; }
     }
 
     #endregion
