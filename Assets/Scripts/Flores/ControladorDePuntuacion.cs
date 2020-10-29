@@ -6,36 +6,44 @@ using System;
 public class ControladorDePuntuacion : MonoBehaviour
 {
     [SerializeField] private ColocandoFlores colocadorDeFlores;
+    [SerializeField] List<Puntuacion> puntuaciones;
+    private Dictionary<string, PuntuacionUI> puntuacionesPorFlor = new Dictionary<string, PuntuacionUI>();
+
     public void AumentoDePuntuacion(FlorDelMapa florTocada)
     {
         colocadorDeFlores.ColocarFlor(florTocada.gameObject.tag);
         ActualizarPuntuacion(florTocada);
     }
 
-    [SerializeField] private TextMeshProUGUI puntuacion;
-    private Dictionary<string, int> puntuacionesPorFlor = new Dictionary<string, int>();
     private void ActualizarPuntuacion(FlorDelMapa florTomada)
     {
-        if(puntuacionesPorFlor.TryGetValue(florTomada.gameObject.tag, out int puntuacionActual))
+        if(puntuacionesPorFlor.TryGetValue(florTomada.gameObject.tag, out PuntuacionUI puntuacionActual))
         {
-            puntuacionActual++;
+            puntuacionActual.puntuacion++;
             puntuacionesPorFlor.Remove(florTomada.gameObject.tag);
             puntuacionesPorFlor.Add(florTomada.gameObject.tag, puntuacionActual);
         }
         else
         {
-            puntuacionesPorFlor.Add(florTomada.gameObject.tag, 1);
+            PuntuacionUI puntuacionActualQueNoEsta = new PuntuacionUI
+            {
+                imagenUI = florTomada.FlorUi(),
+                puntuacion = 1
+            };
+            puntuacionesPorFlor.Add(florTomada.gameObject.tag, puntuacionActualQueNoEsta);
         }
+
         ActualizarPuntuacionUI(puntuacionesPorFlor);
     }
 
-    private void ActualizarPuntuacionUI(Dictionary<string, int> puntuacionesPorFlor)
+    private void ActualizarPuntuacionUI(Dictionary<string, PuntuacionUI> puntuacionesPorFlor)
     {
-        string puntuacionT = "Puntuacion: \n";
-        foreach (KeyValuePair<string, int> entry in puntuacionesPorFlor)
+        int i = 0;
+        foreach (KeyValuePair<string, PuntuacionUI> entry in puntuacionesPorFlor)
         {
-            puntuacionT += entry.Key + ": " + entry.Value+" \n";
+            puntuaciones[i].ActualizarImagen(entry.Value.imagenUI);
+            puntuaciones[i].ActualizarPuntuacion(entry.Value.puntuacion + "");
+            i++;
         }
-        puntuacion.text = puntuacionT;
     }
 }
