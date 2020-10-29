@@ -47186,8 +47186,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -350, y: -875.30444}
-  m_SizeDelta: {x: -699.8545, y: -1750.6089}
+  m_AnchoredPosition: {x: -164, y: -875.30444}
+  m_SizeDelta: {x: -327.56128, y: -1750.6089}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2060346189
 MonoBehaviour:
@@ -47208,11 +47208,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: dakdakdajkndakojadkadkpdakjp oddkdkdk k dkd kd kdkdkdk dk dk dk dk dk dk
-    dk dk dk dk dknd kn dk dkn dkn dkn dnk dkn
+  m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5a14f9e25c14e2c478e71ca0ac5c743a, type: 2}
+  m_sharedMaterial: {fileID: 2609076818466094054, guid: 5a14f9e25c14e2c478e71ca0ac5c743a,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
