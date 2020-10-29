@@ -31,10 +31,10 @@ public class ControladorDePuntuacion : MonoBehaviour
 
     private void ActualizarPuntuacionUI(Dictionary<string, int> puntuacionesPorFlor)
     {
-        string puntuacionT = "Puntuacion: ";
+        string puntuacionT = "Puntuacion: \n";
         foreach (KeyValuePair<string, int> entry in puntuacionesPorFlor)
         {
-            puntuacionT += entry.Key + ": " + entry.Value+" ";
+            puntuacionT += entry.Key + ": " + entry.Value+" \n";
         }
         puntuacion.text = puntuacionT;
     }
