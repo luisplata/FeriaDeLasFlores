@@ -9,6 +9,7 @@ public class ControladorDePuntuacion : MonoBehaviour
     public void AumentoDePuntuacion(FlorDelMapa florTocada)
     {
         colocadorDeFlores.ColocarFlor(florTocada.gameObject.tag);
+        ActualizarPuntuacion(florTocada);
     }
 
     [SerializeField] private TextMeshProUGUI puntuacion;
@@ -18,7 +19,12 @@ public class ControladorDePuntuacion : MonoBehaviour
         if(puntuacionesPorFlor.TryGetValue(florTomada.gameObject.tag, out int puntuacionActual))
         {
             puntuacionActual++;
+            puntuacionesPorFlor.Remove(florTomada.gameObject.tag);
             puntuacionesPorFlor.Add(florTomada.gameObject.tag, puntuacionActual);
+        }
+        else
+        {
+            puntuacionesPorFlor.Add(florTomada.gameObject.tag, 1);
         }
         ActualizarPuntuacionUI(puntuacionesPorFlor);
     }
@@ -28,7 +34,7 @@ public class ControladorDePuntuacion : MonoBehaviour
         string puntuacionT = "Puntuacion: ";
         foreach (KeyValuePair<string, int> entry in puntuacionesPorFlor)
         {
-            puntuacionT += entry.Key + ": " + entry.Value;
+            puntuacionT += entry.Key + ": " + entry.Value+" ";
         }
         puntuacion.text = puntuacionT;
     }
