@@ -61,7 +61,7 @@ public class PlayerController : IntEventInvoker
             rigidBody.AddForce(Vector3.up * Mathf.Sqrt(jumpHeight * -2f * Physics.gravity.y), ForceMode.VelocityChange);
             AudioManager.Play(AudioClipName.Jump);
         }
-        else if (Input.GetButtonDown("Fall") && !isGrounded)
+        else if (Input.GetButtonDown("Fall"))
         {
             rigidBody.AddForce(Vector3.down * Mathf.Sqrt(1.5f * jumpHeight * -2f * Physics.gravity.y), ForceMode.VelocityChange);
         }
@@ -71,22 +71,37 @@ public class PlayerController : IntEventInvoker
     {
         if (collision.gameObject.tag == "Obstacle")
         {
-            collision.gameObject.SetActive(false);
-            if (!canReceiveDamage)
-            {
-                return;
-            }
-
-            if(lifes <= 0)
-            {
-                gameOverEvent.Invoke(0);
-                return;
-            }
-
-            lifes -= 1;
-            StartCoroutine(DamageAnimation());
-            AudioManager.Play(AudioClipName.Crash);
+            TakeDamage(collision.gameObject);
         }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Obstacle")
+        {
+            TakeDamage(other.gameObject);
+            other.gameObject.transform.parent.gameObject.SetActive(false);
+        }
+    }
+
+    private void TakeDamage(GameObject aggressorObject)
+    {
+        aggressorObject.SetActive(false);
+
+        if (!canReceiveDamage)
+        {
+            return;
+        }
+
+        AudioManager.Play(AudioClipName.Crash);
+
+        if (lifes <= 0)
+        {
+            gameOverEvent.Invoke(0);
+            return;
+        }
+
+        lifes -= 1;
+        StartCoroutine(DamageAnimation());
     }
 
     private IEnumerator DamageAnimation()

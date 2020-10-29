@@ -27398,7 +27398,6 @@ GameObject:
   - component: {fileID: 1156544835}
   - component: {fileID: 1156544836}
   - component: {fileID: 1156544837}
-  - component: {fileID: 1156544831}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -27419,25 +27418,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!95 &1156544831
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1156544829}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 91fc8955ba31571439bd03b3e2659514, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &1156544833
 Transform:
   m_ObjectHideFlags: 0
@@ -27482,7 +27462,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 878494ae5b6450d4fb8da3bc55977456, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GroundDistance: 1.5
+  GroundDistance: 1
   Ground:
     serializedVersion: 2
     m_Bits: 256
@@ -35194,6 +35174,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1522312130}
   - component: {fileID: 1522312129}
+  - component: {fileID: 1522312131}
   - component: {fileID: 1522312128}
   m_Layer: 0
   m_Name: Main Camera
@@ -35267,6 +35248,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 25, y: 0, z: 0}
+--- !u!114 &1522312131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1522312127}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97d8e5c49a9b5ae42ba1c6132a8fcfe5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1523157049
 GameObject:
   m_ObjectHideFlags: 0
@@ -40076,7 +40069,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   environments:
-  - {fileID: 1059394372}
+  - {fileID: 517569175}
   - {fileID: 17482867526111227}
   - {fileID: 517569175}
   - {fileID: 17482867526111227}

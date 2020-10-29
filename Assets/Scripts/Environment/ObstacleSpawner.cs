@@ -12,7 +12,6 @@ public class ObstacleSpawner : MonoBehaviour
     private float spawnSecondsMin = 1f;
     private float spawnSecondsMax = 3f;
     private List<ObstaclePool> obstacles = new List<ObstaclePool>();
-
     private class ObstaclePool
     {
         public List<GameObject> objectPool;
@@ -73,6 +72,8 @@ public class ObstacleSpawner : MonoBehaviour
 
     private void Start()
     {
+        EventManager.AddListener(EventName.GameOverEvent, HandleGameOver);
+
         foreach(ObstaclePool obstacle in obstacles)
         {
             obstacle.RunSpawnTimer();
@@ -101,5 +102,10 @@ public class ObstacleSpawner : MonoBehaviour
             spawnPositionIndex += 1;
             spawnPositionIndex %= spawnPositions.Length;
         }
+    }
+
+    private void HandleGameOver(int unused)
+    {
+        enabled = false;
     }
 }

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Train : MonoBehaviour
 {
-
     [SerializeField]
     private float movementSpeed = -10f;
 
