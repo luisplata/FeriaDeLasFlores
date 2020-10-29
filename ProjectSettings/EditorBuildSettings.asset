@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/EnvGeneration flower.unity
-    guid: 0d1dbe94df77b184cb5affcd52146696
+    path: Assets/Scenes/PantallaInicio.unity
+    guid: 6a2e2b05ad0fd1c45bdffa279764b428
+  - enabled: 1
+    path: Assets/Scenes/LvL1.unity
+    guid: 8e2e5876bfeb54940b03581db2cc705d
   m_configObjects: {}
