@@ -23,11 +23,14 @@ public class PlayerController : IntEventInvoker
     private bool canReceiveDamage = true;
     private GameOverEvent gameOverEvent = new GameOverEvent();
 
+    private Animator animator;
+
     void Start()
     {
         speed = ConfigurationUtils.PlayerMovementSpeed;
         jumpHeight = ConfigurationUtils.PlayerJumpHeight;
-
+        animator = GetComponent<Animator>();
+        animator.enabled = false;
         rigidBody = GetComponent<Rigidbody>();
         groundChecker = transform.GetChild(0);
 
@@ -96,6 +99,8 @@ public class PlayerController : IntEventInvoker
 
         if (lifes <= 0)
         {
+            animator.enabled = true;
+            animator.SetBool("gameOver", true);
             gameOverEvent.Invoke(0);
             return;
         }
