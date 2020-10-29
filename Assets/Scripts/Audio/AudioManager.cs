@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections;
+using System.IO;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,9 +8,12 @@ using UnityEngine;
 /// </summary>
 public static class AudioManager
 {
+    private static string SoundsFolder = $"Sounds{Path.DirectorySeparatorChar}";
+
     private static bool initialized = false;
     private static AudioSource audioSource;
     private static Dictionary<AudioClipName, AudioClip> audioClips = new Dictionary<AudioClipName, AudioClip>();
+
 
     /// <summary>
     /// Gets wheter or not the audio manager has been initialized
@@ -28,11 +31,10 @@ public static class AudioManager
         initialized = true;
         audioSource = source;
 
-
-        foreach (AudioClipName audioClipName in Enum.GetValues(typeof(AudioClipName)))
+        foreach (AudioClip clip in Resources.LoadAll<AudioClip>(SoundsFolder))
         {
-            Debug.Log(audioClipName.ToString());
-            audioClips.Add(audioClipName, Resources.Load<AudioClip>(audioClipName.ToString()));
+            int enumClip = (int)Enum.Parse(typeof(AudioClipName), clip.name);
+            audioClips.Add((AudioClipName)enumClip, clip);
         }
     }
 

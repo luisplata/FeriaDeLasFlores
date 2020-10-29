@@ -29,7 +29,7 @@ public class EnvironmentMovement : IntEventInvoker
         EventManager.AddInvoker(EventName.FloorChangeEvent, this);
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         float positionToCompare = floor[0].InitPosition.z;
 
