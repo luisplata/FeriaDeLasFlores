@@ -8,8 +8,6 @@ public class Floor : MonoBehaviour
 
     private Vector3 initPosition;
 
-    private bool canMove = true;
-
     public Vector3 InitPosition
     {
         get { return initPosition; }
@@ -25,16 +23,13 @@ public class Floor : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (canMove)
-        {
-            Vector3 position = transform.position;
-            position.z += movementSpeed;
-            transform.position = position;
-        }
+        Vector3 position = transform.position;
+        position.z += movementSpeed;
+        transform.position = position;
     }
 
     private void HandleGameOver(int unused)
     {
-        canMove = false;
+        enabled = false;
     }
 }

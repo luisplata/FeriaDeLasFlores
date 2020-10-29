@@ -8,8 +8,6 @@ public class EnvironmentMovement : IntEventInvoker
 
     private float floor0ZInitialPosition;
 
-    private bool gameOver = false;
-
     private FloorChangeEvent floorChangeEvent = new FloorChangeEvent();
     public Floor NonVisibleFloor
     {
@@ -36,10 +34,6 @@ public class EnvironmentMovement : IntEventInvoker
 
     private void FixedUpdate()
     {
-        if (gameOver)
-        {
-            return;
-        }
 
         float positionToCompare = floor[0].InitPosition.z;
 
@@ -72,6 +66,6 @@ public class EnvironmentMovement : IntEventInvoker
 
     private void HandleGameOverEvent(int unused)
     {
-        gameOver = true;
+        enabled = false;
     }
 }

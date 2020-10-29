@@ -12,8 +12,6 @@ public class EnvironmentChanger : MonoBehaviour
 
     private bool mustEndChange;
 
-    private bool gameOver = false;
-
     private void Start()
     {
         currentEnvironment = environments[0];
@@ -25,22 +23,12 @@ public class EnvironmentChanger : MonoBehaviour
 
     private void HandleGameStateChange(int gameStateInt)
     {
-        if (gameOver)
-        {
-            return;
-        }
-
         nextEnvironements.Enqueue(environments[gameStateInt]);
         nextEnvironment = nextEnvironements.Peek();
     }
 
     private void ChangeEnvironment(int unused)
     {
-        if (gameOver)
-        {
-            return;
-        }
-
         if (mustEndChange)
         {
 
@@ -69,6 +57,6 @@ public class EnvironmentChanger : MonoBehaviour
 
     private void HandleGameOverEvent(int unused)
     {
-        gameOver = true;
+        enabled = false;
     }
 }
