@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7102224135532362262}
   - component: {fileID: 1069301445268361925}
   m_Layer: 0
-  m_Name: HolaRoja
+  m_Name: 04_HolaRoja
   m_TagString: PetaloRojo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -106,3 +106,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21bbd83dd2a85e9468694583210dbd0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  florUI: {fileID: 21300000, guid: 39e5c6189f954834babe705e0b47c74d, type: 3}

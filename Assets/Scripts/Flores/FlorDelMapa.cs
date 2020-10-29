@@ -6,7 +6,12 @@ using UnityEngine;
  */
 public class FlorDelMapa : MonoBehaviour
 {
-    
+    [SerializeField] private Sprite florUI;
+
+    public Sprite FlorUi()
+    {
+        return florUI;
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
