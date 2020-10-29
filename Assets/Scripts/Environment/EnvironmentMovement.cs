@@ -8,6 +8,8 @@ public class EnvironmentMovement : IntEventInvoker
 
     private float floor0ZInitialPosition;
 
+    private bool gameOver = false;
+
     private FloorChangeEvent floorChangeEvent = new FloorChangeEvent();
     public Floor NonVisibleFloor
     {
@@ -21,16 +23,24 @@ public class EnvironmentMovement : IntEventInvoker
         set { floor[0] = value; }
     }
 
+
     private void Start()
     {
         floor0ZInitialPosition = VisibleFloor.transform.position.z;
 
         unityEvents.Add(EventName.FloorChangeEvent, floorChangeEvent);
         EventManager.AddInvoker(EventName.FloorChangeEvent, this);
+
+        EventManager.AddListener(EventName.GameOverEvent, HandleGameOverEvent);
     }
 
     private void FixedUpdate()
     {
+        if (gameOver)
+        {
+            return;
+        }
+
         float positionToCompare = floor[0].InitPosition.z;
 
         if (!floor[0].gameObject.activeSelf)
@@ -58,5 +68,10 @@ public class EnvironmentMovement : IntEventInvoker
 
             floorChangeEvent.Invoke(1);
         }
+    }
+
+    private void HandleGameOverEvent(int unused)
+    {
+        gameOver = true;
     }
 }

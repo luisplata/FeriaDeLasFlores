@@ -11,7 +11,6 @@ public class InstanciadorDeFlores : MonoBehaviour
 
     private void OnEnable()
     {
-        Debug.Log("Se instancia para un nuevo flor");
         foreach(GameObject posicion in posicionesParaInstanciarFlores)
         {
             GameObject flor = listaDeFLoresParaInstanciar[Random.Range(0, listaDeFLoresParaInstanciar.Count)];

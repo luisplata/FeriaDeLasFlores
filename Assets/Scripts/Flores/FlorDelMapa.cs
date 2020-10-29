@@ -14,7 +14,7 @@ public class FlorDelMapa : MonoBehaviour
             if (other.TryGetComponent(out ControladorDePuntuacion puncuation))
             {
                 puncuation.AumentoDePuntuacion(this);
-                Debug.Log(this.ToString());
+                AudioManager.Play(AudioClipName.FlowerPickup);
                 Destroy(gameObject);
             }
         }

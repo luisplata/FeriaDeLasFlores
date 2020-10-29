@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Train : MonoBehaviour
 {
-    [SerializeField]
-    private bool invertMovement;
 
     [SerializeField]
     private float movementSpeed = -10f;
@@ -14,7 +12,6 @@ public class Train : MonoBehaviour
 
     private void Start()
     {
-        movementSpeed *= invertMovement ? -1 : 1;
         rigidBody = GetComponent<Rigidbody>();
     }
     private void Update()

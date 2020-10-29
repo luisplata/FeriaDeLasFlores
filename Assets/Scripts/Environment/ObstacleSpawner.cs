@@ -5,10 +5,10 @@ using UnityEngine;
 public class ObstacleSpawner : MonoBehaviour
 {
     [SerializeField] private EnvironmentMovement environmentMovement;
-    [SerializeField] private GameObject[] spawnPositions = new GameObject[3];
+    [SerializeField] private GameObject[] spawnPositions;
     [SerializeField] private List<GameObject> obstaclesPrefabs = new List<GameObject>();
 
-    private int poolObjectsInstances = 6;
+    private int poolObjectsInstances = 10;
     private float spawnSecondsMin = 1f;
     private float spawnSecondsMax = 3f;
     private List<ObstaclePool> obstacles = new List<ObstaclePool>();
@@ -81,8 +81,8 @@ public class ObstacleSpawner : MonoBehaviour
 
     private void SpawnObstacles(ObstaclePool obstacle)
     {
-        int objectsToSpawn = Random.Range(1, 3);
-        int spawnPositionIndex = Random.Range(0, 3);
+        int objectsToSpawn = Random.Range(1, spawnPositions.Length + 1);
+        int spawnPositionIndex = Random.Range(0, spawnPositions.Length);
         
         for (int i=0; i < objectsToSpawn; i++)
         {
@@ -99,7 +99,7 @@ public class ObstacleSpawner : MonoBehaviour
             obstacleGameObject.transform.SetParent(environmentMovement.NonVisibleFloor.transform);
 
             spawnPositionIndex += 1;
-            spawnPositionIndex %= 3;
+            spawnPositionIndex %= spawnPositions.Length;
         }
     }
 }

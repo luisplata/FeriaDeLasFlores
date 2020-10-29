@@ -12,6 +12,8 @@ public class GameStateManager : IntEventInvoker
 
     private GameStateChangedEvent gameStateChangedEvent = new GameStateChangedEvent();
 
+    private bool gameOver = false;
+
     public GameState GameState
     {
         get { return GameState; }
@@ -33,6 +35,8 @@ public class GameStateManager : IntEventInvoker
         currentStateTimer = gameObject.AddComponent<CountdownTimer>();
         currentStateTimer.AddTimerFinishedEventListener(HandleGameStateFinished);
         RunStateTimer();
+
+        EventManager.AddListener(EventName.GameOverEvent, HandleGameOverEvent);
     }
 
     private void InitializeGameStateDuration()
@@ -76,6 +80,10 @@ public class GameStateManager : IntEventInvoker
 
     private void HandleGameStateFinished()
     {
+        if (gameOver)
+        {
+            return;
+        }
 
         switch (currentGameState)
         {
@@ -106,4 +114,8 @@ public class GameStateManager : IntEventInvoker
         return gameStateDuration[gameState];
     }
 
+    private void HandleGameOverEvent(int unused)
+    {
+        gameOver = true;
+    }
 }
