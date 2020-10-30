@@ -7,17 +7,7 @@ public static class ConfigurationUtils
 {
     private static ConfigurationData configurationData;
 
-    private static Vector3[] linesPositions;
-
     #region Properties
-
-    /// <summary>
-    /// Get the positions of each line in the game
-    /// </summary>
-    public static Vector3[] LinesPositions
-    {
-        get { return linesPositions; }
-    }
 
     /// <summary>
     /// Warm up state duration in seconds
@@ -99,17 +89,5 @@ public static class ConfigurationUtils
     public static void Initialize()
     {
         configurationData = new ConfigurationData();
-        InitializeLinesPositions();
-    }
-
-    private static void InitializeLinesPositions()
-    {
-        GameObject[] lines = GameObject.FindGameObjectsWithTag(GameInitializer.LineTag);
-        linesPositions = new Vector3[lines.Length];
-        
-        for(int i = 0; i < lines.Length; i++)
-        {
-            linesPositions[i] = lines[i].transform.position;
-        }
     }
 }

@@ -11,5 +11,6 @@ public enum GameState
     Calibrate,
     Reward,
     Challenge,
-    Rest
+    Rest,
+    None
 }
