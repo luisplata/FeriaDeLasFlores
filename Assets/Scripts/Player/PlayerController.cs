@@ -28,7 +28,7 @@ public class PlayerController : IntEventInvoker
     private EnvironmentChangedEvent environmentChangedEvent = new EnvironmentChangedEvent();
 
     //test
-    private CountdownTimer changeEnvironmentTimer;
+    //private CountdownTimer changeEnvironmentTimer;
 
     void Start()
     {
@@ -45,14 +45,14 @@ public class PlayerController : IntEventInvoker
         EventManager.AddInvoker(EventName.EnvironmentChangedEvent, this);
 
         //test
-        changeEnvironmentTimer = gameObject.AddComponent<CountdownTimer>();
+        /*changeEnvironmentTimer = gameObject.AddComponent<CountdownTimer>();
         changeEnvironmentTimer.AddTimerFinishedEventListener(SetFlowerCompletionPercentageTest);
         changeEnvironmentTimer.Duration = 20f;
-        changeEnvironmentTimer.Run();
+        changeEnvironmentTimer.Run();*/
     }
 
     //test
-    private void SetFlowerCompletionPercentageTest()
+    /*private void SetFlowerCompletionPercentageTest()
     {
         if(flowerCompletionPercentage < 0.33)
         {
@@ -68,7 +68,7 @@ public class PlayerController : IntEventInvoker
         }
         changeEnvironmentTimer.Duration = 20f;
         changeEnvironmentTimer.Run();
-    }
+    }*/
 
     private void Update()
     {
@@ -156,7 +156,7 @@ public class PlayerController : IntEventInvoker
     {
         flowerCompletionPercentage = percentage;
         int flowerCompletionPercentageInt = (int)(flowerCompletionPercentage * 100);
-        if(currentEnvironment != EnvironmentName.Street && flowerCompletionPercentageInt >= 33 && flowerCompletionPercentageInt < 66)
+        if (currentEnvironment != EnvironmentName.Street && flowerCompletionPercentageInt >= 33 && flowerCompletionPercentageInt < 66)
         {
             currentEnvironment = EnvironmentName.Street;
             environmentChangedEvent.Invoke((int)EnvironmentName.Street);
@@ -168,6 +168,7 @@ public class PlayerController : IntEventInvoker
         }
         else if(flowerCompletionPercentageInt == 100)
         {
+            Debug.Log("ganeeeeeee");
             //TO DO Game Win Event
         }
     }
