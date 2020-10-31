@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : IntEventInvoker
 {   
@@ -132,6 +133,7 @@ public class PlayerController : IntEventInvoker
         if (lifes <= 0)
         {
             gameOverEvent.Invoke(0);
+            SceneManager.LoadScene(2);
             return;
         }
 

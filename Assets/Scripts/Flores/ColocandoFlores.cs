@@ -26,6 +26,8 @@ public class ColocandoFlores : MonoBehaviour
             }
             listasDeFlores.Add(tagFlor, lista);
         }
+
+        ConfigurationUtils.TotalFlowers = (int)totalFlowers;
     }
 
     public void ColocarFlor(string tagDeLaFlor)
@@ -40,6 +42,7 @@ public class ColocandoFlores : MonoBehaviour
                 posicionParaTomar = SiguienteNumeroDisponibleDeFlor(listaRecuperada);
                 referencia = listaRecuperada[posicionParaTomar];
                 referencia.GetComponent<MeshRenderer>().enabled = true;
+                ConfigurationUtils.CollectedFlowers++;
                 collectedFlowers++;
                 playerController.SetFlowerCompletionPercentage(collectedFlowers / totalFlowers);
             }
