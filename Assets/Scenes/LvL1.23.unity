@@ -3087,6 +3087,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   isGrounded: 1
+  lifes: 1
   silleta: {fileID: 801316763}
 --- !u!114 &1156544836
 MonoBehaviour:
@@ -3101,7 +3102,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colocadorDeFlores: {fileID: 1171942790}
-  puntuaciones: []
   controladorDeUi: {fileID: 1483906817}
 --- !u!82 &1156544837
 AudioSource:
@@ -4994,7 +4994,7 @@ PrefabInstance:
     - target: {fileID: 9208873773328664335, guid: 79db98bf9398af648afe1411a7e28844,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -359.90002
+      value: -250
       objectReference: {fileID: 0}
     - target: {fileID: 9208873773328664335, guid: 79db98bf9398af648afe1411a7e28844,
         type: 3}
