@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class GameStateManager : IntEventInvoker
 {
-    private static Dictionary<GameState, float> gameStateDuration = new Dictionary<GameState, float>();
+    private static Dictionary<GameState, float> gameStateDuration;
 
     private GameState currentGameState;
     private CountdownTimer currentStateTimer;
@@ -22,6 +22,7 @@ public class GameStateManager : IntEventInvoker
 
     private void Awake()
     {
+        gameStateDuration = new Dictionary<GameState, float>();
         InitializeGameStateDuration();
     }
 
@@ -68,6 +69,7 @@ public class GameStateManager : IntEventInvoker
             }
 
             gameStateDuration.Add(eventName, duration);
+            
         }
 
     }
