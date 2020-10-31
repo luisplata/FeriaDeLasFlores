@@ -7,12 +7,14 @@ public class ControladorDePuntuacion : MonoBehaviour
 {
     [SerializeField] private ColocandoFlores colocadorDeFlores;
     [SerializeField] List<Puntuacion> puntuaciones;
+    [SerializeField] private PuntuacionUiController controladorDeUi;
     private Dictionary<string, PuntuacionUI> puntuacionesPorFlor = new Dictionary<string, PuntuacionUI>();
 
     public void AumentoDePuntuacion(FlorDelMapa florTocada)
     {
         colocadorDeFlores.ColocarFlor(florTocada.gameObject.tag);
         ActualizarPuntuacion(florTocada);
+        controladorDeUi.MarcoPuncuacion();
     }
 
     private void ActualizarPuntuacion(FlorDelMapa florTomada)

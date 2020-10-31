@@ -26,6 +26,8 @@ public class PlayerController : IntEventInvoker
     private EnvironmentName currentEnvironment;
     private float flowerCompletionPercentage;
     private EnvironmentChangedEvent environmentChangedEvent = new EnvironmentChangedEvent();
+    public int FlorEnPorcenajeParaEscribir => (int)(flowerCompletionPercentage * 100);
+    public float FlorEnPorcentajeParaUi => flowerCompletionPercentage;
 
     //test
     //private CountdownTimer changeEnvironmentTimer;
