@@ -74,6 +74,7 @@ public class EnvironmentChanger : MonoBehaviour
         nextEnvironment.gameObject.SetActive(true);
         nextEnvironment.VisibleFloor.gameObject.SetActive(false);
         nextEnvironment.NonVisibleFloor.gameObject.SetActive(true);
+        nextEnvironment.Spawner.gameObject.SetActive(false);
 
         currentEnvironment.NonVisibleFloor.gameObject.SetActive(false);
 

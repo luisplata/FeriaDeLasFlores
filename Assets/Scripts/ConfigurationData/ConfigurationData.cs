@@ -89,6 +89,7 @@ public class ConfigurationData
     public float FloorMovementSpeed
     {
         get { return values[ConfigurationDataValueName.FloorMovementSpeed]; }
+        set { values[ConfigurationDataValueName.FloorMovementSpeed] = value; }
     }
 
     #endregion

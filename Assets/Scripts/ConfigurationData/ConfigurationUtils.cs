@@ -79,6 +79,7 @@ public static class ConfigurationUtils
     public static float FloorMovementSpeed
     {
         get { return configurationData.FloorMovementSpeed; }
+        set { configurationData.FloorMovementSpeed = value; }
     }
 
     #endregion

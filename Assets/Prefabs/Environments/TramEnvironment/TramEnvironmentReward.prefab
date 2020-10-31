@@ -162,6 +162,7 @@ MonoBehaviour:
   floor:
   - {fileID: 6162360039222191789}
   - {fileID: 6162360037878300064}
+  spawner: {fileID: 6162360038192421017}
 --- !u!82 &6162360037853357667
 AudioSource:
   m_ObjectHideFlags: 0

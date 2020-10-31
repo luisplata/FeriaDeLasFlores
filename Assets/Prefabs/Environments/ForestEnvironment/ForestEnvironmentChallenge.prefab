@@ -27648,7 +27648,7 @@ GameObject:
   - component: {fileID: 2114352467500257616}
   - component: {fileID: 2114352467500257618}
   m_Layer: 0
-  m_Name: ForestEnvironmentRocks
+  m_Name: ForestEnvironmentChallenge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27686,6 +27686,7 @@ MonoBehaviour:
   floor:
   - {fileID: 2114352467543154573}
   - {fileID: 2114352466103920149}
+  spawner: {fileID: 4579970193405600106}
 --- !u!82 &2114352467500257618
 AudioSource:
   m_ObjectHideFlags: 0

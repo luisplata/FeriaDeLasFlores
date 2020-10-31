@@ -5545,6 +5545,7 @@ MonoBehaviour:
   floor:
   - {fileID: 7331426944599488969}
   - {fileID: 7331426943651058490}
+  spawner: {fileID: 4038442203710439676}
 --- !u!82 &7488537732115829844
 AudioSource:
   m_ObjectHideFlags: 0

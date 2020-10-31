@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnvironmentMovement : IntEventInvoker
 {
     [SerializeField] private Floor[] floor = new Floor[2];
+    [SerializeField] private GameObject spawner;
 
     private float floor0ZInitialPosition;
 
@@ -19,6 +20,11 @@ public class EnvironmentMovement : IntEventInvoker
     {
         get { return floor[0]; }
         set { floor[0] = value; }
+    }
+
+    public GameObject Spawner
+    {
+        get { return spawner; }
     }
 
 
@@ -46,6 +52,7 @@ public class EnvironmentMovement : IntEventInvoker
         {
             if (!floor[0].gameObject.activeSelf)
             {
+                spawner.gameObject.SetActive(true);
                 floor[0].gameObject.SetActive(true);
                 floor[0].InitPosition = new Vector3(0, 0, floor0ZInitialPosition);
             }

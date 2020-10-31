@@ -44,12 +44,14 @@ public class PlayerController : IntEventInvoker
         unityEvents.Add(EventName.EnvironmentChangedEvent, environmentChangedEvent);
         EventManager.AddInvoker(EventName.EnvironmentChangedEvent, this);
 
+        //test
         changeEnvironmentTimer = gameObject.AddComponent<CountdownTimer>();
         changeEnvironmentTimer.AddTimerFinishedEventListener(SetFlowerCompletionPercentageTest);
         changeEnvironmentTimer.Duration = 20f;
         changeEnvironmentTimer.Run();
     }
 
+    //test
     private void SetFlowerCompletionPercentageTest()
     {
         if(flowerCompletionPercentage < 0.33)
