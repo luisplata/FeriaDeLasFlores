@@ -132,6 +132,7 @@ public class PlayerController : IntEventInvoker
 
         if (lifes <= 0)
         {
+            //derrota
             gameOverEvent.Invoke(0);
             SceneManager.LoadScene(2);
             return;
