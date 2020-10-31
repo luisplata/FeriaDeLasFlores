@@ -54,6 +54,22 @@ public class PlayerController : IntEventInvoker
     {
         CheckGround();
         CheckInputs();
+        if (Input.GetButton("Fire1"))
+        {
+            gameOverEvent.Invoke(0);
+            animator.enabled = true;
+            rigidBody.useGravity = false;
+            animator.SetTrigger("win");
+        }
+        if (Input.GetButton("Fire2"))
+        {
+            ConfigurationUtils.TotalFlowers = 0;
+            ConfigurationUtils.PlaySeconds = 1000000;
+            gameOverEvent.Invoke(0);
+            animator.enabled = true;
+            rigidBody.useGravity = false;
+            animator.SetTrigger("win");
+        }
     }
 
     private void FixedUpdate()
