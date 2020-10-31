@@ -141,15 +141,15 @@ public class ConfigurationData
     private void SetDeafultValues()
     {
         values.Clear();
-        values.Add(ConfigurationDataValueName.WarmUpStateDuration, 12);
-        values.Add(ConfigurationDataValueName.CalibrateStateDuration, 5);
-        values.Add(ConfigurationDataValueName.RewardStateDuration, 5);
-        values.Add(ConfigurationDataValueName.ChallengeStateDuration, 10);
-        values.Add(ConfigurationDataValueName.RestStateDuration, 5);
-        values.Add(ConfigurationDataValueName.PlayerMovementSpeed, 10);
+        values.Add(ConfigurationDataValueName.WarmUpStateDuration, 1);
+        values.Add(ConfigurationDataValueName.CalibrateStateDuration, 1);
+        values.Add(ConfigurationDataValueName.RewardStateDuration, 1);
+        values.Add(ConfigurationDataValueName.ChallengeStateDuration, 1);
+        values.Add(ConfigurationDataValueName.RestStateDuration, 1);
+        values.Add(ConfigurationDataValueName.PlayerMovementSpeed, 15);
         values.Add(ConfigurationDataValueName.PlayerJumpHeight, 3);
         values.Add(ConfigurationDataValueName.PlayerMovementTolerance, 0.05f);
-        values.Add(ConfigurationDataValueName.FloorMovementSpeed, -1f);
+        values.Add(ConfigurationDataValueName.FloorMovementSpeed, -0.75f);
     }
 
     #endregion
