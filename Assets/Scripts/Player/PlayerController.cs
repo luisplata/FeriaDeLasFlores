@@ -19,6 +19,7 @@ public class PlayerController : IntEventInvoker
     public bool isGrounded = true;
     private Transform groundChecker;
 
+    [SerializeField]
     private int lifes = 1;
     [SerializeField]
     private GameObject silleta;

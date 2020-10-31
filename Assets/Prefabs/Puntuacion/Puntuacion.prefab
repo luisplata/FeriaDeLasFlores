@@ -174,7 +174,7 @@ MonoBehaviour:
   debeEntrarDeNuevo: 1
   deltaTimeLocal: 0
   tiempoDeEspera: 1
-  aumentoDeTiempoDeEspera: 0.2
+  aumentoDeTiempoDeEspera: 0.1
 --- !u!95 &9208873773328664328
 Animator:
   serializedVersion: 3
@@ -203,7 +203,7 @@ PlayableDirector:
   m_GameObject: {fileID: 9208873773328664334}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 0}
+  m_PlayableAsset: {fileID: 11400000, guid: 22b13e9a0c0b12c499a403f146464038, type: 2}
   m_InitialState: 0
   m_WrapMode: 2
   m_DirectorUpdateMode: 1

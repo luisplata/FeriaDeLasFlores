@@ -15,6 +15,7 @@ public class PuntuacionUiController : MonoBehaviour
     [SerializeField] private float deltaTimeLocal;
     [SerializeField] private float tiempoDeEspera = 1;
     [SerializeField] private float aumentoDeTiempoDeEspera;
+    private bool ejecutarCorrutina = true;
 
     private void Update()
     {
@@ -28,7 +29,8 @@ public class PuntuacionUiController : MonoBehaviour
             {
                 director.playableAsset = salida;
                 director.Play();
-                StartCoroutine(ControladorDeSemaforo((float)salida.duration));
+                if(ejecutarCorrutina)
+                    StartCoroutine(ControladorDeSemaforo((float)salida.duration));
             }
         }
     }
@@ -46,9 +48,13 @@ public class PuntuacionUiController : MonoBehaviour
 
     IEnumerator ControladorDeSemaforo(float tiempo)
     {
+        ejecutarCorrutina = false;
+        Debug.Log("se ejecuta al tiempo que la animacion de salida");
         yield return new WaitForSeconds(tiempo);
+        Debug.Log("se ejecuta despues de la animacion de salida");
         deltaTimeLocal = 0;
         tiempoDeEspera = 1;
         debeEntrarDeNuevo = true;
-}
+        ejecutarCorrutina = true;
+    }
 }

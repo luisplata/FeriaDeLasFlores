@@ -6,7 +6,6 @@ using System;
 public class ControladorDePuntuacion : MonoBehaviour
 {
     [SerializeField] private ColocandoFlores colocadorDeFlores;
-    [SerializeField] List<Puntuacion> puntuaciones;
     [SerializeField] private PuntuacionUiController controladorDeUi;
     private Dictionary<string, PuntuacionUI> puntuacionesPorFlor = new Dictionary<string, PuntuacionUI>();
 
@@ -43,8 +42,6 @@ public class ControladorDePuntuacion : MonoBehaviour
         int i = 0;
         foreach (KeyValuePair<string, PuntuacionUI> entry in puntuacionesPorFlor)
         {
-            puntuaciones[i].ActualizarImagen(entry.Value.imagenUI);
-            puntuaciones[i].ActualizarPuntuacion(entry.Value.puntuacion + "");
             i++;
         }
     }
