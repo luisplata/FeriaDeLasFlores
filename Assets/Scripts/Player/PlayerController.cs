@@ -1,6 +1,4 @@
-﻿using Packages.Rider.Editor.UnitTesting;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
