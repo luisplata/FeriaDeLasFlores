@@ -9,6 +9,9 @@ public static class ConfigurationUtils
 
     #region Properties
 
+    public static int TotalFlowers { get; set; }
+    public static int CollectedFlowers { get; set; }
+    public static int PlaySeconds { get; set; }
     /// <summary>
     /// Warm up state duration in seconds
     /// </summary>

@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using Packages.Rider.Editor.UnitTesting;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : IntEventInvoker
 {   
@@ -29,8 +31,7 @@ public class PlayerController : IntEventInvoker
     public int FlorEnPorcenajeParaEscribir => (int)(flowerCompletionPercentage * 100);
     public float FlorEnPorcentajeParaUi => flowerCompletionPercentage;
 
-    //test
-    //private CountdownTimer changeEnvironmentTimer;
+    private Animator animator;
 
     void Start()
     {
@@ -46,31 +47,9 @@ public class PlayerController : IntEventInvoker
         unityEvents.Add(EventName.EnvironmentChangedEvent, environmentChangedEvent);
         EventManager.AddInvoker(EventName.EnvironmentChangedEvent, this);
 
-        //test
-        /*changeEnvironmentTimer = gameObject.AddComponent<CountdownTimer>();
-        changeEnvironmentTimer.AddTimerFinishedEventListener(SetFlowerCompletionPercentageTest);
-        changeEnvironmentTimer.Duration = 20f;
-        changeEnvironmentTimer.Run();*/
+        animator = GetComponent<Animator>();
+        animator.enabled = false;
     }
-
-    //test
-    /*private void SetFlowerCompletionPercentageTest()
-    {
-        if(flowerCompletionPercentage < 0.33)
-        {
-            SetFlowerCompletionPercentage(0.33f);
-        }
-        else if(flowerCompletionPercentage < 0.66f)
-        {
-            SetFlowerCompletionPercentage(0.66f);
-        }
-        else if (flowerCompletionPercentage >= 0.66)
-        {
-            return;
-        }
-        changeEnvironmentTimer.Duration = 20f;
-        changeEnvironmentTimer.Run();
-    }*/
 
     private void Update()
     {
@@ -135,6 +114,8 @@ public class PlayerController : IntEventInvoker
         {
             //derrota
             gameOverEvent.Invoke(0);
+            animator.enabled = true;
+            animator.SetTrigger("gameOver");
             return;
         }
 
@@ -171,8 +152,14 @@ public class PlayerController : IntEventInvoker
         }
         else if(flowerCompletionPercentageInt == 100)
         {
-            Debug.Log("ganeeeeeee");
-            //TO DO Game Win Event
+            gameOverEvent.Invoke(0);
+            animator.enabled = true;
+            rigidBody.useGravity = false;
+            animator.SetTrigger("win");
         }
+    }
+    public void ChangeToGameOverScene()
+    {
+        SceneManager.LoadScene(2);
     }
 }

@@ -16,6 +16,7 @@ public class GameTimeManager : MonoBehaviour
 
     private void Update()
     {
+        ConfigurationUtils.PlaySeconds = (int)gameTimer.ElapsedSeconds;
         ConfigurationUtils.FloorMovementSpeed = initialFloorMovementSpeed - (gameTimer.ElapsedSeconds / 180) ;
     }
 }
