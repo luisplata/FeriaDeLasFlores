@@ -12,7 +12,7 @@ public static class AudioManager
 
     private static bool initialized = false;
     private static AudioSource audioSource;
-    private static Dictionary<AudioClipName, AudioClip> audioClips = new Dictionary<AudioClipName, AudioClip>();
+    private static Dictionary<AudioClipName, AudioClip> audioClips;
 
 
     /// <summary>
@@ -28,6 +28,7 @@ public static class AudioManager
     /// <param name="source">audio source</param>
     public static void Initialize(AudioSource source)
     {
+        audioClips = new Dictionary<AudioClipName, AudioClip>();
         initialized = true;
         audioSource = source;
 
