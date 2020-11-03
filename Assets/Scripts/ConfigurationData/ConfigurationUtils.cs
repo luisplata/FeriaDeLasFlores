@@ -93,5 +93,7 @@ public static class ConfigurationUtils
     public static void Initialize()
     {
         configurationData = new ConfigurationData();
+        CollectedFlowers = 0;
+        PlaySeconds = 0;
     }
 }
