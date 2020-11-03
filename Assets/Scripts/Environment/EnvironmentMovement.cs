@@ -37,10 +37,10 @@ public class EnvironmentMovement : IntEventInvoker
 
         EventManager.AddListener(EventName.GameOverEvent, HandleGameOverEvent);
     }
+    bool asd = false;
 
     private void FixedUpdate()
     {
-
         float positionToCompare = floor[0].InitPosition.z;
 
         if (!floor[0].gameObject.activeSelf)
@@ -57,7 +57,9 @@ public class EnvironmentMovement : IntEventInvoker
                 floor[0].InitPosition = new Vector3(0, 0, floor0ZInitialPosition);
             }
 
-            floor[0].transform.position = floor[1].InitPosition;
+            floor[0].transform.position = new Vector3(floor[1].InitPosition.x, floor[1].InitPosition.y, floor[1].InitPosition.z - (positionToCompare - floor[1].transform.position.z));
+            Debug.Log(floor[1].transform.position);
+            Debug.Log(floor[0].transform.position);
 
             Vector3 floor0InitPosition = floor[0].InitPosition;
             floor[0].InitPosition = floor[1].InitPosition;

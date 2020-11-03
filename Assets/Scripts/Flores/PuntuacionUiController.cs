@@ -49,9 +49,7 @@ public class PuntuacionUiController : MonoBehaviour
     IEnumerator ControladorDeSemaforo(float tiempo)
     {
         ejecutarCorrutina = false;
-        Debug.Log("se ejecuta al tiempo que la animacion de salida");
         yield return new WaitForSeconds(tiempo);
-        Debug.Log("se ejecuta despues de la animacion de salida");
         deltaTimeLocal = 0;
         tiempoDeEspera = 1;
         debeEntrarDeNuevo = true;
