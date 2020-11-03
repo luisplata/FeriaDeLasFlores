@@ -18,7 +18,8 @@ public class CreditosController : MonoBehaviour
     void Start()
     {
         CrearScore();
-        button.SetActive(!contro.GanoElPlayer);
+        button.SetActive(contro.GanoElPlayer);
+        jugar.SetActive(!contro.GanoElPlayer);
     }
 
 
@@ -68,8 +69,6 @@ public class CreditosController : MonoBehaviour
                     Debug.Log(sco.nombre + " => " + sco.score);
                     count++;
                 }
-                button.SetActive(contro.GanoElPlayer);
-                jugar.SetActive(!contro.GanoElPlayer);
             }
         }
     }
@@ -109,6 +108,6 @@ public class CreditosController : MonoBehaviour
 
     public void JugarDeNuevo()
     {
-        SceneManager.LoadScene("Intro");
+        SceneManager.LoadScene(0);
     }
 }
