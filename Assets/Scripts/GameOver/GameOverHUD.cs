@@ -35,7 +35,7 @@ public class GameOverHUD : MonoBehaviour
             //perdiste
             gameOverText.text = "Has perdido\nintenta ganar para dejar tu nombre para la historia!";
         }
-        flowerScore.text = $"recogiste {ConfigurationUtils.CollectedFlowers} / {ConfigurationUtils.TotalFlowers} flores";
-        timeScore.text = $"tiempo jugado: {ConfigurationUtils.PlaySeconds} segundos";
+        flowerScore.text = $"Recogiste {ConfigurationUtils.CollectedFlowers} / {ConfigurationUtils.TotalFlowers} flores";
+        timeScore.text = $"Tiempo jugado: {ConfigurationUtils.PlaySeconds} segundos";
     }
 }

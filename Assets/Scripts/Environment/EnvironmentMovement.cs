@@ -58,8 +58,6 @@ public class EnvironmentMovement : IntEventInvoker
             }
 
             floor[0].transform.position = new Vector3(floor[1].InitPosition.x, floor[1].InitPosition.y, floor[1].InitPosition.z - (positionToCompare - floor[1].transform.position.z));
-            Debug.Log(floor[1].transform.position);
-            Debug.Log(floor[0].transform.position);
 
             Vector3 floor0InitPosition = floor[0].InitPosition;
             floor[0].InitPosition = floor[1].InitPosition;
