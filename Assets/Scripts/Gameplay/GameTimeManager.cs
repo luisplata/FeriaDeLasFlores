@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class GameTimeManager : MonoBehaviour
 {
@@ -17,6 +15,6 @@ public class GameTimeManager : MonoBehaviour
     private void Update()
     {
         ConfigurationUtils.PlaySeconds = (int)gameTimer.ElapsedSeconds;
-        ConfigurationUtils.FloorMovementSpeed = initialFloorMovementSpeed - (gameTimer.ElapsedSeconds / 180) ;
+        ConfigurationUtils.FloorMovementSpeed = initialFloorMovementSpeed - (gameTimer.ElapsedSeconds / 5);
     }
 }

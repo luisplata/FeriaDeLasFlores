@@ -149,7 +149,7 @@ public class ConfigurationData
         values.Add(ConfigurationDataValueName.PlayerMovementSpeed, 15);
         values.Add(ConfigurationDataValueName.PlayerJumpHeight, 3);
         values.Add(ConfigurationDataValueName.PlayerMovementTolerance, 0.05f);
-        values.Add(ConfigurationDataValueName.FloorMovementSpeed, -0.75f);
+        values.Add(ConfigurationDataValueName.FloorMovementSpeed, -0.01f);
     }
 
     #endregion

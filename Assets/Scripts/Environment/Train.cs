@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class Train : MonoBehaviour
 {
-    [SerializeField]
-    private float movementSpeed = -10f;
+    private float movementSpeed = -40f;
 
     private Rigidbody rigidBody;
 
@@ -13,10 +12,11 @@ public class Train : MonoBehaviour
     {
         rigidBody = GetComponent<Rigidbody>();
     }
-    private void Update()
+    private void FixedUpdate()
     {
-        rigidBody.velocity = Vector3.zero;
-        rigidBody.AddForce(new Vector3(0, 0, movementSpeed), ForceMode.Impulse);
+        Vector3 position = transform.position;
+        position.z += movementSpeed * Time.fixedDeltaTime;
+        transform.position = position;
     }
 
 }

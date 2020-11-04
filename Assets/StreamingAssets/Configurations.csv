@@ -6,4 +6,4 @@ RestStateDuration,1
 PlayerMovementSpeed,15
 PlayerJumpHeight,3
 PlayerMovementTolerance,0.05
-FloorMovementSpeed,-0.75
+FloorMovementSpeed,-30

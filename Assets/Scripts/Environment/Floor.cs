@@ -24,7 +24,7 @@ public class Floor : MonoBehaviour
     {
         movementSpeed = ConfigurationUtils.FloorMovementSpeed;
         Vector3 position = transform.position;
-        position.z += movementSpeed;
+        position.z += movementSpeed * Time.fixedDeltaTime;
         transform.position = position;
     }
 

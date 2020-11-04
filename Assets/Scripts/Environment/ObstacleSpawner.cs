@@ -9,7 +9,7 @@ public class ObstacleSpawner : MonoBehaviour
     [SerializeField] private List<GameObject> obstaclesPrefabs = new List<GameObject>();
 
     private int poolObjectsInstances = 10;
-    private float spawnSecondsMin = 1f;
+    private float spawnSecondsMin = 2f;
     private float spawnSecondsMax = 3f;
     private List<ObstaclePool> obstacles = new List<ObstaclePool>();
     private class ObstaclePool
