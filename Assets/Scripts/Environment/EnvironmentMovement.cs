@@ -39,7 +39,7 @@ public class EnvironmentMovement : IntEventInvoker
     }
     bool asd = false;
 
-    private void FixedUpdate()
+    private void Update()
     {
         float positionToCompare = floor[0].InitPosition.z;
 

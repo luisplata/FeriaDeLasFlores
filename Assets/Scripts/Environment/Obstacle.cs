@@ -9,7 +9,7 @@ public class Obstacle : MonoBehaviour
         EventManager.AddListener(EventName.GameOverEvent, HandleGameOver);
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         if(transform.position.z < Camera.main.transform.position.z)
         {

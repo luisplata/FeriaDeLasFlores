@@ -20,11 +20,11 @@ public class Floor : MonoBehaviour
         EventManager.AddListener(EventName.GameOverEvent, HandleGameOver);
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         movementSpeed = ConfigurationUtils.FloorMovementSpeed;
         Vector3 position = transform.position;
-        position.z += movementSpeed * Time.fixedDeltaTime;
+        position.z += movementSpeed * Time.deltaTime;
         transform.position = position;
     }
 
