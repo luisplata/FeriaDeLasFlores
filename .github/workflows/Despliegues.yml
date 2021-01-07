@@ -20,6 +20,7 @@ jobs:
         targetPlatform:
           - WebGL # WebGL.
           - StandaloneWindows64 # Build a Windows 64-bit standalone.
+          - Android #Android
     steps:
       - uses: actions/checkout@v2
         with:
