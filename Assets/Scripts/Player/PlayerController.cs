@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class PlayerController : IntEventInvoker
@@ -29,6 +30,8 @@ public class PlayerController : IntEventInvoker
     private EnvironmentChangedEvent environmentChangedEvent = new EnvironmentChangedEvent();
     public int FlorEnPorcenajeParaEscribir => (int)(flowerCompletionPercentage * 100);
     public float FlorEnPorcentajeParaUi => flowerCompletionPercentage;
+    
+    [SerializeField] private Transform leftPosition, centerPosition, rightPosition;
 
     private Animator animator;
 
@@ -52,35 +55,37 @@ public class PlayerController : IntEventInvoker
 
     private void Update()
     {
-        CheckGround();
-        CheckInputs();
-    }
-
-    private void FixedUpdate()
-    {
-        rigidBody.MovePosition(rigidBody.position + inputs * speed * Time.fixedDeltaTime);
-    }
-
-    private void CheckGround()
-    {
-        isGrounded = Physics.CheckSphere(groundChecker.position, GroundDistance, Ground, QueryTriggerInteraction.Ignore);
-    }
-
-    private void CheckInputs()
-    {
-        inputs = Vector3.zero;
+        // CheckGround();
+        // CheckInputs();
         inputs.x = Input.GetAxis("Horizontal");
-
-        if (Input.GetButtonDown("Jump") && isGrounded)
-        {
-            rigidBody.AddForce(Vector3.up * Mathf.Sqrt(jumpHeight * -2f * Physics.gravity.y), ForceMode.VelocityChange);
-            AudioManager.Play(AudioClipName.Jump);
-        }
-        else if (Input.GetButtonDown("Fall"))
-        {
-            rigidBody.AddForce(Vector3.down * Mathf.Sqrt(1.5f * jumpHeight * -2f * Physics.gravity.y), ForceMode.VelocityChange);
-        }
+        Debug.Log("Input Horizontal: " + inputs.x);
     }
+    //
+    // private void FixedUpdate()
+    // {
+    //     rigidBody.MovePosition(rigidBody.position + inputs * speed * Time.fixedDeltaTime);
+    // }
+
+    // private void CheckGround()
+    // {
+    //     isGrounded = Physics.CheckSphere(groundChecker.position, GroundDistance, Ground, QueryTriggerInteraction.Ignore);
+    // }
+
+    // private void CheckInputs()
+    // {
+    //     inputs = Vector3.zero;
+    //     inputs.x = Input.GetAxis("Horizontal");
+    //
+    //     if (Input.GetButtonDown("Jump") && isGrounded)
+    //     {
+    //         rigidBody.AddForce(Vector3.up * Mathf.Sqrt(jumpHeight * -2f * Physics.gravity.y), ForceMode.VelocityChange);
+    //         AudioManager.Play(AudioClipName.Jump);
+    //     }
+    //     else if (Input.GetButtonDown("Fall"))
+    //     {
+    //         rigidBody.AddForce(Vector3.down * Mathf.Sqrt(1.5f * jumpHeight * -2f * Physics.gravity.y), ForceMode.VelocityChange);
+    //     }
+    // }
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -160,5 +165,10 @@ public class PlayerController : IntEventInvoker
     public void ChangeToGameOverScene()
     {
         SceneManager.LoadScene(2);
+    }
+
+    public void Move(InputAction.CallbackContext context)
+    {
+        //determinar si undio a la derecha o a la izquierda.
     }
 }
