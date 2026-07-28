@@ -92,6 +92,14 @@ public class ConfigurationData
         set { values[ConfigurationDataValueName.FloorMovementSpeed] = value; }
     }
 
+    /// <summary>
+    /// Player lane switch speed in units per second
+    /// </summary>
+    public float PlayerLaneSwitchSpeed
+    {
+        get { return values[ConfigurationDataValueName.PlayerLaneSwitchSpeed]; }
+    }
+
     #endregion
 
     #region Constructor
@@ -150,6 +158,7 @@ public class ConfigurationData
         values.Add(ConfigurationDataValueName.PlayerJumpHeight, 3);
         values.Add(ConfigurationDataValueName.PlayerMovementTolerance, 0.05f);
         values.Add(ConfigurationDataValueName.FloorMovementSpeed, -30f);
+        values.Add(ConfigurationDataValueName.PlayerLaneSwitchSpeed, 5f);
     }
 
     #endregion

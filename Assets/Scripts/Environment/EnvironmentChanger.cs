@@ -1,13 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class EnvironmentChanger : MonoBehaviour
 {
-    [SerializeField] private List<EnvironmentMovement> forestEnvironments = new List<EnvironmentMovement>();
-    [SerializeField] private List<EnvironmentMovement> streetEnvironments = new List<EnvironmentMovement>();
-    [SerializeField] private List<EnvironmentMovement> tramEnvironments = new List<EnvironmentMovement>();
+    [SerializeField] private List<EnvironmentMovement> forestEnvironments = new();
+    [SerializeField] private List<EnvironmentMovement> streetEnvironments = new();
+    [SerializeField] private List<EnvironmentMovement> tramEnvironments = new();
     private List<EnvironmentMovement> currentEnvironmentList;
     private List<EnvironmentMovement> nextEnvironmentList;
     private Queue<List<EnvironmentMovement>> nextEnvironments = new Queue<List<EnvironmentMovement>>();

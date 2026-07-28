@@ -3393,7 +3393,7 @@ Transform:
   m_GameObject: {fileID: 983873655}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4077,9 +4077,13 @@ MonoBehaviour:
   isGrounded: 1
   lifes: 1
   silleta: {fileID: 801316763}
-  leftPosition: {fileID: 0}
-  centerPosition: {fileID: 0}
-  rightPosition: {fileID: 0}
+  leftPosition: {fileID: 56883810}
+  centerPosition: {fileID: 831769464}
+  rightPosition: {fileID: 1312138002}
+  playerConfig: {fileID: 11400000, guid: 6882cd45ad9c3a8458950e05224ba117, type: 2}
+  currentLane: 1
+  isSwitchingLane: 0
+  laneSwitchSpeed: 0
 --- !u!114 &1156544836
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4293,7 +4297,7 @@ MonoBehaviour:
     m_ActionName: UI/TrackedDeviceOrientation
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: 
+  m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 1522312129}
 --- !u!114 &1171942790 stripped

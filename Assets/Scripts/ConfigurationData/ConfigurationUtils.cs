@@ -85,6 +85,14 @@ public static class ConfigurationUtils
         set { configurationData.FloorMovementSpeed = value; }
     }
 
+    /// <summary>
+    /// Player lane switch speed in units per second
+    /// </summary>
+    public static float PlayerLaneSwitchSpeed
+    {
+        get { return configurationData.PlayerLaneSwitchSpeed; }
+    }
+
     #endregion
 
     /// <summary>

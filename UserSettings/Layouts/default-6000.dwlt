@@ -11,6 +11,54 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 12004, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
+  m_EditorClassIdentifier: UnityEditor.dll::UnityEditor.ContainerWindow
+  m_PixelRect:
+    serializedVersion: 2
+    x: 1
+    y: 70
+    width: 1087
+    height: 969
+  m_ShowMode: 0
+  m_Title: Project Settings
+  m_RootView: {fileID: 5}
+  m_MinSize: {x: 310, y: 226}
+  m_MaxSize: {x: 4000, y: 4026}
+  m_Maximized: 0
+--- !u!114 &2
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12004, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEditor.dll::UnityEditor.ContainerWindow
+  m_PixelRect:
+    serializedVersion: 2
+    x: 303
+    y: 147
+    width: 910
+    height: 559
+  m_ShowMode: 0
+  m_Title: Build Profiles
+  m_RootView: {fileID: 7}
+  m_MinSize: {x: 725, y: 426}
+  m_MaxSize: {x: 4000, y: 4026}
+  m_Maximized: 0
+--- !u!114 &3
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12004, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
   m_EditorClassIdentifier: 
   m_PixelRect:
     serializedVersion: 2
@@ -20,11 +68,113 @@ MonoBehaviour:
     height: 997
   m_ShowMode: 4
   m_Title: Simulator
-  m_RootView: {fileID: 3}
+  m_RootView: {fileID: 9}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
   m_Maximized: 1
---- !u!114 &2
+--- !u!114 &4
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: ProjectSettingsWindow
+  m_EditorClassIdentifier: UnityEditor.dll::UnityEditor.DockArea
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1087
+    height: 969
+  m_MinSize: {x: 310, y: 226}
+  m_MaxSize: {x: 4000, y: 4026}
+  m_ActualView: {fileID: 21}
+  m_Panes:
+  - {fileID: 21}
+  m_Selected: 0
+  m_LastSelected: 0
+--- !u!114 &5
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEditor.dll::UnityEditor.SplitView
+  m_Children:
+  - {fileID: 4}
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1087
+    height: 969
+  m_MinSize: {x: 310, y: 226}
+  m_MaxSize: {x: 4000, y: 4026}
+  vertical: 0
+  controlID: 3024
+  draggingID: 0
+--- !u!114 &6
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: BuildProfileWindow
+  m_EditorClassIdentifier: UnityEditor.dll::UnityEditor.DockArea
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 910
+    height: 559
+  m_MinSize: {x: 725, y: 426}
+  m_MaxSize: {x: 4000, y: 4026}
+  m_ActualView: {fileID: 22}
+  m_Panes:
+  - {fileID: 22}
+  m_Selected: 0
+  m_LastSelected: 0
+--- !u!114 &7
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEditor.dll::UnityEditor.SplitView
+  m_Children:
+  - {fileID: 6}
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 910
+    height: 559
+  m_MinSize: {x: 725, y: 426}
+  m_MaxSize: {x: 4000, y: 4026}
+  vertical: 0
+  controlID: 3001
+  draggingID: 0
+--- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -45,12 +195,12 @@ MonoBehaviour:
     height: 591
   m_MinSize: {x: 202, y: 226}
   m_MaxSize: {x: 4002, y: 4026}
-  m_ActualView: {fileID: 23}
+  m_ActualView: {fileID: 32}
   m_Panes:
-  - {fileID: 23}
+  - {fileID: 32}
   m_Selected: 0
   m_LastSelected: 0
---- !u!114 &3
+--- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -63,9 +213,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Children:
-  - {fileID: 4}
-  - {fileID: 6}
-  - {fileID: 5}
+  - {fileID: 10}
+  - {fileID: 12}
+  - {fileID: 11}
   m_Position:
     serializedVersion: 2
     x: 0
@@ -78,7 +228,7 @@ MonoBehaviour:
   m_TopViewHeight: 36
   m_UseBottomView: 1
   m_BottomViewHeight: 20
---- !u!114 &4
+--- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -99,8 +249,8 @@ MonoBehaviour:
     height: 36
   m_MinSize: {x: 50, y: 50}
   m_MaxSize: {x: 4000, y: 4000}
-  m_ActualView: {fileID: 15}
---- !u!114 &5
+  m_ActualView: {fileID: 24}
+--- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -121,7 +271,7 @@ MonoBehaviour:
     height: 20
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
---- !u!114 &6
+--- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -134,8 +284,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Children:
-  - {fileID: 7}
-  - {fileID: 14}
+  - {fileID: 13}
+  - {fileID: 20}
   m_Position:
     serializedVersion: 2
     x: 0
@@ -145,9 +295,9 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 112}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 38
+  controlID: 145
   draggingID: 0
---- !u!114 &7
+--- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -160,8 +310,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Children:
-  - {fileID: 8}
-  - {fileID: 11}
+  - {fileID: 14}
+  - {fileID: 17}
   m_Position:
     serializedVersion: 2
     x: 0
@@ -171,9 +321,9 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 112}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
-  controlID: 39
+  controlID: 138
   draggingID: 0
---- !u!114 &8
+--- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -186,8 +336,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Children:
-  - {fileID: 9}
-  - {fileID: 10}
+  - {fileID: 15}
+  - {fileID: 16}
   m_Position:
     serializedVersion: 2
     x: 0
@@ -197,9 +347,9 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 56}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 40
+  controlID: 46
   draggingID: 0
---- !u!114 &9
+--- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -220,12 +370,12 @@ MonoBehaviour:
     height: 350
   m_MinSize: {x: 201, y: 226}
   m_MaxSize: {x: 4001, y: 4026}
-  m_ActualView: {fileID: 16}
+  m_ActualView: {fileID: 25}
   m_Panes:
-  - {fileID: 16}
+  - {fileID: 25}
   m_Selected: 0
   m_LastSelected: 0
---- !u!114 &10
+--- !u!114 &16
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -246,12 +396,12 @@ MonoBehaviour:
     height: 350
   m_MinSize: {x: 202, y: 226}
   m_MaxSize: {x: 4002, y: 4026}
-  m_ActualView: {fileID: 17}
+  m_ActualView: {fileID: 26}
   m_Panes:
-  - {fileID: 17}
+  - {fileID: 26}
   m_Selected: 0
   m_LastSelected: 0
---- !u!114 &11
+--- !u!114 &17
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -264,9 +414,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Children:
-  - {fileID: 12}
-  - {fileID: 13}
-  - {fileID: 2}
+  - {fileID: 18}
+  - {fileID: 19}
+  - {fileID: 8}
   m_Position:
     serializedVersion: 2
     x: 0
@@ -276,9 +426,9 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 56}
   m_MaxSize: {x: 24288, y: 8096}
   vertical: 0
-  controlID: 96
+  controlID: 139
   draggingID: 0
---- !u!114 &12
+--- !u!114 &18
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -299,12 +449,12 @@ MonoBehaviour:
     height: 591
   m_MinSize: {x: 231, y: 276}
   m_MaxSize: {x: 10001, y: 10026}
-  m_ActualView: {fileID: 18}
+  m_ActualView: {fileID: 27}
   m_Panes:
-  - {fileID: 18}
+  - {fileID: 27}
   m_Selected: 0
   m_LastSelected: 0
---- !u!114 &13
+--- !u!114 &19
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -325,14 +475,14 @@ MonoBehaviour:
     height: 591
   m_MinSize: {x: 102, y: 126}
   m_MaxSize: {x: 4002, y: 4026}
-  m_ActualView: {fileID: 19}
+  m_ActualView: {fileID: 28}
   m_Panes:
-  - {fileID: 19}
-  - {fileID: 20}
-  - {fileID: 21}
+  - {fileID: 28}
+  - {fileID: 29}
+  - {fileID: 30}
   m_Selected: 0
   m_LastSelected: 2
---- !u!114 &14
+--- !u!114 &20
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -353,12 +503,984 @@ MonoBehaviour:
     height: 941
   m_MinSize: {x: 276, y: 76}
   m_MaxSize: {x: 4001, y: 4026}
-  m_ActualView: {fileID: 22}
+  m_ActualView: {fileID: 31}
   m_Panes:
-  - {fileID: 22}
+  - {fileID: 31}
+  - {fileID: 23}
   m_Selected: 0
   m_LastSelected: 1
---- !u!114 &15
+--- !u!114 &21
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 13854, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEditor.dll::UnityEditor.ProjectSettingsWindow
+  m_MinSize: {x: 310, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Project Settings
+    m_Image: {fileID: -5712115415447495865, guid: 0000000000000000d000000000000000,
+      type: 0}
+    m_Tooltip: 
+    m_TextWithWhitespace: "Project Settings\u200B"
+  m_Pos:
+    serializedVersion: 2
+    x: 0
+    y: 26
+    width: 1087
+    height: 943
+  m_SerializedDataModeController:
+    m_DataMode: 0
+    m_PreferredDataMode: 0
+    m_SupportedDataModes: 
+    isAutomatic: 1
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+    m_ContainerData: []
+    m_DynamicPanelContainerData: []
+    m_OverlaysVisible: 1
+    m_DynamicPanelBehavior: 0
+  m_PosLeft: {x: 0, y: 0}
+  m_PosRight: {x: 0, y: 1133.8077}
+  m_Scope: 1
+  m_SplitterPos: 284
+  m_SearchText: inp
+  m_TreeViewState:
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 4dcf9b58
+    m_LastClickedID: 1486606157
+    m_ExpandedIDs: a01a5fa667ea4eb1000000007f0eae07e594f01ac53aba5a
+    m_RenameOverlay:
+      m_UserAcceptedRename: 0
+      m_Name: 
+      m_OriginalName: 
+      m_EditFieldRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+      m_UserData: 0
+      m_IsWaitingForDelay: 0
+      m_IsRenaming: 0
+      m_OriginalEventType: 11
+      m_IsRenamingFilename: 0
+      m_TrimLeadingAndTrailingWhitespace: 0
+      m_ClientGUIView: {fileID: 0}
+    m_SearchString: inp
+--- !u!114 &22
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 15004, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEditor.BuildProfileModule.dll::UnityEditor.Build.Profile.BuildProfileWindow
+  m_MinSize: {x: 725, y: 400}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Build Profiles
+    m_Image: {fileID: 0}
+    m_Tooltip: 
+    m_TextWithWhitespace: "Build Profiles\u200B"
+  m_Pos:
+    serializedVersion: 2
+    x: 0
+    y: 26
+    width: 910
+    height: 533
+  m_SerializedDataModeController:
+    m_DataMode: 0
+    m_PreferredDataMode: 0
+    m_SupportedDataModes: 
+    isAutomatic: 1
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+    m_ContainerData: []
+    m_DynamicPanelContainerData: []
+    m_OverlaysVisible: 1
+    m_DynamicPanelBehavior: 0
+--- !u!114 &23
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 13401, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEditor.TestRunner.dll::UnityEditor.TestTools.TestRunner.TestRunnerWindow
+  m_MinSize: {x: 50, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Test Runner
+    m_Image: {fileID: 0}
+    m_Tooltip: Test framework for running Edit mode and Play mode tests in Unity.
+      Part of the com.unity.test-framework package.
+    m_TextWithWhitespace: "Test Runner\u200B"
+  m_Pos:
+    serializedVersion: 2
+    x: 1384
+    y: 79
+    width: 535
+    height: 915
+  m_SerializedDataModeController:
+    m_DataMode: 0
+    m_PreferredDataMode: 0
+    m_SupportedDataModes: 
+    isAutomatic: 1
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+    m_ContainerData: []
+    m_DynamicPanelContainerData: []
+    m_OverlaysVisible: 1
+    m_DynamicPanelBehavior: 0
+  m_Spl:
+    ID: 2183
+    splitterInitialOffset: 0
+    currentActiveSplitter: -1
+    realSizes:
+    - 634
+    - 211
+    relativeSizes:
+    - 0.75
+    - 0.25
+    minSizes:
+    - 32
+    - 32
+    maxSizes:
+    - 0
+    - 0
+    lastTotalSize: 845
+    splitSize: 6
+    xOffset: 0
+    m_Version: 1
+    oldRealSizes: 
+    oldMinSizes: 
+    oldMaxSizes: 
+    oldSplitSize: 0
+  m_TestTypeToolbarIndex: 1
+  m_TestListGUIs:
+  - m_Window: {fileID: 23}
+    runProgress:
+      RunGuid: 4a7de093-3f27-4594-8b99-030d5b4fb98a
+      ExecutionSettings:
+        m_TargetPlatform: 0
+        m_HasTargetPlatform: 0
+        filter:
+          testMode: 0
+          testNames: []
+          groupNames: []
+          categoryNames: []
+          assemblyNames: []
+        filters:
+        - testMode: 2
+          testNames: []
+          groupNames: []
+          categoryNames: []
+          assemblyNames: []
+        runSynchronously: 0
+        playerHeartbeatTimeout: 600
+        orderedTestNames: []
+        ignoreTests: []
+        featureFlags:
+          fileCleanUpCheck: 0
+          requiresSplashScreen: 0
+          strictDomainReload: 0
+          disableNestedEnumeratorBugfix: 0
+        randomOrderSeed: 0
+      HasFinished: 1
+      Progress: 1.0000002
+      CurrentStepName: Unlock Reload Assemblies
+      CurrentStageName: 
+    m_NewResultList:
+    - id: 1000
+      uniqueId: '[Feriadeflores][suite]'
+      name: Feriadeflores
+      fullName: Feriadeflores
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 
+      parentUniqueId: 
+    m_ResultText: 
+    m_ResultStacktrace: 
+    m_TestListState:
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 73c98ed2ffffff7f
+      m_RenameOverlay:
+        m_UserAcceptedRename: 0
+        m_Name: 
+        m_OriginalName: 
+        m_EditFieldRect:
+          serializedVersion: 2
+          x: 0
+          y: 0
+          width: 0
+          height: 0
+        m_UserData: 0
+        m_IsWaitingForDelay: 0
+        m_IsRenaming: 0
+        m_OriginalEventType: 11
+        m_IsRenamingFilename: 0
+        m_TrimLeadingAndTrailingWhitespace: 0
+        m_ClientGUIView: {fileID: 0}
+      m_SearchString: 
+    m_TestRunnerUIFilter:
+      PassedHidden: 0
+      FailedHidden: 0
+      NotRunHidden: 0
+      m_SearchString: 
+      selectedCategories: []
+      availableCategories:
+      - Uncategorized
+    m_SelectedOption: 0
+  - m_Window: {fileID: 23}
+    runProgress:
+      RunGuid: 4a7de093-3f27-4594-8b99-030d5b4fb98a
+      ExecutionSettings:
+        m_TargetPlatform: 0
+        m_HasTargetPlatform: 0
+        filter:
+          testMode: 0
+          testNames: []
+          groupNames: []
+          categoryNames: []
+          assemblyNames: []
+        filters:
+        - testMode: 2
+          testNames: []
+          groupNames: []
+          categoryNames: []
+          assemblyNames: []
+        runSynchronously: 0
+        playerHeartbeatTimeout: 600
+        orderedTestNames: []
+        ignoreTests: []
+        featureFlags:
+          fileCleanUpCheck: 0
+          requiresSplashScreen: 0
+          strictDomainReload: 0
+          disableNestedEnumeratorBugfix: 0
+        randomOrderSeed: 0
+      HasFinished: 1
+      Progress: 1.0000002
+      CurrentStepName: Unlock Reload Assemblies
+      CurrentStageName: 
+    m_NewResultList:
+    - id: 1000
+      uniqueId: '[Feriadeflores][suite]'
+      name: Feriadeflores
+      fullName: Feriadeflores
+      resultStatus: 2
+      duration: 0.0600273
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 
+      parentUniqueId: 
+    - id: 1033
+      uniqueId: '[Assembly-CSharp][D:/Unity/FeriaDeLasFlores/Library/ScriptAssemblies/Assembly-CSharp.dll][suite]'
+      name: Assembly-CSharp.dll
+      fullName: D:/Unity/FeriaDeLasFlores/Library/ScriptAssemblies/Assembly-CSharp.dll
+      resultStatus: 2
+      duration: 0.0600273
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1000
+      parentUniqueId: '[Feriadeflores][suite]'
+    - id: 1001
+      uniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][ConfigDataTests][suite]'
+      name: ConfigDataTests
+      fullName: ConfigDataTests
+      resultStatus: 1
+      duration: 0.021723201
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1033
+      parentUniqueId: '[Assembly-CSharp][D:/Unity/FeriaDeLasFlores/Library/ScriptAssemblies/Assembly-CSharp.dll][suite]'
+    - id: 1008
+      uniqueId: 'Assembly-CSharp.dll/ConfigDataTests/[Assembly-CSharp][ConfigDataTests.PlayerLaneSwitchSpeedAccessorReturnsPositiveValue]'
+      name: PlayerLaneSwitchSpeedAccessorReturnsPositiveValue
+      fullName: ConfigDataTests.PlayerLaneSwitchSpeedAccessorReturnsPositiveValue
+      resultStatus: 1
+      duration: 0.0178242
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1005
+      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][ConfigDataTests][suite]'
+    - id: 1007
+      uniqueId: 'Assembly-CSharp.dll/ConfigDataTests/[Assembly-CSharp][ConfigDataTests.PlayerLaneSwitchSpeedDefaultIsFive]'
+      name: PlayerLaneSwitchSpeedDefaultIsFive
+      fullName: ConfigDataTests.PlayerLaneSwitchSpeedDefaultIsFive
+      resultStatus: 1
+      duration: 0.0034628
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1005
+      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][ConfigDataTests][suite]'
+    - id: 1006
+      uniqueId: 'Assembly-CSharp.dll/ConfigDataTests/[Assembly-CSharp][ConfigDataTests.PlayerLaneSwitchSpeedEnumValueExists]'
+      name: PlayerLaneSwitchSpeedEnumValueExists
+      fullName: ConfigDataTests.PlayerLaneSwitchSpeedEnumValueExists
+      resultStatus: 1
+      duration: 0.0004362
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1005
+      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][ConfigDataTests][suite]'
+    - id: 1005
+      uniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][PlayerControllerTests][suite]'
+      name: PlayerControllerTests
+      fullName: PlayerControllerTests
+      resultStatus: 2
+      duration: 0.0383041
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1033
+      parentUniqueId: '[Assembly-CSharp][D:/Unity/FeriaDeLasFlores/Library/ScriptAssemblies/Assembly-CSharp.dll][suite]'
+    - id: 1027
+      uniqueId: 'Assembly-CSharp.dll/PlayerControllerTests/[Assembly-CSharp][PlayerControllerTests.BufferedInputFiresAfterSnap]'
+      name: BufferedInputFiresAfterSnap
+      fullName: PlayerControllerTests.BufferedInputFiresAfterSnap
+      resultStatus: 1
+      duration: 0.0063407
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1009
+      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][PlayerControllerTests][suite]'
+    - id: 1034
+      uniqueId: 'Assembly-CSharp.dll/PlayerControllerTests/[Assembly-CSharp][PlayerControllerTests.BufferedInputFiresAfterTransition]'
+      name: BufferedInputFiresAfterTransition
+      fullName: PlayerControllerTests.BufferedInputFiresAfterTransition
+      resultStatus: 1
+      duration: 0.0028242
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1009
+      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][PlayerControllerTests][suite]'
+    - id: 1026
+      uniqueId: 'Assembly-CSharp.dll/PlayerControllerTests/[Assembly-CSharp][PlayerControllerTests.BufferIsNullWhenNoInputDuringTransition]'
+      name: BufferIsNullWhenNoInputDuringTransition
+      fullName: PlayerControllerTests.BufferIsNullWhenNoInputDuringTransition
+      resultStatus: 1
+      duration: 0.0008181
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1009
+      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][PlayerControllerTests][suite]'
+    - id: 1025
+      uniqueId: 'Assembly-CSharp.dll/PlayerControllerTests/[Assembly-CSharp][PlayerControllerTests.BufferOverwritesOnRepeatedInput]'
+      name: BufferOverwritesOnRepeatedInput
+      fullName: PlayerControllerTests.BufferOverwritesOnRepeatedInput
+      resultStatus: 1
+      duration: 0.0008111
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1009
+      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][PlayerControllerTests][suite]'
+    - id: 1022
+      uniqueId: 'Assembly-CSharp.dll/PlayerControllerTests/[Assembly-CSharp][PlayerControllerTests.DoesNotSnapWhenOutsideTolerance]'
+      name: DoesNotSnapWhenOutsideTolerance
+      fullName: PlayerControllerTests.DoesNotSnapWhenOutsideTolerance
+      resultStatus: 2
+      duration: 0.0070715
+      messages: "  Player must still be mid-transition when outside tolerance\r\n 
+        Expected: True\r\n  But was:  False\r\n"
+      output: 
+      stacktrace: 'at PlayerControllerTests.DoesNotSnapWhenOutsideTolerance () [0x00042]
+        in D:\Unity\FeriaDeLasFlores\Assets\Tests\EditMode\PlayerControllerTests.cs:251
+
+'
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1009
+      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][PlayerControllerTests][suite]'
+    - id: 1033
+      uniqueId: 'Assembly-CSharp.dll/PlayerControllerTests/[Assembly-CSharp][PlayerControllerTests.FullTransitionCenterToRight]'
+      name: FullTransitionCenterToRight
+      fullName: PlayerControllerTests.FullTransitionCenterToRight
+      resultStatus: 1
+      duration: 0.001145
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1009
+      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][PlayerControllerTests][suite]'
+    - id: 1032
+      uniqueId: 'Assembly-CSharp.dll/PlayerControllerTests/[Assembly-CSharp][PlayerControllerTests.FullTransitionCompletesToCorrectLane]'
+      name: FullTransitionCompletesToCorrectLane
+      fullName: PlayerControllerTests.FullTransitionCompletesToCorrectLane
+      resultStatus: 1
+      duration: 0.0012328
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1009
+      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][PlayerControllerTests][suite]'
+    - id: 1031
+      uniqueId: 'Assembly-CSharp.dll/PlayerControllerTests/[Assembly-CSharp][PlayerControllerTests.GetLaneIndexForPositionMidpoint]'
+      name: GetLaneIndexForPositionMidpoint
+      fullName: PlayerControllerTests.GetLaneIndexForPositionMidpoint
+      resultStatus: 1
+      duration: 0.002643
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1009
+      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][PlayerControllerTests][suite]'
+    - id: 1030
+      uniqueId: 'Assembly-CSharp.dll/PlayerControllerTests/[Assembly-CSharp][PlayerControllerTests.GetLaneIndexForPositionReturnsClosestLane]'
+      name: GetLaneIndexForPositionReturnsClosestLane
+      fullName: PlayerControllerTests.GetLaneIndexForPositionReturnsClosestLane
+      resultStatus: 1
+      duration: 0.0007828
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1009
+      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][PlayerControllerTests][suite]'
+    - id: 1029
+      uniqueId: 'Assembly-CSharp.dll/PlayerControllerTests/[Assembly-CSharp][PlayerControllerTests.GetLaneTransformInvalidIndexReturnsCenter]'
+      name: GetLaneTransformInvalidIndexReturnsCenter
+      fullName: PlayerControllerTests.GetLaneTransformInvalidIndexReturnsCenter
+      resultStatus: 1
+      duration: 0.0009218
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1009
+      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][PlayerControllerTests][suite]'
+    - id: 1028
+      uniqueId: 'Assembly-CSharp.dll/PlayerControllerTests/[Assembly-CSharp][PlayerControllerTests.GetLaneTransformReturnsCorrectTransform]'
+      name: GetLaneTransformReturnsCorrectTransform
+      fullName: PlayerControllerTests.GetLaneTransformReturnsCorrectTransform
+      resultStatus: 1
+      duration: 0.0008166
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1009
+      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][PlayerControllerTests][suite]'
+    - id: 1011
+      uniqueId: 'Assembly-CSharp.dll/PlayerControllerTests/[Assembly-CSharp][PlayerControllerTests.InitialIsNotSwitchingLane]'
+      name: InitialIsNotSwitchingLane
+      fullName: PlayerControllerTests.InitialIsNotSwitchingLane
+      resultStatus: 1
+      duration: 0.0005902
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1009
+      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][PlayerControllerTests][suite]'
+    - id: 1010
+      uniqueId: 'Assembly-CSharp.dll/PlayerControllerTests/[Assembly-CSharp][PlayerControllerTests.InitialLaneIsCenter]'
+      name: InitialLaneIsCenter
+      fullName: PlayerControllerTests.InitialLaneIsCenter
+      resultStatus: 1
+      duration: 0.0005713
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1009
+      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][PlayerControllerTests][suite]'
+    - id: 1013
+      uniqueId: 'Assembly-CSharp.dll/PlayerControllerTests/[Assembly-CSharp][PlayerControllerTests.InitialTargetPositionIsCenter]'
+      name: InitialTargetPositionIsCenter
+      fullName: PlayerControllerTests.InitialTargetPositionIsCenter
+      resultStatus: 1
+      duration: 0.0006244
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1009
+      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][PlayerControllerTests][suite]'
+    - id: 1024
+      uniqueId: 'Assembly-CSharp.dll/PlayerControllerTests/[Assembly-CSharp][PlayerControllerTests.InputDuringTransitionIsBuffered]'
+      name: InputDuringTransitionIsBuffered
+      fullName: PlayerControllerTests.InputDuringTransitionIsBuffered
+      resultStatus: 1
+      duration: 0.0007578
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1009
+      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][PlayerControllerTests][suite]'
+    - id: 1012
+      uniqueId: 'Assembly-CSharp.dll/PlayerControllerTests/[Assembly-CSharp][PlayerControllerTests.LaneSwitchSpeedSetFromConfig]'
+      name: LaneSwitchSpeedSetFromConfig
+      fullName: PlayerControllerTests.LaneSwitchSpeedSetFromConfig
+      resultStatus: 1
+      duration: 0.0008109
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1009
+      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][PlayerControllerTests][suite]'
+    - id: 1023
+      uniqueId: 'Assembly-CSharp.dll/PlayerControllerTests/[Assembly-CSharp][PlayerControllerTests.LaneTransitionPreservesYAndZ]'
+      name: LaneTransitionPreservesYAndZ
+      fullName: PlayerControllerTests.LaneTransitionPreservesYAndZ
+      resultStatus: 1
+      duration: 0.0009975
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1009
+      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][PlayerControllerTests][suite]'
+    - id: 1016
+      uniqueId: 'Assembly-CSharp.dll/PlayerControllerTests/[Assembly-CSharp][PlayerControllerTests.LeftInputAtLeftmostBoundaryStaysAtLaneZero]'
+      name: LeftInputAtLeftmostBoundaryStaysAtLaneZero
+      fullName: PlayerControllerTests.LeftInputAtLeftmostBoundaryStaysAtLaneZero
+      resultStatus: 1
+      duration: 0.0008805
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1009
+      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][PlayerControllerTests][suite]'
+    - id: 1014
+      uniqueId: 'Assembly-CSharp.dll/PlayerControllerTests/[Assembly-CSharp][PlayerControllerTests.LeftInputFromCenterBeginsTransitionToLaneZero]'
+      name: LeftInputFromCenterBeginsTransitionToLaneZero
+      fullName: PlayerControllerTests.LeftInputFromCenterBeginsTransitionToLaneZero
+      resultStatus: 1
+      duration: 0.0008532
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1009
+      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][PlayerControllerTests][suite]'
+    - id: 1036
+      uniqueId: 'Assembly-CSharp.dll/PlayerControllerTests/[Assembly-CSharp][PlayerControllerTests.RapidInputAtBoundaryDoesNotLeaveBounds]'
+      name: RapidInputAtBoundaryDoesNotLeaveBounds
+      fullName: PlayerControllerTests.RapidInputAtBoundaryDoesNotLeaveBounds
+      resultStatus: 1
+      duration: 0.0009361
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1009
+      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][PlayerControllerTests][suite]'
+    - id: 1017
+      uniqueId: 'Assembly-CSharp.dll/PlayerControllerTests/[Assembly-CSharp][PlayerControllerTests.RightInputAtRightmostBoundaryStaysAtLaneTwo]'
+      name: RightInputAtRightmostBoundaryStaysAtLaneTwo
+      fullName: PlayerControllerTests.RightInputAtRightmostBoundaryStaysAtLaneTwo
+      resultStatus: 1
+      duration: 0.0008776
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1009
+      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][PlayerControllerTests][suite]'
+    - id: 1015
+      uniqueId: 'Assembly-CSharp.dll/PlayerControllerTests/[Assembly-CSharp][PlayerControllerTests.RightInputFromCenterBeginsTransitionToLaneTwo]'
+      name: RightInputFromCenterBeginsTransitionToLaneTwo
+      fullName: PlayerControllerTests.RightInputFromCenterBeginsTransitionToLaneTwo
+      resultStatus: 1
+      duration: 0.0008498
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1009
+      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][PlayerControllerTests][suite]'
+    - id: 1020
+      uniqueId: 'Assembly-CSharp.dll/PlayerControllerTests/[Assembly-CSharp][PlayerControllerTests.SmallNegativeInputMovesLeft]'
+      name: SmallNegativeInputMovesLeft
+      fullName: PlayerControllerTests.SmallNegativeInputMovesLeft
+      resultStatus: 1
+      duration: 0.000792
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1009
+      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][PlayerControllerTests][suite]'
+    - id: 1019
+      uniqueId: 'Assembly-CSharp.dll/PlayerControllerTests/[Assembly-CSharp][PlayerControllerTests.SmallPositiveInputMovesRight]'
+      name: SmallPositiveInputMovesRight
+      fullName: PlayerControllerTests.SmallPositiveInputMovesRight
+      resultStatus: 1
+      duration: 0.0008066
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1009
+      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][PlayerControllerTests][suite]'
+    - id: 1021
+      uniqueId: 'Assembly-CSharp.dll/PlayerControllerTests/[Assembly-CSharp][PlayerControllerTests.SnapCompletesWhenWithinTolerance]'
+      name: SnapCompletesWhenWithinTolerance
+      fullName: PlayerControllerTests.SnapCompletesWhenWithinTolerance
+      resultStatus: 1
+      duration: 0.000844
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1009
+      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][PlayerControllerTests][suite]'
+    - id: 1035
+      uniqueId: 'Assembly-CSharp.dll/PlayerControllerTests/[Assembly-CSharp][PlayerControllerTests.YAndZPositionPreservedDuringTransition]'
+      name: YAndZPositionPreservedDuringTransition
+      fullName: PlayerControllerTests.YAndZPositionPreservedDuringTransition
+      resultStatus: 1
+      duration: 0.0009991
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1009
+      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][PlayerControllerTests][suite]'
+    - id: 1018
+      uniqueId: 'Assembly-CSharp.dll/PlayerControllerTests/[Assembly-CSharp][PlayerControllerTests.ZeroInputDoesNothing]'
+      name: ZeroInputDoesNothing
+      fullName: PlayerControllerTests.ZeroInputDoesNothing
+      resultStatus: 1
+      duration: 0.0007055
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1009
+      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][PlayerControllerTests][suite]'
+    m_ResultText: "DoesNotSnapWhenOutsideTolerance (0,007s)\n---\n  Player must still
+      be mid-transition when outside tolerance\r\n  Expected: True\r\n  But was: 
+      False\r\n\n---\nat PlayerControllerTests.DoesNotSnapWhenOutsideTolerance ()
+      [0x00042] in <color=#40a0ff><a href=\"D:\\Unity\\FeriaDeLasFlores\\Assets\\Tests\\EditMode\\PlayerControllerTests.cs\"
+      line=\"251\r\">Assets\\Tests\\EditMode\\PlayerControllerTests.cs:251\r</a></color>"
+    m_ResultStacktrace: 'at PlayerControllerTests.DoesNotSnapWhenOutsideTolerance
+      () [0x00042] in D:\Unity\FeriaDeLasFlores\Assets\Tests\EditMode\PlayerControllerTests.cs:251
+
+'
+    m_TestListState:
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: 1a4721ca
+      m_LastClickedID: -903788774
+      m_ExpandedIDs: 8bbd25d273c98ed24bc83315ffffff7f
+      m_RenameOverlay:
+        m_UserAcceptedRename: 0
+        m_Name: 
+        m_OriginalName: 
+        m_EditFieldRect:
+          serializedVersion: 2
+          x: 0
+          y: 0
+          width: 0
+          height: 0
+        m_UserData: 0
+        m_IsWaitingForDelay: 0
+        m_IsRenaming: 0
+        m_OriginalEventType: 11
+        m_IsRenamingFilename: 0
+        m_TrimLeadingAndTrailingWhitespace: 0
+        m_ClientGUIView: {fileID: 0}
+      m_SearchString: 
+    m_TestRunnerUIFilter:
+      PassedHidden: 0
+      FailedHidden: 0
+      NotRunHidden: 0
+      m_SearchString: 
+      selectedCategories: []
+      availableCategories:
+      - Uncategorized
+    m_SelectedOption: 0
+  - m_Window: {fileID: 0}
+    runProgress:
+      RunGuid: 4a7de093-3f27-4594-8b99-030d5b4fb98a
+      ExecutionSettings:
+        m_TargetPlatform: 0
+        m_HasTargetPlatform: 0
+        filter:
+          testMode: 0
+          testNames: []
+          groupNames: []
+          categoryNames: []
+          assemblyNames: []
+        filters:
+        - testMode: 2
+          testNames: []
+          groupNames: []
+          categoryNames: []
+          assemblyNames: []
+        runSynchronously: 0
+        playerHeartbeatTimeout: 600
+        orderedTestNames: []
+        ignoreTests: []
+        featureFlags:
+          fileCleanUpCheck: 0
+          requiresSplashScreen: 0
+          strictDomainReload: 0
+          disableNestedEnumeratorBugfix: 0
+        randomOrderSeed: 0
+      HasFinished: 1
+      Progress: 1.0000002
+      CurrentStepName: Unlock Reload Assemblies
+      CurrentStageName: 
+    m_NewResultList: []
+    m_ResultText: 
+    m_ResultStacktrace: 
+    m_TestListState:
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 
+      m_RenameOverlay:
+        m_UserAcceptedRename: 0
+        m_Name: 
+        m_OriginalName: 
+        m_EditFieldRect:
+          serializedVersion: 2
+          x: 0
+          y: 0
+          width: 0
+          height: 0
+        m_UserData: 0
+        m_IsWaitingForDelay: 0
+        m_IsRenaming: 0
+        m_OriginalEventType: 11
+        m_IsRenamingFilename: 0
+        m_TrimLeadingAndTrailingWhitespace: 0
+        m_ClientGUIView: {fileID: 0}
+      m_SearchString: 
+    m_TestRunnerUIFilter:
+      PassedHidden: 0
+      FailedHidden: 0
+      NotRunHidden: 0
+      m_SearchString: 
+      selectedCategories: []
+      availableCategories: []
+    m_SelectedOption: 0
+--- !u!114 &24
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -638,7 +1760,7 @@ MonoBehaviour:
     m_DynamicPanelContainerData: []
     m_OverlaysVisible: 1
     m_DynamicPanelBehavior: 0
---- !u!114 &16
+--- !u!114 &25
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -684,8 +1806,12 @@ MonoBehaviour:
       m_LastClickedID:
         m_Data: 0
       m_ExpandedIDs:
-      - m_Data: -214198
-      - m_Data: -192216
+      - m_Data: -66404
+      - m_Data: -65204
+      - m_Data: -47876
+      - m_Data: -30538
+      - m_Data: -1292
+      - m_Data: 28996
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -703,7 +1829,7 @@ MonoBehaviour:
         m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_TrimLeadingAndTrailingWhitespace: 0
-        m_ClientGUIView: {fileID: 9}
+        m_ClientGUIView: {fileID: 15}
       m_SearchString: 
     m_ExpandedScenes: []
     m_CurrenRootInstanceID: 0
@@ -711,7 +1837,7 @@ MonoBehaviour:
       m_IsLocked: 0
     m_CurrentSortingName: TransformSorting
   m_WindowGUID: 4c969a2b90040154d917609493e03593
---- !u!114 &17
+--- !u!114 &26
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1424,7 +2550,7 @@ MonoBehaviour:
   m_LastSceneViewRotation: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
   m_LastSceneViewOrtho: 0
   m_Viewpoint:
-    m_SceneView: {fileID: 17}
+    m_SceneView: {fileID: 26}
     m_CameraOverscanSettings:
       m_Opacity: 50
       m_Scale: 1
@@ -1437,7 +2563,7 @@ MonoBehaviour:
     name: Contributors / Receivers
     section: Lighting
   m_ViewIsLockedToObject: 0
---- !u!114 &18
+--- !u!114 &27
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1487,7 +2613,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/3DModels/porps-20260728T165551Z-1-001/porps
+    - Assets
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -1497,26 +2623,27 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/3DModels/porps-20260728T165551Z-1-001/porps
+  - Assets
   m_LastFoldersGridSize: 16
   m_LastProjectPath: D:\Unity\FeriaDeLasFlores
   m_LockTracker:
     m_IsLocked: 0
   m_LastLocalAssetsSearchArea: 1
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
+    scrollPos: {x: 0, y: 79}
     m_SelectedIDs:
-    - m_Data: 125790
+    - m_Data: 50688
     m_LastClickedID:
-      m_Data: 125790
+      m_Data: 50688
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 50688
-    - m_Data: 50690
-    - m_Data: 50692
-    - m_Data: 50694
-    - m_Data: 50696
-    - m_Data: 50698
+    - m_Data: 50760
+    - m_Data: 50762
+    - m_Data: 50764
+    - m_Data: 50766
+    - m_Data: 50768
+    - m_Data: 50770
+    - m_Data: 50772
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1534,7 +2661,7 @@ MonoBehaviour:
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_TrimLeadingAndTrailingWhitespace: 0
-      m_ClientGUIView: {fileID: 12}
+      m_ClientGUIView: {fileID: 18}
     m_SearchString: 
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
@@ -1549,12 +2676,13 @@ MonoBehaviour:
       m_Data: 0
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 50688
-    - m_Data: 50690
-    - m_Data: 50692
-    - m_Data: 50694
-    - m_Data: 50696
-    - m_Data: 50698
+    - m_Data: 50760
+    - m_Data: 50762
+    - m_Data: 50764
+    - m_Data: 50766
+    - m_Data: 50768
+    - m_Data: 50770
+    - m_Data: 50772
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1582,8 +2710,8 @@ MonoBehaviour:
       m_ResourceFile: 
   m_ListAreaState:
     m_SelectedInstanceIDs:
-    - m_Data: -164614
-    m_LastClickedInstanceID: -164614
+    - m_Data: 74274
+    m_LastClickedInstanceID: 74274
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs:
     - m_Data: 60754
@@ -1605,7 +2733,7 @@ MonoBehaviour:
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_TrimLeadingAndTrailingWhitespace: 0
-      m_ClientGUIView: {fileID: 12}
+      m_ClientGUIView: {fileID: 18}
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -1613,11 +2741,11 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 314}
+    m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 16
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 207
---- !u!114 &19
+--- !u!114 &28
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1656,7 +2784,7 @@ MonoBehaviour:
     m_DynamicPanelContainerData: []
     m_OverlaysVisible: 1
     m_DynamicPanelBehavior: 0
---- !u!114 &20
+--- !u!114 &29
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1698,7 +2826,7 @@ MonoBehaviour:
   m_LockTracker:
     m_IsLocked: 0
   m_LastSelectedObjectID: 0
---- !u!114 &21
+--- !u!114 &30
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1775,7 +2903,7 @@ MonoBehaviour:
   m_CurrentEditor: 0
   m_LayerEditor:
     m_SelectedLayerIndex: 0
---- !u!114 &22
+--- !u!114 &31
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1827,7 +2955,7 @@ MonoBehaviour:
   m_LockTracker:
     m_IsLocked: 0
   m_PreviewWindow: {fileID: 0}
---- !u!114 &23
+--- !u!114 &32
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}

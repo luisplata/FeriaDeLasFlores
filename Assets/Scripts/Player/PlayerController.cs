@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class PlayerController : IntEventInvoker
-{   
+{
     [SerializeField]
     private float GroundDistance = 0.7f;
     [SerializeField]
@@ -12,9 +12,8 @@ public class PlayerController : IntEventInvoker
 
     private float speed = 5f;
     private float jumpHeight = 2f;
-    
+
     private Rigidbody rigidBody;
-    private Vector3 inputs = Vector3.zero;
     public bool isGrounded = true;
     private Transform groundChecker;
 
@@ -30,15 +29,39 @@ public class PlayerController : IntEventInvoker
     private EnvironmentChangedEvent environmentChangedEvent = new EnvironmentChangedEvent();
     public int FlorEnPorcenajeParaEscribir => (int)(flowerCompletionPercentage * 100);
     public float FlorEnPorcentajeParaUi => flowerCompletionPercentage;
-    
-    [SerializeField] private Transform leftPosition, centerPosition, rightPosition;
+
+    [SerializeField] internal Transform leftPosition, centerPosition, rightPosition;
+
+    [Header("Config")]
+    [SerializeField]
+    public PlayerConfigSO playerConfig;
 
     private Animator animator;
 
+    // ── Lane movement fields ──────────────────────────────────────
+    [SerializeField] internal int currentLane = 1;           // 0=left, 1=center, 2=right
+    internal Vector3 targetPosition;
+    [SerializeField] internal bool isSwitchingLane;
+    internal int? bufferedLane;                               // null when no buffer
+    [SerializeField] internal float laneSwitchSpeed;
+    private float lastInputX;                              // for filtering held-key repeats
+    // ──────────────────────────────────────────────────────────────
+
     void Start()
     {
-        speed = ConfigurationUtils.PlayerMovementSpeed;
-        jumpHeight = ConfigurationUtils.PlayerJumpHeight;
+        InitializeLaneSystem();
+
+        if (playerConfig != null)
+        {
+            speed = playerConfig.movementSpeed;
+            jumpHeight = playerConfig.jumpHeight;
+        }
+        else
+        {
+            speed = ConfigurationUtils.PlayerMovementSpeed;
+            jumpHeight = ConfigurationUtils.PlayerJumpHeight;
+        }
+
         rigidBody = GetComponent<Rigidbody>();
         groundChecker = transform.GetChild(0);
 
@@ -53,39 +76,123 @@ public class PlayerController : IntEventInvoker
         animator.enabled = false;
     }
 
-    private void Update()
+    internal void Update()
     {
-        // CheckGround();
-        // CheckInputs();
-        inputs.x = Input.GetAxis("Horizontal");
-        Debug.Log("Input Horizontal: " + inputs.x);
+        UpdateLaneMovement(Time.deltaTime);
     }
-    //
-    // private void FixedUpdate()
-    // {
-    //     rigidBody.MovePosition(rigidBody.position + inputs * speed * Time.fixedDeltaTime);
-    // }
 
-    // private void CheckGround()
-    // {
-    //     isGrounded = Physics.CheckSphere(groundChecker.position, GroundDistance, Ground, QueryTriggerInteraction.Ignore);
-    // }
+    internal void UpdateLaneMovement(float deltaTime)
+    {
+        if (!isSwitchingLane) return;
 
-    // private void CheckInputs()
-    // {
-    //     inputs = Vector3.zero;
-    //     inputs.x = Input.GetAxis("Horizontal");
-    //
-    //     if (Input.GetButtonDown("Jump") && isGrounded)
-    //     {
-    //         rigidBody.AddForce(Vector3.up * Mathf.Sqrt(jumpHeight * -2f * Physics.gravity.y), ForceMode.VelocityChange);
-    //         AudioManager.Play(AudioClipName.Jump);
-    //     }
-    //     else if (Input.GetButtonDown("Fall"))
-    //     {
-    //         rigidBody.AddForce(Vector3.down * Mathf.Sqrt(1.5f * jumpHeight * -2f * Physics.gravity.y), ForceMode.VelocityChange);
-    //     }
-    // }
+        Vector3 pos = transform.position;
+        float newX = Mathf.MoveTowards(pos.x, targetPosition.x,
+                                       laneSwitchSpeed * deltaTime);
+        transform.position = new Vector3(newX, pos.y, pos.z);
+
+        // Check only X distance — Y/Z may differ if player was moved after StartLaneTransition
+        float tolerance = playerConfig != null ? playerConfig.movementTolerance : ConfigurationUtils.PlayerMovementTolerance;
+        if (Mathf.Abs(transform.position.x - targetPosition.x) <= tolerance)
+        {
+            // Snap: use target X, preserve current Y and Z
+            transform.position = new Vector3(targetPosition.x, pos.y, pos.z);
+            isSwitchingLane = false;
+            currentLane = GetLaneIndexForPosition(targetPosition);
+
+            if (bufferedLane.HasValue)
+            {
+                StartLaneTransition(bufferedLane.Value);
+                bufferedLane = null;
+            }
+        }
+    }
+
+    // ── Lane system initialisation ────────────────────────────────
+
+    internal void InitializeLaneSystem()
+    {
+        currentLane = 1;
+        laneSwitchSpeed = playerConfig != null
+            ? Mathf.Max(playerConfig.laneSwitchSpeed, 0.01f)
+            : Mathf.Max(ConfigurationUtils.PlayerLaneSwitchSpeed, 0.01f);
+        isSwitchingLane = false;
+        bufferedLane = null;
+        targetPosition = GetLaneTransform(currentLane).position;
+    }
+
+    // ── Input handler ─────────────────────────────────────────────
+
+    public void Move(InputAction.CallbackContext context)
+    {
+        float x = context.ReadValue<Vector2>().x;
+        Debug.Log($"Move input: {x}");
+        ProcessLaneInput(x);
+    }
+
+    internal void ProcessLaneInput(float x)
+    {
+        // Ignore neutral
+        if (Mathf.Approximately(x, 0)) { lastInputX = 0; return; }
+
+        // Ignore held-key repeats (same value as last processed)
+        if (Mathf.Approximately(x, lastInputX)) return;
+        lastInputX = x;
+
+        int direction = x > 0 ? 1 : -1;
+
+        if (!isSwitchingLane)
+        {
+            int targetLane = Mathf.Clamp(currentLane + direction, 0, 2);
+            if (targetLane != currentLane)
+                StartLaneTransition(targetLane);
+        }
+        else
+        {
+            // Determine which way we're currently moving
+            float moveDir = targetPosition.x - transform.position.x;
+            bool movingRight = moveDir > 0f;
+
+            if ((direction == 1 && !movingRight) || (direction == -1 && movingRight))
+            {
+                // Opposite direction: cancel current transition, go back
+                StartLaneTransition(currentLane);
+            }
+            else
+            {
+                // Same direction: buffer next lane (if there is one)
+                int targetLane = Mathf.Clamp(currentLane + direction, 0, 2);
+                if (targetLane != currentLane)
+                    bufferedLane = targetLane;
+            }
+        }
+    }
+
+    // ── Helpers ───────────────────────────────────────────────────
+
+    internal void StartLaneTransition(int laneIndex)
+    {
+        Vector3 lane = GetLaneTransform(laneIndex).position;
+        targetPosition = new Vector3(lane.x, transform.position.y, transform.position.z);
+        isSwitchingLane = true;
+    }
+
+    internal Transform GetLaneTransform(int index) => index switch
+    {
+        0 => leftPosition,
+        1 => centerPosition,
+        2 => rightPosition,
+        _ => centerPosition
+    };
+
+    internal int GetLaneIndexForPosition(Vector3 pos)
+    {
+        float d0 = Vector3.Distance(pos, leftPosition.position);
+        float d1 = Vector3.Distance(pos, centerPosition.position);
+        float d2 = Vector3.Distance(pos, rightPosition.position);
+        return d0 < d1 ? (d0 < d2 ? 0 : 2) : (d1 < d2 ? 1 : 2);
+    }
+
+    // ── Collision & damage ────────────────────────────────────────
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -130,7 +237,7 @@ public class PlayerController : IntEventInvoker
     private IEnumerator DamageAnimation()
     {
         canReceiveDamage = false;
-        for(int i = 0; i < 10; i++)
+        for (int i = 0; i < 10; i++)
         {
             silleta.SetActive(false);
             yield return new WaitForSeconds(0.05f);
@@ -149,12 +256,12 @@ public class PlayerController : IntEventInvoker
             currentEnvironment = EnvironmentName.Street;
             environmentChangedEvent.Invoke((int)EnvironmentName.Street);
         }
-        else if(currentEnvironment != EnvironmentName.Tram && flowerCompletionPercentageInt >= 66 && flowerCompletionPercentageInt < 100)
+        else if (currentEnvironment != EnvironmentName.Tram && flowerCompletionPercentageInt >= 66 && flowerCompletionPercentageInt < 100)
         {
             currentEnvironment = EnvironmentName.Tram;
             environmentChangedEvent.Invoke((int)EnvironmentName.Tram);
         }
-        else if(flowerCompletionPercentageInt == 100)
+        else if (flowerCompletionPercentageInt == 100)
         {
             gameOverEvent.Invoke(0);
             animator.enabled = true;
@@ -165,10 +272,5 @@ public class PlayerController : IntEventInvoker
     public void ChangeToGameOverScene()
     {
         SceneManager.LoadScene(2);
-    }
-
-    public void Move(InputAction.CallbackContext context)
-    {
-        //determinar si undio a la derecha o a la izquierda.
     }
 }
