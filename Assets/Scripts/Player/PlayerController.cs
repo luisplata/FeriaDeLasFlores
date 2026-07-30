@@ -5,17 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : IntEventInvoker
 {
-    [SerializeField]
-    private float GroundDistance = 0.7f;
-    [SerializeField]
-    private LayerMask Ground;
-
     private float speed = 5f;
-    private float jumpHeight = 2f;
+    [SerializeField] internal float jumpHeight = 2f;
 
     private Rigidbody rigidBody;
-    public bool isGrounded = true;
-    private Transform groundChecker;
+    public bool isGrounded => !isJumping;
 
     [SerializeField]
     private int lifes = 1;
@@ -47,6 +41,15 @@ public class PlayerController : IntEventInvoker
     private float lastInputX;                              // for filtering held-key repeats
     // ──────────────────────────────────────────────────────────────
 
+    // ── Jump fields ───────────────────────────────────────────────
+    [SerializeField] internal bool isJumping;
+    internal float jumpStartY;
+    private float jumpTimer;
+    private float jumpDuration = 0.5f;
+    [SerializeField] internal bool isFastFalling;
+    private float fastFallMultiplier = 2f;
+    // ─────────────────────────────────────────────────────────────
+
     void Start()
     {
         InitializeLaneSystem();
@@ -55,15 +58,18 @@ public class PlayerController : IntEventInvoker
         {
             speed = playerConfig.movementSpeed;
             jumpHeight = playerConfig.jumpHeight;
+            jumpDuration = Mathf.Max(playerConfig.jumpDuration, 0.016f);
+            fastFallMultiplier = playerConfig.fastFallMultiplier;
         }
         else
         {
             speed = ConfigurationUtils.PlayerMovementSpeed;
             jumpHeight = ConfigurationUtils.PlayerJumpHeight;
+            jumpDuration = Mathf.Max(ConfigurationUtils.PlayerJumpDuration, 0.016f);
+            fastFallMultiplier = ConfigurationUtils.PlayerFastFallMultiplier;
         }
 
         rigidBody = GetComponent<Rigidbody>();
-        groundChecker = transform.GetChild(0);
 
         unityEvents.Add(EventName.GameOverEvent, gameOverEvent);
         EventManager.AddInvoker(EventName.GameOverEvent, this);
@@ -79,6 +85,7 @@ public class PlayerController : IntEventInvoker
     internal void Update()
     {
         UpdateLaneMovement(Time.deltaTime);
+        if (isJumping) UpdateJump(Time.deltaTime);
     }
 
     internal void UpdateLaneMovement(float deltaTime)
@@ -107,6 +114,36 @@ public class PlayerController : IntEventInvoker
         }
     }
 
+    // ── Jump arc logic ────────────────────────────────────────────
+
+    /// <summary>
+    /// Advances the jump arc each frame. Parabolic curve: 0 → peak → 0.
+    /// When t >= 1.0, snaps Y to jumpStartY and clears isJumping.
+    /// </summary>
+    internal void UpdateJump(float deltaTime)
+    {
+        float rawT = jumpTimer / jumpDuration;
+        bool inDescent = rawT > 0.5f;
+        float effectiveDt = (isFastFalling && inDescent)
+            ? deltaTime * fastFallMultiplier
+            : deltaTime;
+
+        jumpTimer += effectiveDt;
+        float t = Mathf.Clamp01(jumpTimer / jumpDuration);
+
+        // Parabola: 4 * t * (1 - t) gives 0 at t=0, 1 at t=0.5, 0 at t=1
+        float yOffset = jumpHeight * 4f * t * (1f - t);
+        Vector3 pos = transform.position;
+        transform.position = new Vector3(pos.x, jumpStartY + yOffset, pos.z);
+
+        if (t >= 1f)
+        {
+            // Snap to exact start Y on landing
+            transform.position = new Vector3(transform.position.x, jumpStartY, transform.position.z);
+            isJumping = false;
+        }
+    }
+
     // ── Lane system initialisation ────────────────────────────────
 
     internal void InitializeLaneSystem()
@@ -124,9 +161,37 @@ public class PlayerController : IntEventInvoker
 
     public void Move(InputAction.CallbackContext context)
     {
-        float x = context.ReadValue<Vector2>().x;
-        Debug.Log($"Move input: {x}");
+        Vector2 value = context.ReadValue<Vector2>();
+        float x = value.x;
+        isFastFalling = value.y < -0.5f;
+        Debug.Log($"Move input: x={x}, down={isFastFalling}");
         ProcessLaneInput(x);
+    }
+
+    /// <summary>
+    /// Input handler for jumping. Same SendMessage-compatible signature as Move.
+    /// Gates on context.performed (press-only) and !isJumping.
+    /// User binds this to their preferred input action.
+    /// </summary>
+    public void Jump(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+            TryPerformJump();
+    }
+
+    /// <summary>
+    /// Internal jump gating logic. Returns true if the jump was initiated,
+    /// false if already jumping. Testable without constructing InputAction.CallbackContext.
+    /// </summary>
+    internal bool TryPerformJump()
+    {
+        if (isJumping) return false;
+
+        Debug.Log("Jump performed");
+        jumpStartY = transform.position.y;
+        jumpTimer = 0f;
+        isJumping = true;
+        return true;
     }
 
     internal void ProcessLaneInput(float x)

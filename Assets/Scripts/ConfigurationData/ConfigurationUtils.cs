@@ -93,6 +93,22 @@ public static class ConfigurationUtils
         get { return configurationData.PlayerLaneSwitchSpeed; }
     }
 
+    /// <summary>
+    /// Player jump duration in seconds (full arc: 0 → peak → 0)
+    /// </summary>
+    public static float PlayerJumpDuration
+    {
+        get { return configurationData.PlayerJumpDuration; }
+    }
+
+    /// <summary>
+    /// Multiplier for descent speed when holding down mid-jump
+    /// </summary>
+    public static float PlayerFastFallMultiplier
+    {
+        get { return configurationData.PlayerFastFallMultiplier; }
+    }
+
     #endregion
 
     /// <summary>

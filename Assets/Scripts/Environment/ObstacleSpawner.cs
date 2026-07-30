@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class ObstacleSpawner : MonoBehaviour
 {
-    [SerializeField] private EnvironmentMovement environmentMovement;
-    [SerializeField] private GameObject[] spawnPositions;
+    [SerializeField] internal EnvironmentMovement environmentMovement;
+    [SerializeField] internal PlayerController playerController;
     [SerializeField] private List<GameObject> obstaclesPrefabs = new List<GameObject>();
 
     private int poolObjectsInstances = 10;
     private float spawnSecondsMin = 2f;
     private float spawnSecondsMax = 3f;
     private List<ObstaclePool> obstacles = new List<ObstaclePool>();
-    private class ObstaclePool
+    internal class ObstaclePool
     {
         public List<GameObject> objectPool;
         private ObstacleSpawner obstacleSpawner;
@@ -80,27 +80,26 @@ public class ObstacleSpawner : MonoBehaviour
         }
     }
 
-    private void SpawnObstacles(ObstaclePool obstacle)
+    internal void SpawnObstacles(ObstaclePool obstacle)
     {
-        int objectsToSpawn = Random.Range(1, spawnPositions.Length + 1);
-        int spawnPositionIndex = Random.Range(0, spawnPositions.Length);
-        
-        for (int i=0; i < objectsToSpawn; i++)
+        if (playerController == null)
+            playerController = FindObjectOfType<PlayerController>();
+        if (playerController == null) return;
+
+        int objectsToSpawn = Random.Range(1, 4);
+
+        for (int i = 0; i < objectsToSpawn; i++)
         {
-            GameObject spawnPosition = spawnPositions[spawnPositionIndex];
+            int laneIndex = Random.Range(0, 3);
             GameObject obstacleGameObject = obstacle.GetAvailableObstacle();
+            if (!obstacleGameObject) return;
 
-            if (!obstacleGameObject)
-            {
-                return;
-            }
-
-            obstacleGameObject.transform.position = spawnPosition.transform.position;
+            Transform laneTransform = playerController.GetLaneTransform(laneIndex);
+            obstacleGameObject.transform.position = new Vector3(
+                laneTransform.position.x, 0.5f, 200f
+            );
             obstacleGameObject.SetActive(true);
             obstacleGameObject.transform.SetParent(environmentMovement.NonVisibleFloor.transform);
-
-            spawnPositionIndex += 1;
-            spawnPositionIndex %= spawnPositions.Length;
         }
     }
 

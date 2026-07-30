@@ -32,6 +32,7 @@ public class PlayerControllerTests
         playerConfig.movementTolerance = 0.05f;
         playerConfig.movementSpeed = 15f;
         playerConfig.jumpHeight = 3f;
+        playerConfig.jumpDuration = 0.5f;
 
         playerObject = new GameObject("TestPlayer");
         playerController = playerObject.AddComponent<PlayerController>();
@@ -51,12 +52,11 @@ public class PlayerControllerTests
         playerController.centerPosition = centerPos;
         playerController.rightPosition = rightPos;
 
-        // Create ground checker child (required by PlayerController.Start but not by lane init)
-        var groundChecker = new GameObject("GroundChecker").transform;
-        groundChecker.parent = playerObject.transform;
-
         // Initialize lane system (the lane-specific subset of Start)
         playerController.InitializeLaneSystem();
+
+        // Mirror the jump config loading that Start() would do
+        playerController.jumpHeight = playerConfig.jumpHeight;
     }
 
     [TearDown]
@@ -672,5 +672,436 @@ public class PlayerControllerTests
             "Rapid left input at boundary must keep lane at 0");
         Assert.That(playerController.isSwitchingLane, Is.False,
             "No transition should start from boundary");
+    }
+
+    // ──────────────────────────────────────────────
+    //  Jump Gating (Task 3.2 — RED / Task 2.5 — GREEN)
+    // ──────────────────────────────────────────────
+
+    /// <summary>
+    /// Spec: "Jump MUST fire when not already jumping (performed action)."
+    /// Verifies TryPerformJump returns true and sets isJumping.
+    /// </summary>
+    [Test]
+    public void JumpFiresOnPerformedWhenNotJumping()
+    {
+        bool jumped = playerController.TryPerformJump();
+
+        Assert.That(jumped, Is.True,
+            "TryPerformJump should return true when not jumping");
+        Assert.That(playerController.isJumping, Is.True,
+            "isJumping should be set to true after successful jump");
+    }
+
+    /// <summary>
+    /// Spec: "Jump MUST be ignored when isJumping is already true (double-tap guard)."
+    /// </summary>
+    [Test]
+    public void JumpIgnoredWhenAlreadyJumping()
+    {
+        // First jump succeeds
+        playerController.TryPerformJump();
+        Assert.That(playerController.isJumping, Is.True, "First jump should succeed");
+
+        // Capture jumpStartY after first jump
+        float startY = playerObject.transform.position.y;
+
+        // Second attempt should be ignored
+        bool jumpedAgain = playerController.TryPerformJump();
+
+        Assert.That(jumpedAgain, Is.False,
+            "TryPerformJump should return false when already jumping");
+        Assert.That(playerController.isJumping, Is.True,
+            "isJumping should remain true after rejected jump");
+        // Y should not have been reset (jumpStartY unchanged means jump continues)
+        Assert.That(playerObject.transform.position.y, Is.EqualTo(startY).Within(0.001f),
+            "Position Y should not change when jump is rejected");
+    }
+
+    /// <summary>
+    /// Triangulation: After landing (isJumping cleared), a new jump is allowed.
+    /// </summary>
+    [Test]
+    public void JumpAllowedAfterLanding()
+    {
+        // First jump
+        Assert.That(playerController.TryPerformJump(), Is.True, "First jump");
+        // Complete the jump
+        playerController.UpdateJump(0.5f);
+        Assert.That(playerController.isJumping, Is.False, "isJumping cleared after landing");
+
+        // Second jump should be allowed
+        bool jumpedAgain = playerController.TryPerformJump();
+        Assert.That(jumpedAgain, Is.True,
+            "TryPerformJump should return true after landing (isJumping cleared)");
+        Assert.That(playerController.isJumping, Is.True,
+            "isJumping should be set again for second jump");
+    }
+
+    // ──────────────────────────────────────────────
+    //  Jump Arc Math (Task 3.3 — RED / Task 2.6 — GREEN)
+    // ──────────────────────────────────────────────
+
+    /// <summary>
+    /// Spec: "The jump arc MUST peak at exactly jumpHeight above jumpStartY at the midpoint."
+    /// Parabola: 4*t*(1-t) peaks at t=0.5 with value 1.0 → yOffset = jumpHeight.
+    /// </summary>
+    [Test]
+    public void JumpArcPeaksAtMidpoint()
+    {
+        float startY = 1.5f;
+        playerObject.transform.position = new Vector3(0, startY, 0);
+        playerController.TryPerformJump();
+
+        // Advance to midpoint (t = 0.25 / 0.5 = 0.5)
+        playerController.UpdateJump(0.25f);
+
+        float expectedY = startY + playerConfig.jumpHeight; // 4 * 0.5 * 0.5 = 1.0 multiplier
+        float actualY = playerObject.transform.position.y;
+
+        Assert.That(actualY, Is.EqualTo(expectedY).Within(0.001f),
+            $"At midpoint, Y should be startY + jumpHeight ({expectedY}), but was {actualY}");
+    }
+
+    /// <summary>
+    /// Spec: "The jump arc MUST land at jumpStartY when t >= 1.0."
+    /// </summary>
+    [Test]
+    public void JumpLandsAtStartY()
+    {
+        float startY = 2.0f;
+        playerObject.transform.position = new Vector3(0, startY, 0);
+        playerController.TryPerformJump();
+
+        // Advance past full duration
+        playerController.UpdateJump(0.5f);
+
+        Assert.That(playerObject.transform.position.y, Is.EqualTo(startY).Within(0.001f),
+            "Y should snap back to startY after full duration");
+        Assert.That(playerController.isJumping, Is.False,
+            "isJumping should be false after landing");
+    }
+
+    /// <summary>
+    /// Spec: "t MUST be clamped to 1.0 when deltaTime > jumpDuration."
+    /// </summary>
+    [Test]
+    public void JumpArcClampsTGreaterThanOne()
+    {
+        float startY = 1.0f;
+        playerObject.transform.position = new Vector3(0, startY, 0);
+        playerController.TryPerformJump();
+
+        // Pass deltaTime >> jumpDuration
+        playerController.UpdateJump(1.0f);
+
+        Assert.That(playerObject.transform.position.y, Is.EqualTo(startY).Within(0.001f),
+            "Y should snap to startY even with deltaTime > jumpDuration");
+        Assert.That(playerController.isJumping, Is.False,
+            "isJumping should be cleared after massive deltaTime");
+    }
+
+    /// <summary>
+    /// Triangulation: Very small deltaTime produces a very small Y offset (near start).
+    /// </summary>
+    [Test]
+    public void JumpArcSmallDeltaTimeProducesSmallOffset()
+    {
+        float startY = 1.0f;
+        playerObject.transform.position = new Vector3(0, startY, 0);
+        playerController.TryPerformJump();
+
+        // Advance a tiny amount (t ≈ 0.02 / 0.5 = 0.04)
+        playerController.UpdateJump(0.02f);
+
+        float actualY = playerObject.transform.position.y;
+        Assert.That(actualY, Is.GreaterThan(startY),
+            "Y should be slightly above startY after a small deltaTime");
+        Assert.That(actualY, Is.LessThan(startY + playerConfig.jumpHeight),
+            "Y should be well below peak after a very small deltaTime");
+        Assert.That(playerController.isJumping, Is.True,
+            "Should still be jumping after small deltaTime");
+    }
+
+    // ──────────────────────────────────────────────
+    //  Jump + Lane Integration (Task 3.4 — RED / Phase 2 — GREEN)
+    // ──────────────────────────────────────────────
+
+    /// <summary>
+    /// Spec: "Jumping mid-lane-switch MUST NOT affect lane X movement."
+    /// Jump mid-transition: Y arcs while X continues toward target.
+    /// </summary>
+    [Test]
+    public void JumpDuringLaneTransitionPreservesY()
+    {
+        float startY = 1.0f;
+        Vector3 startPos = new Vector3(CenterX, startY, 10f);
+        playerObject.transform.position = startPos;
+
+        // Start lane switch to right
+        playerController.StartLaneTransition(2);
+        Assert.That(playerController.isSwitchingLane, Is.True, "Should be mid-transition");
+
+        // Jump mid-transition
+        playerController.TryPerformJump();
+        Assert.That(playerController.isJumping, Is.True, "Should be jumping");
+
+        // Simulate frames — Y should arc while X moves toward target
+        bool yWentUp = false;
+        bool xMovedRight = false;
+        for (int i = 0; i < 30; i++)
+        {
+            playerController.UpdateLaneMovement(0.02f);
+            playerController.UpdateJump(0.02f);
+
+            float currentY = playerObject.transform.position.y;
+
+            // Early frames: Y should be above startY
+            if (i < 15 && playerController.isJumping)
+            {
+                Assert.That(currentY, Is.GreaterThanOrEqualTo(startY),
+                    $"Frame {i}: Y should be >= startY during jump arc");
+                if (currentY > startY + 0.001f)
+                    yWentUp = true;
+            }
+
+            if (playerObject.transform.position.x > CenterX + 0.001f)
+                xMovedRight = true;
+        }
+
+        Assert.That(yWentUp, Is.True, "Y should have gone up during jump arc");
+        Assert.That(xMovedRight, Is.True, "X should have moved right during lane transition");
+    }
+
+    /// <summary>
+    /// Spec: "Lane-switching mid-jump MUST NOT affect the Y jump arc."
+    /// Jump first, then switch lanes mid-air. Y arcs unaffected by X movement.
+    /// </summary>
+    [Test]
+    public void LaneSwitchDuringJumpPreservesY()
+    {
+        float startY = 1.0f;
+        Vector3 startPos = new Vector3(CenterX, startY, 10f);
+        playerObject.transform.position = startPos;
+
+        // Jump first
+        playerController.TryPerformJump();
+        Assert.That(playerController.isJumping, Is.True, "Should be jumping");
+
+        // Advance partway through jump (t ≈ 0.15/0.5 = 0.3)
+        playerController.UpdateJump(0.15f);
+        float yMidArc = playerObject.transform.position.y;
+        Assert.That(yMidArc, Is.GreaterThan(startY),
+            "Y should be above startY after partial jump");
+
+        // Now start lane switch mid-air
+        playerController.StartLaneTransition(2);
+        Assert.That(playerController.isSwitchingLane, Is.True, "Should be mid-transition");
+
+        // Simulate frames — Y should continue arc while X moves
+        for (int i = 0; i < 20; i++)
+        {
+            playerController.UpdateLaneMovement(0.02f);
+            playerController.UpdateJump(0.02f);
+
+            // X should be moving right
+            if (i > 0)
+            {
+                Assert.That(playerObject.transform.position.x,
+                    Is.GreaterThan(CenterX).Or.EqualTo(CenterX),
+                    $"Frame {i}: X should have started moving right");
+            }
+        }
+
+        // Complete the jump
+        while (playerController.isJumping)
+            playerController.UpdateJump(0.02f);
+
+        Assert.That(playerObject.transform.position.y, Is.EqualTo(startY).Within(0.001f),
+            "Y should return to startY after jump completes");
+
+        // Complete the lane switch if still transitioning
+        while (playerController.isSwitchingLane)
+            playerController.UpdateLaneMovement(0.02f);
+
+        Assert.That(playerObject.transform.position.x, Is.EqualTo(RightX).Within(playerConfig.movementTolerance),
+            "X should have moved to right lane after full transition");
+    }
+
+    // ──────────────────────────────────────────────
+    //  Fast-Fall (Task 3.1–3.6 — RED / Phase 2 — GREEN)
+    // ──────────────────────────────────────────────
+
+    /// <summary>
+    /// Spec: "Holding down mid-jump during descent (t > 0.5) MUST accelerate the fall."
+    /// When isFastFalling is true and we're past the peak, effectiveDt is multiplied by fastFallMultiplier.
+    /// </summary>
+    [Test]
+    public void FastFallAcceleratesDescent()
+    {
+        float startY = 1.0f;
+        playerObject.transform.position = new Vector3(0, startY, 0);
+        playerController.TryPerformJump();
+
+        // Advance past the peak into descent (t ≈ 0.3 / 0.5 = 0.6)
+        playerController.UpdateJump(0.3f);
+
+        // Set fast-fall and advance with a known delta
+        playerController.isFastFalling = true;
+        playerController.UpdateJump(0.05f); // effectiveDt = 0.05 * 2 = 0.1
+
+        // Expected: jumpTimer = 0.3 + 0.1 = 0.4, t = 0.4 / 0.5 = 0.8
+        // yOffset = jumpHeight * 4 * 0.8 * (1 - 0.8) = jumpHeight * 0.64
+        float expectedY = startY + playerConfig.jumpHeight * 0.64f;
+        float actualY = playerObject.transform.position.y;
+
+        Assert.That(actualY, Is.EqualTo(expectedY).Within(0.001f),
+            $"With fast-fall active in descent, Y should be {expectedY} but was {actualY}");
+    }
+
+    /// <summary>
+    /// Spec: "Releasing the down input mid-descent MUST restore normal descent speed."
+    /// When isFastFalling transitions from true to false, subsequent UpdateJump calls
+    /// should use regular deltaTime.
+    /// </summary>
+    [Test]
+    public void FastFallClearedMidDescentRestoresNormalSpeed()
+    {
+        float startY = 1.0f;
+        playerObject.transform.position = new Vector3(0, startY, 0);
+        playerController.TryPerformJump();
+
+        // Advance to descent (t = 0.3 / 0.5 = 0.6)
+        playerController.UpdateJump(0.3f);
+
+        // Fast-fall for one step
+        playerController.isFastFalling = true;
+        playerController.UpdateJump(0.05f); // effectiveDt = 0.1 → t = 0.8
+
+        // Release fast-fall
+        playerController.isFastFalling = false;
+        playerController.UpdateJump(0.05f); // normal Dt = 0.05 → t = 0.85
+
+        // Expected: jumpTimer = 0.3 + 0.1 + 0.05 = 0.45, t = 0.45 / 0.5 = 0.9
+        // yOffset = 3 * 4 * 0.9 * 0.1 = 1.08
+        float expectedY = startY + playerConfig.jumpHeight * 4f * 0.9f * 0.1f;
+        float actualY = playerObject.transform.position.y;
+
+        Assert.That(actualY, Is.EqualTo(expectedY).Within(0.001f),
+            $"After releasing fast-fall mid-descent, Y should be {expectedY} but was {actualY}");
+        Assert.That(playerController.isJumping, Is.True,
+            "Should still be jumping after partial fast-fall");
+    }
+
+    /// <summary>
+    /// Spec: "Fast-fall MUST NOT affect ascent (t ≤ 0.5) — only descent."
+    /// When isFastFalling is true but we're still rising, effectiveDt should be plain deltaTime.
+    /// </summary>
+    [Test]
+    public void FastFallIgnoredDuringAscent()
+    {
+        float startY = 1.0f;
+        playerObject.transform.position = new Vector3(0, startY, 0);
+        playerController.TryPerformJump();
+
+        // Advance a small amount while still in ascent (t = 0.1 / 0.5 = 0.2)
+        playerController.isFastFalling = true; // should be ignored during ascent
+        playerController.UpdateJump(0.1f);     // plain dt, NOT multiplied
+
+        // Expected: jumpTimer = 0.1, t = 0.2
+        // yOffset = 3 * 4 * 0.2 * 0.8 = 1.92
+        float expectedY = startY + playerConfig.jumpHeight * 4f * 0.2f * 0.8f;
+        float actualY = playerObject.transform.position.y;
+
+        Assert.That(actualY, Is.EqualTo(expectedY).Within(0.001f),
+            $"During ascent with fast-fall set, Y should be {expectedY} but was {actualY}");
+        Assert.That(playerController.isJumping, Is.True,
+            "Should still be jumping during ascent");
+    }
+
+    /// <summary>
+    /// Spec: "When isFastFalling is true and t > 0.5, the timer MUST advance faster."
+    /// Verifies the multiplier effect produces the exact expected jumpTimer and position.
+    /// This is the core math verification for the fast-fall feature.
+    /// </summary>
+    [Test]
+    public void FastFallMultiplierAdvancesTimerFaster()
+    {
+        float startY = 1.0f;
+        playerObject.transform.position = new Vector3(0, startY, 0);
+        playerController.TryPerformJump();
+
+        // Advance to descent (t = 0.3 / 0.5 = 0.6)
+        playerController.UpdateJump(0.3f);
+
+        // Apply fast-fall and update with 0.05f → effectiveDt = 0.05 * 2 = 0.1
+        playerController.isFastFalling = true;
+        playerController.UpdateJump(0.05f);
+
+        // Expected: jumpTimer = 0.3 + 0.1 = 0.4, t = 0.4 / 0.5 = 0.8
+        // yOffset = jumpHeight * 4 * 0.8 * (1 - 0.8) = jumpHeight * 0.64
+        float expectedY = playerController.jumpStartY + playerConfig.jumpHeight * 0.64f;
+        float actualY = playerObject.transform.position.y;
+
+        Assert.That(actualY, Is.EqualTo(expectedY).Within(0.001f),
+            $"Fast-fall should advance timer by effectiveDt; expected Y {expectedY} but was {actualY}");
+    }
+
+    /// <summary>
+    /// Spec: "Landing MUST still work correctly when fast-fall is held throughout the entire descent."
+    /// When fast-fall is active from peak to landing, the jump should complete and snap to startY.
+    /// </summary>
+    [Test]
+    public void LandingWorksWithFastFallHeldThroughout()
+    {
+        float startY = 1.0f;
+        playerObject.transform.position = new Vector3(0, startY, 0);
+        playerController.TryPerformJump();
+
+        // Advance to just past peak
+        playerController.UpdateJump(0.26f); // t ≈ 0.52 — just into descent
+
+        // Fast-fall for the rest of the jump
+        playerController.isFastFalling = true;
+        // From t=0.52 to t=1.0 with multiplier 2x: need (1.0 - 0.52) / 2 = 0.24 real seconds
+        // But the jump will land when t >= 1.0
+        playerController.UpdateJump(0.24f);
+        // With fast-fall, effectiveDt = 0.24 * 2 = 0.48, so jumpTimer = 0.26 + 0.48 = 0.74, t = 1.48 ≥ 1.0
+
+        Assert.That(playerController.isJumping, Is.False,
+            "Jump should have completed with fast-fall held throughout");
+        Assert.That(playerObject.transform.position.y, Is.EqualTo(startY).Within(0.001f),
+            "Player should snap back to startY after landing with fast-fall");
+    }
+
+    /// <summary>
+    /// Spec: "Landing MUST still work when fast-fall is active then released mid-descent."
+    /// Fast-fall speeds up part of the descent, then normal speed finishes the jump to landing.
+    /// </summary>
+    [Test]
+    public void LandingWorksWithFastFallReleasedMidDescent()
+    {
+        float startY = 1.0f;
+        playerObject.transform.position = new Vector3(0, startY, 0);
+        playerController.TryPerformJump();
+
+        // Advance to descent (t = 0.3 / 0.5 = 0.6)
+        playerController.UpdateJump(0.3f);
+
+        // Fast-fall for a step (effectiveDt = 0.05 * 2 = 0.1 → t = 0.8)
+        playerController.isFastFalling = true;
+        playerController.UpdateJump(0.05f);
+
+        // Release fast-fall — subsequent steps use normal dt
+        playerController.isFastFalling = false;
+        playerController.UpdateJump(0.05f); // t = 0.85
+
+        // Finish the jump with normal speed
+        playerController.UpdateJump(0.15f); // t = 1.0 → LANDING
+
+        Assert.That(playerController.isJumping, Is.False,
+            "Jump should land after fast-fall released mid-descent");
+        Assert.That(playerObject.transform.position.y, Is.EqualTo(startY).Within(0.001f),
+            "Player must be at startY after landing (fast-fall released mid-descent)");
     }
 }
