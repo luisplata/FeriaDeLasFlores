@@ -72,11 +72,11 @@ public class PlayerController : IntEventInvoker
         rigidBody = GetComponent<Rigidbody>();
 
         unityEvents.Add(EventName.GameOverEvent, gameOverEvent);
-        EventManager.AddInvoker(EventName.GameOverEvent, this);
+        // EventManager.AddInvoker(EventName.GameOverEvent, this);
 
         currentEnvironment = EnvironmentName.Forest;
         unityEvents.Add(EventName.EnvironmentChangedEvent, environmentChangedEvent);
-        EventManager.AddInvoker(EventName.EnvironmentChangedEvent, this);
+        // EventManager.AddInvoker(EventName.EnvironmentChangedEvent, this);
 
         animator = GetComponent<Animator>();
         animator.enabled = false;
