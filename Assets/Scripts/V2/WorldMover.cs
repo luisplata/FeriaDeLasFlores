@@ -5,29 +5,13 @@ public class WorldMover : MonoBehaviour
 {
     [Header("Movimiento")] public float speed = 10f; // Velocidad de movimiento
     public Vector3 direction = Vector3.back; // Dirección (por defecto -Z)
-    public bool isMoving = true; // Permite pausar/reanudar
+    public bool isMoving; // Permite pausar/reanudar
 
     [Header("Referencia")] public Transform referencePoint; // Si es null, se busca al Player
 
     [Header("Evento")] public UnityEvent OnPassedBehind; // Se dispara cuando pasa detrás del punto de referencia
 
     private float thresholdDistance = 5f; // Distancia detrás para considerar "pasado"
-
-    /// <summary>
-    /// Método público para configurar el movimiento desde otro script.
-    /// </summary>
-    public void Configurate(float newSpeed,
-        Vector3? newDirection = null,
-        Transform newReference = null,
-        float newThreshold = 5f)
-    {
-        speed = newSpeed;
-        if (newDirection.HasValue)
-            direction = newDirection.Value.normalized;
-        if (newReference != null)
-            referencePoint = newReference;
-        thresholdDistance = newThreshold;
-    }
 
     void Start()
     {

@@ -153,7 +153,7 @@
             }
         }
 
-        private void EndGame(EndReason reason)
+        public void EndGame(EndReason reason)
         {
             currentEndReason = reason;
             SetState(GameState.FinDelJuego);

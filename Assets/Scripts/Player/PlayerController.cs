@@ -11,10 +11,8 @@ public class PlayerController : IntEventInvoker
     private Rigidbody rigidBody;
     public bool isGrounded => !isJumping;
 
-    [SerializeField]
-    private int lifes = 1;
-    [SerializeField]
-    private GameObject silleta;
+    [SerializeField] private int lifes = 1;
+    [SerializeField] private GameObject silleta;
     private bool canReceiveDamage = true;
     private GameOverEvent gameOverEvent = new GameOverEvent();
 
@@ -26,19 +24,17 @@ public class PlayerController : IntEventInvoker
 
     [SerializeField] internal Transform leftPosition, centerPosition, rightPosition;
 
-    [Header("Config")]
-    [SerializeField]
-    public PlayerConfigSO playerConfig;
+    [Header("Config")] [SerializeField] public PlayerConfigSO playerConfig;
 
     private Animator animator;
 
     // ── Lane movement fields ──────────────────────────────────────
-    [SerializeField] internal int currentLane = 1;           // 0=left, 1=center, 2=right
+    [SerializeField] internal int currentLane = 1; // 0=left, 1=center, 2=right
     internal Vector3 targetPosition;
     [SerializeField] internal bool isSwitchingLane;
-    internal int? bufferedLane;                               // null when no buffer
+    internal int? bufferedLane; // null when no buffer
     [SerializeField] internal float laneSwitchSpeed;
-    private float lastInputX;                              // for filtering held-key repeats
+    private float lastInputX; // for filtering held-key repeats
     // ──────────────────────────────────────────────────────────────
 
     // ── Jump fields ───────────────────────────────────────────────
@@ -94,11 +90,13 @@ public class PlayerController : IntEventInvoker
 
         Vector3 pos = transform.position;
         float newX = Mathf.MoveTowards(pos.x, targetPosition.x,
-                                       laneSwitchSpeed * deltaTime);
+            laneSwitchSpeed * deltaTime);
         transform.position = new Vector3(newX, pos.y, pos.z);
 
         // Check only X distance — Y/Z may differ if player was moved after StartLaneTransition
-        float tolerance = playerConfig != null ? playerConfig.movementTolerance : ConfigurationUtils.PlayerMovementTolerance;
+        float tolerance = playerConfig != null
+            ? playerConfig.movementTolerance
+            : ConfigurationUtils.PlayerMovementTolerance;
         if (Mathf.Abs(transform.position.x - targetPosition.x) <= tolerance)
         {
             // Snap: use target X, preserve current Y and Z
@@ -164,8 +162,13 @@ public class PlayerController : IntEventInvoker
         Vector2 value = context.ReadValue<Vector2>();
         float x = value.x;
         isFastFalling = value.y < -0.5f;
-        Debug.Log($"Move input: x={x}, down={isFastFalling}");
+        // Debug.Log($"Move input: x={x}, down={isFastFalling}");
         ProcessLaneInput(x);
+    }
+
+    public void Falling()
+    {
+        isFastFalling = true;
     }
 
     /// <summary>
@@ -179,25 +182,34 @@ public class PlayerController : IntEventInvoker
             TryPerformJump();
     }
 
+    public void JumpWithSwipe()
+    {
+        TryPerformJump();
+    }
+
     /// <summary>
     /// Internal jump gating logic. Returns true if the jump was initiated,
     /// false if already jumping. Testable without constructing InputAction.CallbackContext.
     /// </summary>
-    internal bool TryPerformJump()
+    public bool TryPerformJump()
     {
         if (isJumping) return false;
 
-        Debug.Log("Jump performed");
+        // Debug.Log("Jump performed");
         jumpStartY = transform.position.y;
         jumpTimer = 0f;
         isJumping = true;
         return true;
     }
 
-    internal void ProcessLaneInput(float x)
+    public void ProcessLaneInput(float x)
     {
         // Ignore neutral
-        if (Mathf.Approximately(x, 0)) { lastInputX = 0; return; }
+        if (Mathf.Approximately(x, 0))
+        {
+            lastInputX = 0;
+            return;
+        }
 
         // Ignore held-key repeats (same value as last processed)
         if (Mathf.Approximately(x, lastInputX)) return;
@@ -266,6 +278,7 @@ public class PlayerController : IntEventInvoker
             TakeDamage(collision.gameObject);
         }
     }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Obstacle")
@@ -309,6 +322,7 @@ public class PlayerController : IntEventInvoker
             silleta.SetActive(true);
             yield return new WaitForSeconds(0.05f);
         }
+
         canReceiveDamage = true;
     }
 
@@ -316,12 +330,14 @@ public class PlayerController : IntEventInvoker
     {
         flowerCompletionPercentage = percentage;
         int flowerCompletionPercentageInt = (int)(flowerCompletionPercentage * 100);
-        if (currentEnvironment != EnvironmentName.Street && flowerCompletionPercentageInt >= 33 && flowerCompletionPercentageInt < 66)
+        if (currentEnvironment != EnvironmentName.Street && flowerCompletionPercentageInt >= 33 &&
+            flowerCompletionPercentageInt < 66)
         {
             currentEnvironment = EnvironmentName.Street;
             environmentChangedEvent.Invoke((int)EnvironmentName.Street);
         }
-        else if (currentEnvironment != EnvironmentName.Tram && flowerCompletionPercentageInt >= 66 && flowerCompletionPercentageInt < 100)
+        else if (currentEnvironment != EnvironmentName.Tram && flowerCompletionPercentageInt >= 66 &&
+                 flowerCompletionPercentageInt < 100)
         {
             currentEnvironment = EnvironmentName.Tram;
             environmentChangedEvent.Invoke((int)EnvironmentName.Tram);
@@ -334,6 +350,7 @@ public class PlayerController : IntEventInvoker
             animator.SetTrigger("win");
         }
     }
+
     public void ChangeToGameOverScene()
     {
         SceneManager.LoadScene(2);

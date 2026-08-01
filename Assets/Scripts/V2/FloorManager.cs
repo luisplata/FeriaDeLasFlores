@@ -3,33 +3,25 @@ using UnityEngine.Events;
 
 public class FloorManager : MonoBehaviour
 {
-    [Header("Referencias")]
-    public WorldMover[] tiles;
+    [SerializeField] private CoinSpawner coinSpawner;
+
+    [Header("Referencias")] public WorldMover[] tiles;
     public Transform player;
 
-    [Header("Configuración")]
-    public float tileLength = 42f;
+    [Header("Configuración")] public float tileLength = 42f;
     public float recycleOffset = 0f;
 
-    [Header("Eventos")]
-    public UnityEvent OnRecycle;
+    [Header("Eventos")] public UnityEvent OnRecycle;
     public UnityEvent<int> OnRecycleWithIndex;
 
     private int headIndex = 0;
 
     // Propiedad pública para acceder al índice reciclado
     public int LastRecycledIndex { get; private set; }
+    public CoinSpawner CoinSpawner => coinSpawner;
 
-    public void Configurate(WorldMover[] tilesArray, Transform playerRef,
-                            float tileLen, float offset)
-    {
-        tiles = tilesArray;
-        player = playerRef;
-        tileLength = tileLen;
-        recycleOffset = offset;
-    }
 
-    private void Start()
+    public void Configure()
     {
         if (player == null)
         {
@@ -48,11 +40,14 @@ public class FloorManager : MonoBehaviour
 
         System.Array.Sort(tiles, (a, b) => a.transform.position.z.CompareTo(b.transform.position.z));
 
+        coinSpawner.Configure();
+
         foreach (var t in tiles)
         {
             if (t == null) Debug.LogWarning("FloorManager: Tile null.");
             else if (t.GetComponent<WorldMover>() == null)
                 Debug.LogWarning("FloorManager: " + t.name + " no tiene WorldMover.");
+            t.SetMoving(true);
         }
     }
 
@@ -83,5 +78,13 @@ public class FloorManager : MonoBehaviour
         Vector3 pos = tiles[index].transform.position;
         pos.z = newZ;
         tiles[index].transform.position = pos;
+    }
+
+    public void StopAll()
+    {
+        foreach (var t in tiles)
+        {
+            if (t != null) t.SetMoving(false);
+        }
     }
 }
