@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 997
   m_ShowMode: 4
-  m_Title: Project
+  m_Title: Inspector
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -109,6 +109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Children:
   - {fileID: 6}
+  - {fileID: 13}
   - {fileID: 14}
   m_Position:
     serializedVersion: 2
@@ -119,7 +120,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 112}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 138
+  controlID: 31051
   draggingID: 0
 --- !u!114 &6
 MonoBehaviour:
@@ -140,12 +141,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1266
+    width: 974
     height: 941
-  m_MinSize: {x: 300, y: 112}
-  m_MaxSize: {x: 24288, y: 16192}
+  m_MinSize: {x: 200, y: 112}
+  m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 131
+  controlID: 31097
   draggingID: 0
 --- !u!114 &7
 MonoBehaviour:
@@ -166,12 +167,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1266
+    width: 974
     height: 340
   m_MinSize: {x: 200, y: 56}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 46
+  controlID: 31098
   draggingID: 0
 --- !u!114 &8
 MonoBehaviour:
@@ -190,10 +191,10 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 319
+    width: 247
     height: 340
-  m_MinSize: {x: 201, y: 226}
-  m_MaxSize: {x: 4001, y: 4026}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -214,9 +215,9 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 319
+    x: 247
     y: 0
-    width: 947
+    width: 727
     height: 340
   m_MinSize: {x: 202, y: 226}
   m_MaxSize: {x: 4002, y: 4026}
@@ -240,17 +241,16 @@ MonoBehaviour:
   m_Children:
   - {fileID: 11}
   - {fileID: 12}
-  - {fileID: 13}
   m_Position:
     serializedVersion: 2
     x: 0
     y: 340
-    width: 1266
+    width: 974
     height: 601
-  m_MinSize: {x: 300, y: 56}
-  m_MaxSize: {x: 24288, y: 8096}
+  m_MinSize: {x: 200, y: 56}
+  m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 132
+  controlID: 31162
   draggingID: 0
 --- !u!114 &11
 MonoBehaviour:
@@ -269,7 +269,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 446
+    width: 536
     height: 601
   m_MinSize: {x: 231, y: 276}
   m_MaxSize: {x: 10001, y: 10026}
@@ -293,9 +293,9 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 446
+    x: 536
     y: 0
-    width: 372
+    width: 438
     height: 601
   m_MinSize: {x: 102, y: 126}
   m_MaxSize: {x: 4002, y: 4026}
@@ -305,7 +305,7 @@ MonoBehaviour:
   - {fileID: 21}
   - {fileID: 22}
   m_Selected: 0
-  m_LastSelected: 2
+  m_LastSelected: 1
 --- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -321,10 +321,10 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 818
+    x: 974
     y: 0
-    width: 448
-    height: 601
+    width: 508
+    height: 941
   m_MinSize: {x: 202, y: 226}
   m_MaxSize: {x: 4002, y: 4026}
   m_ActualView: {fileID: 15}
@@ -347,9 +347,9 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 1266
+    x: 1482
     y: 0
-    width: 654
+    width: 438
     height: 941
   m_MinSize: {x: 276, y: 76}
   m_MaxSize: {x: 4001, y: 4026}
@@ -381,10 +381,10 @@ MonoBehaviour:
     m_TextWithWhitespace: "Simulator\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 819
-    y: 24
-    width: 446
-    height: 575
+    x: 974
+    y: 79
+    width: 506
+    height: 915
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -414,7 +414,7 @@ MonoBehaviour:
   m_UseMipMap: 0
   m_SimulatorState:
     controlPanelVisible: 0
-    controlPanelWidth: NaN
+    controlPanelWidth: 0
     controlPanelFoldoutKeys:
     - UnityEditor.AdaptivePerformance.Editor.AdaptivePerformanceUIExtension
     - UnityEditor.DeviceSimulation.ApplicationSettingsPlugin
@@ -427,7 +427,7 @@ MonoBehaviour:
     - '{"m_SerializationStates":{"thermalFoldout":false,"performanceFoldout":false,"developerFoldout":false,"indexerFoldout":false,"scalersFoldout":false,"deviceSettingsFoldout":false}}'
     - '{}'
     - '{}'
-    scale: 10
+    scale: 37
     fitToScreenEnabled: 1
     rotationDegree: 0
     highlightSafeAreaEnabled: 0
@@ -457,7 +457,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 0
+    y: 43
     width: 1920
     height: 36
   m_SerializedDataModeController:
@@ -738,8 +738,8 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 24
-    width: 318
+    y: 79
+    width: 246
     height: 314
   m_SerializedDataModeController:
     m_DataMode: 0
@@ -757,12 +757,43 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: []
+      m_SelectedIDs:
+      - m_Data: 52376
       m_LastClickedID:
         m_Data: 0
       m_ExpandedIDs:
+      - m_Data: -229716
+      - m_Data: -229572
+      - m_Data: -229294
+      - m_Data: -229266
+      - m_Data: -225696
+      - m_Data: -225560
+      - m_Data: -224482
+      - m_Data: -224338
+      - m_Data: -223988
+      - m_Data: -223948
+      - m_Data: -220366
+      - m_Data: -220218
+      - m_Data: -204880
+      - m_Data: -196806
+      - m_Data: -195812
+      - m_Data: -195668
+      - m_Data: -195330
+      - m_Data: -195302
+      - m_Data: -191732
+      - m_Data: -191596
+      - m_Data: -153684
+      - m_Data: -152806
+      - m_Data: -149782
+      - m_Data: -149370
+      - m_Data: -148636
+      - m_Data: -147956
+      - m_Data: -96480
+      - m_Data: -85114
+      - m_Data: -72062
+      - m_Data: -51130
+      - m_Data: -20364
       - m_Data: -1292
-      - m_Data: 29124
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -810,9 +841,9 @@ MonoBehaviour:
     m_TextWithWhitespace: "Scene\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 320
-    y: 24
-    width: 945
+    x: 247
+    y: 79
+    width: 725
     height: 314
   m_SerializedDataModeController:
     m_DataMode: 0
@@ -1426,9 +1457,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: -0.99999994, y: 0, z: 70.63383}
+    m_Target: {x: -5.0364795, y: 9.50784, z: 1.0405383}
     speed: 2
-    m_Value: {x: -0.99999994, y: 0, z: 70.63383}
+    m_Value: {x: -5.0364795, y: 9.50784, z: 1.0405383}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1474,13 +1505,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.05428204, y: -0.012854703, z: 0.0006973279, w: 0.9984808}
+    m_Target: {x: -0.24072166, y: -0.5040064, z: 0.14863984, w: -0.81613225}
     speed: 2
-    m_Value: {x: -0.05428204, y: 0.012854702, z: -0.0006973279, w: -0.9984808}
+    m_Value: {x: -0.24070542, y: -0.5039724, z: 0.14862981, w: -0.8160772}
   m_Size:
-    m_Target: 0.6194698
+    m_Target: 1.776279
     speed: 2
-    m_Value: 0.6194698
+    m_Value: 1.776279
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -1498,7 +1529,7 @@ MonoBehaviour:
     m_FarClip: 10000
     m_DynamicClip: 1
     m_OcclusionCulling: 0
-  m_LastSceneViewRotation: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
+  m_LastSceneViewRotation: {x: -0.20844562, y: 0.17091663, z: -0.037045363, w: -0.9623408}
   m_LastSceneViewOrtho: 0
   m_Viewpoint:
     m_SceneView: {fileID: 18}
@@ -1537,8 +1568,8 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 24
-    width: 445
+    y: 419
+    width: 535
     height: 575
   m_SerializedDataModeController:
     m_DataMode: 0
@@ -1564,7 +1595,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/Flores
+    - Assets/Prefabs
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -1574,18 +1605,18 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Scripts/Flores
+  - Assets/Prefabs
   m_LastFoldersGridSize: 16
   m_LastProjectPath: D:\Unity\FeriaDeLasFlores
   m_LockTracker:
     m_IsLocked: 0
   m_LastLocalAssetsSearchArea: 1
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
+    scrollPos: {x: 0, y: 47}
     m_SelectedIDs:
-    - m_Data: 50918
+    - m_Data: 50766
     m_LastClickedID:
-      m_Data: 50918
+      m_Data: 50766
     m_ExpandedIDs:
     - m_Data: 0
     - m_Data: 50754
@@ -1595,6 +1626,8 @@ MonoBehaviour:
     - m_Data: 50762
     - m_Data: 50764
     - m_Data: 50766
+    - m_Data: 50906
+    - m_Data: 1000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1628,12 +1661,14 @@ MonoBehaviour:
     m_ExpandedIDs:
     - m_Data: 0
     - m_Data: 50754
-    - m_Data: 50756
     - m_Data: 50758
     - m_Data: 50760
     - m_Data: 50762
     - m_Data: 50764
     - m_Data: 50766
+    - m_Data: 50888
+    - m_Data: 50906
+    - m_Data: 1000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1661,8 +1696,8 @@ MonoBehaviour:
       m_ResourceFile: 
   m_ListAreaState:
     m_SelectedInstanceIDs:
-    - m_Data: 26712
-    m_LastClickedInstanceID: 26712
+    - m_Data: 52376
+    m_LastClickedInstanceID: 52376
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs:
     - m_Data: 60754
@@ -1670,8 +1705,8 @@ MonoBehaviour:
     - m_Data: 26712
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: CalibrateEnvironment
+      m_OriginalName: CalibrateEnvironment
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
@@ -1679,10 +1714,10 @@ MonoBehaviour:
         width: 0
         height: 0
       m_UserData:
-        m_Data: 0
+        m_Data: 52378
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 4
       m_IsRenamingFilename: 1
       m_TrimLeadingAndTrailingWhitespace: 0
       m_ClientGUIView: {fileID: 11}
@@ -1696,7 +1731,7 @@ MonoBehaviour:
     m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 16
   m_SkipHiddenPackages: 0
-  m_DirectoriesAreaWidth: 207
+  m_DirectoriesAreaWidth: 209
 --- !u!114 &20
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1719,9 +1754,9 @@ MonoBehaviour:
     m_TextWithWhitespace: "Console\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 447
-    y: 24
-    width: 370
+    x: 536
+    y: 419
+    width: 436
     height: 575
   m_SerializedDataModeController:
     m_DataMode: 0
@@ -1758,10 +1793,10 @@ MonoBehaviour:
     m_TextWithWhitespace: "Animation\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 485
-    y: 711
-    width: 888
-    height: 283
+    x: 447
+    y: 419
+    width: 814
+    height: 575
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1800,10 +1835,10 @@ MonoBehaviour:
     m_TextWithWhitespace: "Animator\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 500
-    y: 711
-    width: 908
-    height: 283
+    x: 387
+    y: 419
+    width: 706
+    height: 575
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1820,15 +1855,32 @@ MonoBehaviour:
   m_ViewTransforms:
     m_KeySerializationHelper:
     - {fileID: -4314266446018032208, guid: 53232408f2aa443438015192c87b8d59, type: 2}
+    - {fileID: -6104786452265684374, guid: dff87740847be7c41b1f104dacdb019f, type: 2}
     m_ValueSerializationHelper:
     - e00: 1
       e01: 0
       e02: 0
-      e03: 0
+      e03: -9
       e10: 0
       e11: 1
       e12: 0
-      e13: 0
+      e13: 168
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 0.5494737
+      e01: 0
+      e02: 0
+      e03: -12.473694
+      e10: 0
+      e11: 0.5494737
+      e12: 0
+      e13: 185.57895
       e20: 0
       e21: 0
       e22: 1
@@ -1877,9 +1929,9 @@ MonoBehaviour:
     m_TextWithWhitespace: "Inspector\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 1267
-    y: 24
-    width: 653
+    x: 1482
+    y: 79
+    width: 437
     height: 915
   m_SerializedDataModeController:
     m_DataMode: 0
@@ -1929,9 +1981,9 @@ MonoBehaviour:
     m_TextWithWhitespace: "Test Runner\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 1266
+    x: 1483
     y: 79
-    width: 653
+    width: 436
     height: 915
   m_SerializedDataModeController:
     m_DataMode: 0
@@ -1947,7 +1999,7 @@ MonoBehaviour:
     m_OverlaysVisible: 1
     m_DynamicPanelBehavior: 0
   m_Spl:
-    ID: 174
+    ID: 33750
     splitterInitialOffset: 0
     currentActiveSplitter: -1
     realSizes:
@@ -1970,11 +2022,11 @@ MonoBehaviour:
     oldMinSizes: 
     oldMaxSizes: 
     oldSplitSize: 0
-  m_TestTypeToolbarIndex: 1
+  m_TestTypeToolbarIndex: 0
   m_TestListGUIs:
   - m_Window: {fileID: 24}
     runProgress:
-      RunGuid: fc7c7e97-ffb3-41ac-b54c-40434ac1f2e1
+      RunGuid: b180d362-eff6-4d1e-99c3-91727e9a3c5f
       ExecutionSettings:
         m_TargetPlatform: 0
         m_HasTargetPlatform: 0
@@ -2001,11 +2053,11 @@ MonoBehaviour:
           disableNestedEnumeratorBugfix: 0
         randomOrderSeed: 0
       HasFinished: 1
-      Progress: 0.99999964
+      Progress: 0.9999999
       CurrentStepName: Unlock Reload Assemblies
       CurrentStageName: 
     m_NewResultList:
-    - id: 1000
+    - id: 1003
       uniqueId: '[Feriadeflores][suite]'
       name: Feriadeflores
       fullName: Feriadeflores
@@ -2021,6 +2073,1022 @@ MonoBehaviour:
       categories: []
       parentId: 
       parentUniqueId: 
+    - id: 1063
+      uniqueId: '[Feria.Tests.EditMode][D:/Unity/FeriaDeLasFlores/Library/ScriptAssemblies/Feria.Tests.EditMode.dll][suite]'
+      name: Feria.Tests.EditMode.dll
+      fullName: D:/Unity/FeriaDeLasFlores/Library/ScriptAssemblies/Feria.Tests.EditMode.dll
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1003
+      parentUniqueId: '[Feriadeflores][suite]'
+    - id: 1004
+      uniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][ConfigDataTests][suite]'
+      name: ConfigDataTests
+      fullName: ConfigDataTests
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1063
+      parentUniqueId: '[Feria.Tests.EditMode][D:/Unity/FeriaDeLasFlores/Library/ScriptAssemblies/Feria.Tests.EditMode.dll][suite]'
+    - id: 1007
+      uniqueId: 'Feria.Tests.EditMode.dll/ConfigDataTests/[Feria.Tests.EditMode][ConfigDataTests.PlayerLaneSwitchSpeedAccessorReturnsPositiveValue]'
+      name: PlayerLaneSwitchSpeedAccessorReturnsPositiveValue
+      fullName: ConfigDataTests.PlayerLaneSwitchSpeedAccessorReturnsPositiveValue
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1004
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][ConfigDataTests][suite]'
+    - id: 1006
+      uniqueId: 'Feria.Tests.EditMode.dll/ConfigDataTests/[Feria.Tests.EditMode][ConfigDataTests.PlayerLaneSwitchSpeedDefaultIsFive]'
+      name: PlayerLaneSwitchSpeedDefaultIsFive
+      fullName: ConfigDataTests.PlayerLaneSwitchSpeedDefaultIsFive
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1004
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][ConfigDataTests][suite]'
+    - id: 1005
+      uniqueId: 'Feria.Tests.EditMode.dll/ConfigDataTests/[Feria.Tests.EditMode][ConfigDataTests.PlayerLaneSwitchSpeedEnumValueExists]'
+      name: PlayerLaneSwitchSpeedEnumValueExists
+      fullName: ConfigDataTests.PlayerLaneSwitchSpeedEnumValueExists
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1004
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][ConfigDataTests][suite]'
+    - id: 1008
+      uniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+      name: PlayerControllerTests
+      fullName: PlayerControllerTests
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1063
+      parentUniqueId: '[Feria.Tests.EditMode][D:/Unity/FeriaDeLasFlores/Library/ScriptAssemblies/Feria.Tests.EditMode.dll][suite]'
+    - id: 1027
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.BufferedInputFiresAfterSnap]'
+      name: BufferedInputFiresAfterSnap
+      fullName: PlayerControllerTests.BufferedInputFiresAfterSnap
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1035
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.BufferedInputFiresAfterTransition]'
+      name: BufferedInputFiresAfterTransition
+      fullName: PlayerControllerTests.BufferedInputFiresAfterTransition
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1026
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.BufferIsNullWhenNoInputDuringTransition]'
+      name: BufferIsNullWhenNoInputDuringTransition
+      fullName: PlayerControllerTests.BufferIsNullWhenNoInputDuringTransition
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1021
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.DoesNotSnapWhenOutsideTolerance]'
+      name: DoesNotSnapWhenOutsideTolerance
+      fullName: PlayerControllerTests.DoesNotSnapWhenOutsideTolerance
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1047
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.FastFallAcceleratesDescent]'
+      name: FastFallAcceleratesDescent
+      fullName: PlayerControllerTests.FastFallAcceleratesDescent
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1048
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.FastFallClearedMidDescentRestoresNormalSpeed]'
+      name: FastFallClearedMidDescentRestoresNormalSpeed
+      fullName: PlayerControllerTests.FastFallClearedMidDescentRestoresNormalSpeed
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1049
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.FastFallIgnoredDuringAscent]'
+      name: FastFallIgnoredDuringAscent
+      fullName: PlayerControllerTests.FastFallIgnoredDuringAscent
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1050
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.FastFallMultiplierAdvancesTimerFaster]'
+      name: FastFallMultiplierAdvancesTimerFaster
+      fullName: PlayerControllerTests.FastFallMultiplierAdvancesTimerFaster
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1034
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.FullTransitionCenterToRight]'
+      name: FullTransitionCenterToRight
+      fullName: PlayerControllerTests.FullTransitionCenterToRight
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1033
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.FullTransitionCompletesToCorrectLane]'
+      name: FullTransitionCompletesToCorrectLane
+      fullName: PlayerControllerTests.FullTransitionCompletesToCorrectLane
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1032
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.GetLaneIndexForPositionMidpoint]'
+      name: GetLaneIndexForPositionMidpoint
+      fullName: PlayerControllerTests.GetLaneIndexForPositionMidpoint
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1031
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.GetLaneIndexForPositionReturnsClosestLane]'
+      name: GetLaneIndexForPositionReturnsClosestLane
+      fullName: PlayerControllerTests.GetLaneIndexForPositionReturnsClosestLane
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1030
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.GetLaneTransformInvalidIndexReturnsCenter]'
+      name: GetLaneTransformInvalidIndexReturnsCenter
+      fullName: PlayerControllerTests.GetLaneTransformInvalidIndexReturnsCenter
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1029
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.GetLaneTransformReturnsCorrectTransform]'
+      name: GetLaneTransformReturnsCorrectTransform
+      fullName: PlayerControllerTests.GetLaneTransformReturnsCorrectTransform
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1010
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.InitialIsNotSwitchingLane]'
+      name: InitialIsNotSwitchingLane
+      fullName: PlayerControllerTests.InitialIsNotSwitchingLane
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1009
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.InitialLaneIsCenter]'
+      name: InitialLaneIsCenter
+      fullName: PlayerControllerTests.InitialLaneIsCenter
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1012
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.InitialTargetPositionIsCenter]'
+      name: InitialTargetPositionIsCenter
+      fullName: PlayerControllerTests.InitialTargetPositionIsCenter
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1023
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.InputDuringTransitionIsBuffered]'
+      name: InputDuringTransitionIsBuffered
+      fullName: PlayerControllerTests.InputDuringTransitionIsBuffered
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1040
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.JumpAllowedAfterLanding]'
+      name: JumpAllowedAfterLanding
+      fullName: PlayerControllerTests.JumpAllowedAfterLanding
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1043
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.JumpArcClampsTGreaterThanOne]'
+      name: JumpArcClampsTGreaterThanOne
+      fullName: PlayerControllerTests.JumpArcClampsTGreaterThanOne
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1041
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.JumpArcPeaksAtMidpoint]'
+      name: JumpArcPeaksAtMidpoint
+      fullName: PlayerControllerTests.JumpArcPeaksAtMidpoint
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1044
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.JumpArcSmallDeltaTimeProducesSmallOffset]'
+      name: JumpArcSmallDeltaTimeProducesSmallOffset
+      fullName: PlayerControllerTests.JumpArcSmallDeltaTimeProducesSmallOffset
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1045
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.JumpDuringLaneTransitionPreservesY]'
+      name: JumpDuringLaneTransitionPreservesY
+      fullName: PlayerControllerTests.JumpDuringLaneTransitionPreservesY
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1038
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.JumpFiresOnPerformedWhenNotJumping]'
+      name: JumpFiresOnPerformedWhenNotJumping
+      fullName: PlayerControllerTests.JumpFiresOnPerformedWhenNotJumping
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1039
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.JumpIgnoredWhenAlreadyJumping]'
+      name: JumpIgnoredWhenAlreadyJumping
+      fullName: PlayerControllerTests.JumpIgnoredWhenAlreadyJumping
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1042
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.JumpLandsAtStartY]'
+      name: JumpLandsAtStartY
+      fullName: PlayerControllerTests.JumpLandsAtStartY
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1051
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.LandingWorksWithFastFallHeldThroughout]'
+      name: LandingWorksWithFastFallHeldThroughout
+      fullName: PlayerControllerTests.LandingWorksWithFastFallHeldThroughout
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1052
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.LandingWorksWithFastFallReleasedMidDescent]'
+      name: LandingWorksWithFastFallReleasedMidDescent
+      fullName: PlayerControllerTests.LandingWorksWithFastFallReleasedMidDescent
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1046
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.LaneSwitchDuringJumpPreservesY]'
+      name: LaneSwitchDuringJumpPreservesY
+      fullName: PlayerControllerTests.LaneSwitchDuringJumpPreservesY
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1011
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.LaneSwitchSpeedSetFromConfig]'
+      name: LaneSwitchSpeedSetFromConfig
+      fullName: PlayerControllerTests.LaneSwitchSpeedSetFromConfig
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1022
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.LaneTransitionPreservesYAndZ]'
+      name: LaneTransitionPreservesYAndZ
+      fullName: PlayerControllerTests.LaneTransitionPreservesYAndZ
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1015
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.LeftInputAtLeftmostBoundaryStaysAtLaneZero]'
+      name: LeftInputAtLeftmostBoundaryStaysAtLaneZero
+      fullName: PlayerControllerTests.LeftInputAtLeftmostBoundaryStaysAtLaneZero
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1013
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.LeftInputFromCenterBeginsTransitionToLaneZero]'
+      name: LeftInputFromCenterBeginsTransitionToLaneZero
+      fullName: PlayerControllerTests.LeftInputFromCenterBeginsTransitionToLaneZero
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1025
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.OppositeDirectionCancelsTransition]'
+      name: OppositeDirectionCancelsTransition
+      fullName: PlayerControllerTests.OppositeDirectionCancelsTransition
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1028
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.OppositeInputCancelsTransition]'
+      name: OppositeInputCancelsTransition
+      fullName: PlayerControllerTests.OppositeInputCancelsTransition
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1037
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.RapidInputAtBoundaryDoesNotLeaveBounds]'
+      name: RapidInputAtBoundaryDoesNotLeaveBounds
+      fullName: PlayerControllerTests.RapidInputAtBoundaryDoesNotLeaveBounds
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1016
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.RightInputAtRightmostBoundaryStaysAtLaneTwo]'
+      name: RightInputAtRightmostBoundaryStaysAtLaneTwo
+      fullName: PlayerControllerTests.RightInputAtRightmostBoundaryStaysAtLaneTwo
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1014
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.RightInputFromCenterBeginsTransitionToLaneTwo]'
+      name: RightInputFromCenterBeginsTransitionToLaneTwo
+      fullName: PlayerControllerTests.RightInputFromCenterBeginsTransitionToLaneTwo
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1024
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.SameDirectionRepeatedInputOverwritesBuffer]'
+      name: SameDirectionRepeatedInputOverwritesBuffer
+      fullName: PlayerControllerTests.SameDirectionRepeatedInputOverwritesBuffer
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1019
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.SmallNegativeInputMovesLeft]'
+      name: SmallNegativeInputMovesLeft
+      fullName: PlayerControllerTests.SmallNegativeInputMovesLeft
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1018
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.SmallPositiveInputMovesRight]'
+      name: SmallPositiveInputMovesRight
+      fullName: PlayerControllerTests.SmallPositiveInputMovesRight
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1020
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.SnapCompletesWhenWithinTolerance]'
+      name: SnapCompletesWhenWithinTolerance
+      fullName: PlayerControllerTests.SnapCompletesWhenWithinTolerance
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1036
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.YAndZPositionPreservedDuringTransition]'
+      name: YAndZPositionPreservedDuringTransition
+      fullName: PlayerControllerTests.YAndZPositionPreservedDuringTransition
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1017
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.ZeroInputDoesNothing]'
+      name: ZeroInputDoesNothing
+      fullName: PlayerControllerTests.ZeroInputDoesNothing
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1053
+      uniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][SpawnerTests][suite]'
+      name: SpawnerTests
+      fullName: SpawnerTests
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1063
+      parentUniqueId: '[Feria.Tests.EditMode][D:/Unity/FeriaDeLasFlores/Library/ScriptAssemblies/Feria.Tests.EditMode.dll][suite]'
+    - id: 1062
+      uniqueId: 'Feria.Tests.EditMode.dll/SpawnerTests/[Feria.Tests.EditMode][SpawnerTests.ColocarFlorConTagDesconocidoRetornaSinError]'
+      name: ColocarFlorConTagDesconocidoRetornaSinError
+      fullName: SpawnerTests.ColocarFlorConTagDesconocidoRetornaSinError
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1053
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][SpawnerTests][suite]'
+    - id: 1059
+      uniqueId: 'Feria.Tests.EditMode.dll/SpawnerTests/[Feria.Tests.EditMode][SpawnerTests.InstanciadorCreaPoolEnAwake]'
+      name: InstanciadorCreaPoolEnAwake
+      fullName: SpawnerTests.InstanciadorCreaPoolEnAwake
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1053
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][SpawnerTests][suite]'
+    - id: 1055
+      uniqueId: 'Feria.Tests.EditMode.dll/SpawnerTests/[Feria.Tests.EditMode][SpawnerTests.ObstaclesAreParentedToNonVisibleFloor]'
+      name: ObstaclesAreParentedToNonVisibleFloor
+      fullName: SpawnerTests.ObstaclesAreParentedToNonVisibleFloor
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1053
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][SpawnerTests][suite]'
+    - id: 1056
+      uniqueId: 'Feria.Tests.EditMode.dll/SpawnerTests/[Feria.Tests.EditMode][SpawnerTests.ObstacleSpawnerFindsPlayerControllerViaFallback]'
+      name: ObstacleSpawnerFindsPlayerControllerViaFallback
+      fullName: SpawnerTests.ObstacleSpawnerFindsPlayerControllerViaFallback
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1053
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][SpawnerTests][suite]'
+    - id: 1058
+      uniqueId: 'Feria.Tests.EditMode.dll/SpawnerTests/[Feria.Tests.EditMode][SpawnerTests.ObstaclesSpawnAcrossMultipleLanes]'
+      name: ObstaclesSpawnAcrossMultipleLanes
+      fullName: SpawnerTests.ObstaclesSpawnAcrossMultipleLanes
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1053
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][SpawnerTests][suite]'
+    - id: 1054
+      uniqueId: 'Feria.Tests.EditMode.dll/SpawnerTests/[Feria.Tests.EditMode][SpawnerTests.ObstaclesSpawnAtLaneXPositions]'
+      name: ObstaclesSpawnAtLaneXPositions
+      fullName: SpawnerTests.ObstaclesSpawnAtLaneXPositions
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1053
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][SpawnerTests][suite]'
+    - id: 1057
+      uniqueId: 'Feria.Tests.EditMode.dll/SpawnerTests/[Feria.Tests.EditMode][SpawnerTests.ObstaclesUseIndependentRandomLanesNotSequential]'
+      name: ObstaclesUseIndependentRandomLanesNotSequential
+      fullName: SpawnerTests.ObstaclesUseIndependentRandomLanesNotSequential
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1053
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][SpawnerTests][suite]'
+    - id: 1061
+      uniqueId: 'Feria.Tests.EditMode.dll/SpawnerTests/[Feria.Tests.EditMode][SpawnerTests.OnTriggerEnterDesactivaEnLugarDeDestruir]'
+      name: OnTriggerEnterDesactivaEnLugarDeDestruir
+      fullName: SpawnerTests.OnTriggerEnterDesactivaEnLugarDeDestruir
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1053
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][SpawnerTests][suite]'
+    - id: 1060
+      uniqueId: 'Feria.Tests.EditMode.dll/SpawnerTests/[Feria.Tests.EditMode][SpawnerTests.SpawnFlowersActivaFloresEnZ200]'
+      name: SpawnFlowersActivaFloresEnZ200
+      fullName: SpawnerTests.SpawnFlowersActivaFloresEnZ200
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1053
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][SpawnerTests][suite]'
     m_ResultText: 
     m_ResultStacktrace: 
     m_TestListState:
@@ -2057,7 +3125,7 @@ MonoBehaviour:
     m_SelectedOption: 0
   - m_Window: {fileID: 24}
     runProgress:
-      RunGuid: fc7c7e97-ffb3-41ac-b54c-40434ac1f2e1
+      RunGuid: b180d362-eff6-4d1e-99c3-91727e9a3c5f
       ExecutionSettings:
         m_TargetPlatform: 0
         m_HasTargetPlatform: 0
@@ -2084,16 +3152,16 @@ MonoBehaviour:
           disableNestedEnumeratorBugfix: 0
         randomOrderSeed: 0
       HasFinished: 1
-      Progress: 0.99999964
+      Progress: 0.9999999
       CurrentStepName: Unlock Reload Assemblies
       CurrentStageName: 
     m_NewResultList:
-    - id: 1000
+    - id: 1065
       uniqueId: '[Feriadeflores][suite]'
       name: Feriadeflores
       fullName: Feriadeflores
-      resultStatus: 0
-      duration: 0.0641316
+      resultStatus: 2
+      duration: 0.12452321
       messages: 
       output: 
       stacktrace: 
@@ -2104,1052 +3172,12 @@ MonoBehaviour:
       categories: []
       parentId: 
       parentUniqueId: 
-    - id: 1060
-      uniqueId: '[Assembly-CSharp][D:/Unity/FeriaDeLasFlores/Library/ScriptAssemblies/Assembly-CSharp.dll][suite]'
-      name: Assembly-CSharp.dll
-      fullName: D:/Unity/FeriaDeLasFlores/Library/ScriptAssemblies/Assembly-CSharp.dll
-      resultStatus: 0
-      duration: 0.0641316
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 1
-      categories: []
-      parentId: 1000
-      parentUniqueId: '[Feriadeflores][suite]'
-    - id: 1001
-      uniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][ConfigDataTests][suite]'
-      name: ConfigDataTests
-      fullName: ConfigDataTests
-      resultStatus: 1
-      duration: 0.0191665
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 1
-      categories: []
-      parentId: 1060
-      parentUniqueId: '[Assembly-CSharp][D:/Unity/FeriaDeLasFlores/Library/ScriptAssemblies/Assembly-CSharp.dll][suite]'
-    - id: 1008
-      uniqueId: 'Assembly-CSharp.dll/ConfigDataTests/[Assembly-CSharp][ConfigDataTests.PlayerLaneSwitchSpeedAccessorReturnsPositiveValue]'
-      name: PlayerLaneSwitchSpeedAccessorReturnsPositiveValue
-      fullName: ConfigDataTests.PlayerLaneSwitchSpeedAccessorReturnsPositiveValue
-      resultStatus: 1
-      duration: 0.0147963
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1005
-      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][ConfigDataTests][suite]'
-    - id: 1007
-      uniqueId: 'Assembly-CSharp.dll/ConfigDataTests/[Assembly-CSharp][ConfigDataTests.PlayerLaneSwitchSpeedDefaultIsFive]'
-      name: PlayerLaneSwitchSpeedDefaultIsFive
-      fullName: ConfigDataTests.PlayerLaneSwitchSpeedDefaultIsFive
-      resultStatus: 1
-      duration: 0.0038534
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1005
-      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][ConfigDataTests][suite]'
-    - id: 1006
-      uniqueId: 'Assembly-CSharp.dll/ConfigDataTests/[Assembly-CSharp][ConfigDataTests.PlayerLaneSwitchSpeedEnumValueExists]'
-      name: PlayerLaneSwitchSpeedEnumValueExists
-      fullName: ConfigDataTests.PlayerLaneSwitchSpeedEnumValueExists
-      resultStatus: 1
-      duration: 0.0005168
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1005
-      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][ConfigDataTests][suite]'
-    - id: 1005
-      uniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][PlayerControllerTests][suite]'
-      name: PlayerControllerTests
-      fullName: PlayerControllerTests
-      resultStatus: 0
-      duration: 0.0449651
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 1
-      categories: []
-      parentId: 1060
-      parentUniqueId: '[Assembly-CSharp][D:/Unity/FeriaDeLasFlores/Library/ScriptAssemblies/Assembly-CSharp.dll][suite]'
-    - id: 1027
-      uniqueId: 'Assembly-CSharp.dll/PlayerControllerTests/[Assembly-CSharp][PlayerControllerTests.BufferedInputFiresAfterSnap]'
-      name: BufferedInputFiresAfterSnap
-      fullName: PlayerControllerTests.BufferedInputFiresAfterSnap
-      resultStatus: 1
-      duration: 0.0065648
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1009
-      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][PlayerControllerTests][suite]'
-    - id: 1034
-      uniqueId: 'Assembly-CSharp.dll/PlayerControllerTests/[Assembly-CSharp][PlayerControllerTests.BufferedInputFiresAfterTransition]'
-      name: BufferedInputFiresAfterTransition
-      fullName: PlayerControllerTests.BufferedInputFiresAfterTransition
-      resultStatus: 1
-      duration: 0.0012601
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1009
-      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][PlayerControllerTests][suite]'
-    - id: 1026
-      uniqueId: 'Assembly-CSharp.dll/PlayerControllerTests/[Assembly-CSharp][PlayerControllerTests.BufferIsNullWhenNoInputDuringTransition]'
-      name: BufferIsNullWhenNoInputDuringTransition
-      fullName: PlayerControllerTests.BufferIsNullWhenNoInputDuringTransition
-      resultStatus: 1
-      duration: 0.0006866
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1009
-      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][PlayerControllerTests][suite]'
-    - id: 1022
-      uniqueId: 'Assembly-CSharp.dll/PlayerControllerTests/[Assembly-CSharp][PlayerControllerTests.DoesNotSnapWhenOutsideTolerance]'
-      name: DoesNotSnapWhenOutsideTolerance
-      fullName: PlayerControllerTests.DoesNotSnapWhenOutsideTolerance
-      resultStatus: 1
-      duration: 0.0006813
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1009
-      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][PlayerControllerTests][suite]'
-    - id: 1044
-      uniqueId: 'Assembly-CSharp.dll/PlayerControllerTests/[Assembly-CSharp][PlayerControllerTests.FastFallAcceleratesDescent]'
-      name: FastFallAcceleratesDescent
-      fullName: PlayerControllerTests.FastFallAcceleratesDescent
-      resultStatus: 0
-      duration: 0
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1005
-      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][PlayerControllerTests][suite]'
-    - id: 1045
-      uniqueId: 'Assembly-CSharp.dll/PlayerControllerTests/[Assembly-CSharp][PlayerControllerTests.FastFallClearedMidDescentRestoresNormalSpeed]'
-      name: FastFallClearedMidDescentRestoresNormalSpeed
-      fullName: PlayerControllerTests.FastFallClearedMidDescentRestoresNormalSpeed
-      resultStatus: 0
-      duration: 0
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1005
-      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][PlayerControllerTests][suite]'
-    - id: 1046
-      uniqueId: 'Assembly-CSharp.dll/PlayerControllerTests/[Assembly-CSharp][PlayerControllerTests.FastFallIgnoredDuringAscent]'
-      name: FastFallIgnoredDuringAscent
-      fullName: PlayerControllerTests.FastFallIgnoredDuringAscent
-      resultStatus: 0
-      duration: 0
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1005
-      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][PlayerControllerTests][suite]'
-    - id: 1047
-      uniqueId: 'Assembly-CSharp.dll/PlayerControllerTests/[Assembly-CSharp][PlayerControllerTests.FastFallMultiplierAdvancesTimerFaster]'
-      name: FastFallMultiplierAdvancesTimerFaster
-      fullName: PlayerControllerTests.FastFallMultiplierAdvancesTimerFaster
-      resultStatus: 0
-      duration: 0
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1005
-      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][PlayerControllerTests][suite]'
-    - id: 1033
-      uniqueId: 'Assembly-CSharp.dll/PlayerControllerTests/[Assembly-CSharp][PlayerControllerTests.FullTransitionCenterToRight]'
-      name: FullTransitionCenterToRight
-      fullName: PlayerControllerTests.FullTransitionCenterToRight
-      resultStatus: 1
-      duration: 0.0007296
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1009
-      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][PlayerControllerTests][suite]'
-    - id: 1032
-      uniqueId: 'Assembly-CSharp.dll/PlayerControllerTests/[Assembly-CSharp][PlayerControllerTests.FullTransitionCompletesToCorrectLane]'
-      name: FullTransitionCompletesToCorrectLane
-      fullName: PlayerControllerTests.FullTransitionCompletesToCorrectLane
-      resultStatus: 1
-      duration: 0.0007814
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1009
-      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][PlayerControllerTests][suite]'
-    - id: 1031
-      uniqueId: 'Assembly-CSharp.dll/PlayerControllerTests/[Assembly-CSharp][PlayerControllerTests.GetLaneIndexForPositionMidpoint]'
-      name: GetLaneIndexForPositionMidpoint
-      fullName: PlayerControllerTests.GetLaneIndexForPositionMidpoint
-      resultStatus: 1
-      duration: 0.0021176
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1009
-      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][PlayerControllerTests][suite]'
-    - id: 1030
-      uniqueId: 'Assembly-CSharp.dll/PlayerControllerTests/[Assembly-CSharp][PlayerControllerTests.GetLaneIndexForPositionReturnsClosestLane]'
-      name: GetLaneIndexForPositionReturnsClosestLane
-      fullName: PlayerControllerTests.GetLaneIndexForPositionReturnsClosestLane
-      resultStatus: 1
-      duration: 0.0006617
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1009
-      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][PlayerControllerTests][suite]'
-    - id: 1029
-      uniqueId: 'Assembly-CSharp.dll/PlayerControllerTests/[Assembly-CSharp][PlayerControllerTests.GetLaneTransformInvalidIndexReturnsCenter]'
-      name: GetLaneTransformInvalidIndexReturnsCenter
-      fullName: PlayerControllerTests.GetLaneTransformInvalidIndexReturnsCenter
-      resultStatus: 1
-      duration: 0.0008238
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1009
-      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][PlayerControllerTests][suite]'
-    - id: 1028
-      uniqueId: 'Assembly-CSharp.dll/PlayerControllerTests/[Assembly-CSharp][PlayerControllerTests.GetLaneTransformReturnsCorrectTransform]'
-      name: GetLaneTransformReturnsCorrectTransform
-      fullName: PlayerControllerTests.GetLaneTransformReturnsCorrectTransform
-      resultStatus: 1
-      duration: 0.0006012
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1009
-      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][PlayerControllerTests][suite]'
-    - id: 1011
-      uniqueId: 'Assembly-CSharp.dll/PlayerControllerTests/[Assembly-CSharp][PlayerControllerTests.InitialIsNotSwitchingLane]'
-      name: InitialIsNotSwitchingLane
-      fullName: PlayerControllerTests.InitialIsNotSwitchingLane
-      resultStatus: 1
-      duration: 0.0005423
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1009
-      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][PlayerControllerTests][suite]'
-    - id: 1010
-      uniqueId: 'Assembly-CSharp.dll/PlayerControllerTests/[Assembly-CSharp][PlayerControllerTests.InitialLaneIsCenter]'
-      name: InitialLaneIsCenter
-      fullName: PlayerControllerTests.InitialLaneIsCenter
-      resultStatus: 1
-      duration: 0.0005506
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1009
-      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][PlayerControllerTests][suite]'
-    - id: 1013
-      uniqueId: 'Assembly-CSharp.dll/PlayerControllerTests/[Assembly-CSharp][PlayerControllerTests.InitialTargetPositionIsCenter]'
-      name: InitialTargetPositionIsCenter
-      fullName: PlayerControllerTests.InitialTargetPositionIsCenter
-      resultStatus: 1
-      duration: 0.0005679
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1009
-      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][PlayerControllerTests][suite]'
-    - id: 1024
-      uniqueId: 'Assembly-CSharp.dll/PlayerControllerTests/[Assembly-CSharp][PlayerControllerTests.InputDuringTransitionIsBuffered]'
-      name: InputDuringTransitionIsBuffered
-      fullName: PlayerControllerTests.InputDuringTransitionIsBuffered
-      resultStatus: 1
-      duration: 0.0005979
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1009
-      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][PlayerControllerTests][suite]'
-    - id: 1037
-      uniqueId: 'Assembly-CSharp.dll/PlayerControllerTests/[Assembly-CSharp][PlayerControllerTests.JumpAllowedAfterLanding]'
-      name: JumpAllowedAfterLanding
-      fullName: PlayerControllerTests.JumpAllowedAfterLanding
-      resultStatus: 1
-      duration: 0.0045823
-      messages: 
-      output: 'Jump performed
-
-        Jump performed
-
-'
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1005
-      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][PlayerControllerTests][suite]'
-    - id: 1040
-      uniqueId: 'Assembly-CSharp.dll/PlayerControllerTests/[Assembly-CSharp][PlayerControllerTests.JumpArcClampsTGreaterThanOne]'
-      name: JumpArcClampsTGreaterThanOne
-      fullName: PlayerControllerTests.JumpArcClampsTGreaterThanOne
-      resultStatus: 1
-      duration: 0.0013982
-      messages: 
-      output: 'Jump performed
-
-'
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1005
-      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][PlayerControllerTests][suite]'
-    - id: 1038
-      uniqueId: 'Assembly-CSharp.dll/PlayerControllerTests/[Assembly-CSharp][PlayerControllerTests.JumpArcPeaksAtMidpoint]'
-      name: JumpArcPeaksAtMidpoint
-      fullName: PlayerControllerTests.JumpArcPeaksAtMidpoint
-      resultStatus: 1
-      duration: 0.0011937
-      messages: 
-      output: 'Jump performed
-
-'
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1005
-      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][PlayerControllerTests][suite]'
-    - id: 1041
-      uniqueId: 'Assembly-CSharp.dll/PlayerControllerTests/[Assembly-CSharp][PlayerControllerTests.JumpArcSmallDeltaTimeProducesSmallOffset]'
-      name: JumpArcSmallDeltaTimeProducesSmallOffset
-      fullName: PlayerControllerTests.JumpArcSmallDeltaTimeProducesSmallOffset
-      resultStatus: 1
-      duration: 0.0012058
-      messages: 
-      output: 'Jump performed
-
-'
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1005
-      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][PlayerControllerTests][suite]'
-    - id: 1042
-      uniqueId: 'Assembly-CSharp.dll/PlayerControllerTests/[Assembly-CSharp][PlayerControllerTests.JumpDuringLaneTransitionPreservesY]'
-      name: JumpDuringLaneTransitionPreservesY
-      fullName: PlayerControllerTests.JumpDuringLaneTransitionPreservesY
-      resultStatus: 1
-      duration: 0.0016511
-      messages: 
-      output: 'Jump performed
-
-'
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1005
-      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][PlayerControllerTests][suite]'
-    - id: 1035
-      uniqueId: 'Assembly-CSharp.dll/PlayerControllerTests/[Assembly-CSharp][PlayerControllerTests.JumpFiresOnPerformedWhenNotJumping]'
-      name: JumpFiresOnPerformedWhenNotJumping
-      fullName: PlayerControllerTests.JumpFiresOnPerformedWhenNotJumping
-      resultStatus: 1
-      duration: 0.001052
-      messages: 
-      output: 'Jump performed
-
-'
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1005
-      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][PlayerControllerTests][suite]'
-    - id: 1036
-      uniqueId: 'Assembly-CSharp.dll/PlayerControllerTests/[Assembly-CSharp][PlayerControllerTests.JumpIgnoredWhenAlreadyJumping]'
-      name: JumpIgnoredWhenAlreadyJumping
-      fullName: PlayerControllerTests.JumpIgnoredWhenAlreadyJumping
-      resultStatus: 1
-      duration: 0.0011141
-      messages: 
-      output: 'Jump performed
-
-'
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1005
-      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][PlayerControllerTests][suite]'
-    - id: 1039
-      uniqueId: 'Assembly-CSharp.dll/PlayerControllerTests/[Assembly-CSharp][PlayerControllerTests.JumpLandsAtStartY]'
-      name: JumpLandsAtStartY
-      fullName: PlayerControllerTests.JumpLandsAtStartY
-      resultStatus: 1
-      duration: 0.0010995
-      messages: 
-      output: 'Jump performed
-
-'
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1005
-      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][PlayerControllerTests][suite]'
-    - id: 1048
-      uniqueId: 'Assembly-CSharp.dll/PlayerControllerTests/[Assembly-CSharp][PlayerControllerTests.LandingWorksWithFastFallHeldThroughout]'
-      name: LandingWorksWithFastFallHeldThroughout
-      fullName: PlayerControllerTests.LandingWorksWithFastFallHeldThroughout
-      resultStatus: 0
-      duration: 0
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1005
-      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][PlayerControllerTests][suite]'
-    - id: 1049
-      uniqueId: 'Assembly-CSharp.dll/PlayerControllerTests/[Assembly-CSharp][PlayerControllerTests.LandingWorksWithFastFallReleasedMidDescent]'
-      name: LandingWorksWithFastFallReleasedMidDescent
-      fullName: PlayerControllerTests.LandingWorksWithFastFallReleasedMidDescent
-      resultStatus: 0
-      duration: 0
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1005
-      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][PlayerControllerTests][suite]'
-    - id: 1043
-      uniqueId: 'Assembly-CSharp.dll/PlayerControllerTests/[Assembly-CSharp][PlayerControllerTests.LaneSwitchDuringJumpPreservesY]'
-      name: LaneSwitchDuringJumpPreservesY
-      fullName: PlayerControllerTests.LaneSwitchDuringJumpPreservesY
-      resultStatus: 1
-      duration: 0.0015984
-      messages: 
-      output: 'Jump performed
-
-'
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1005
-      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][PlayerControllerTests][suite]'
-    - id: 1012
-      uniqueId: 'Assembly-CSharp.dll/PlayerControllerTests/[Assembly-CSharp][PlayerControllerTests.LaneSwitchSpeedSetFromConfig]'
-      name: LaneSwitchSpeedSetFromConfig
-      fullName: PlayerControllerTests.LaneSwitchSpeedSetFromConfig
-      resultStatus: 1
-      duration: 0.0006635
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1009
-      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][PlayerControllerTests][suite]'
-    - id: 1023
-      uniqueId: 'Assembly-CSharp.dll/PlayerControllerTests/[Assembly-CSharp][PlayerControllerTests.LaneTransitionPreservesYAndZ]'
-      name: LaneTransitionPreservesYAndZ
-      fullName: PlayerControllerTests.LaneTransitionPreservesYAndZ
-      resultStatus: 1
-      duration: 0.0009057
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1009
-      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][PlayerControllerTests][suite]'
-    - id: 1016
-      uniqueId: 'Assembly-CSharp.dll/PlayerControllerTests/[Assembly-CSharp][PlayerControllerTests.LeftInputAtLeftmostBoundaryStaysAtLaneZero]'
-      name: LeftInputAtLeftmostBoundaryStaysAtLaneZero
-      fullName: PlayerControllerTests.LeftInputAtLeftmostBoundaryStaysAtLaneZero
-      resultStatus: 1
-      duration: 0.0006843
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1009
-      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][PlayerControllerTests][suite]'
-    - id: 1014
-      uniqueId: 'Assembly-CSharp.dll/PlayerControllerTests/[Assembly-CSharp][PlayerControllerTests.LeftInputFromCenterBeginsTransitionToLaneZero]'
-      name: LeftInputFromCenterBeginsTransitionToLaneZero
-      fullName: PlayerControllerTests.LeftInputFromCenterBeginsTransitionToLaneZero
-      resultStatus: 1
-      duration: 0.0007986
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1009
-      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][PlayerControllerTests][suite]'
-    - id: 1022
-      uniqueId: 'Assembly-CSharp.dll/PlayerControllerTests/[Assembly-CSharp][PlayerControllerTests.OppositeDirectionCancelsTransition]'
-      name: OppositeDirectionCancelsTransition
-      fullName: PlayerControllerTests.OppositeDirectionCancelsTransition
-      resultStatus: 1
-      duration: 0.0010213
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1005
-      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][PlayerControllerTests][suite]'
-    - id: 1024
-      uniqueId: 'Assembly-CSharp.dll/PlayerControllerTests/[Assembly-CSharp][PlayerControllerTests.OppositeInputCancelsTransition]'
-      name: OppositeInputCancelsTransition
-      fullName: PlayerControllerTests.OppositeInputCancelsTransition
-      resultStatus: 1
-      duration: 0.0013142
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1005
-      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][PlayerControllerTests][suite]'
-    - id: 1036
-      uniqueId: 'Assembly-CSharp.dll/PlayerControllerTests/[Assembly-CSharp][PlayerControllerTests.RapidInputAtBoundaryDoesNotLeaveBounds]'
-      name: RapidInputAtBoundaryDoesNotLeaveBounds
-      fullName: PlayerControllerTests.RapidInputAtBoundaryDoesNotLeaveBounds
-      resultStatus: 1
-      duration: 0.0010548
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1009
-      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][PlayerControllerTests][suite]'
-    - id: 1017
-      uniqueId: 'Assembly-CSharp.dll/PlayerControllerTests/[Assembly-CSharp][PlayerControllerTests.RightInputAtRightmostBoundaryStaysAtLaneTwo]'
-      name: RightInputAtRightmostBoundaryStaysAtLaneTwo
-      fullName: PlayerControllerTests.RightInputAtRightmostBoundaryStaysAtLaneTwo
-      resultStatus: 1
-      duration: 0.0008066
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1009
-      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][PlayerControllerTests][suite]'
-    - id: 1015
-      uniqueId: 'Assembly-CSharp.dll/PlayerControllerTests/[Assembly-CSharp][PlayerControllerTests.RightInputFromCenterBeginsTransitionToLaneTwo]'
-      name: RightInputFromCenterBeginsTransitionToLaneTwo
-      fullName: PlayerControllerTests.RightInputFromCenterBeginsTransitionToLaneTwo
-      resultStatus: 1
-      duration: 0.0008649
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1009
-      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][PlayerControllerTests][suite]'
-    - id: 1021
-      uniqueId: 'Assembly-CSharp.dll/PlayerControllerTests/[Assembly-CSharp][PlayerControllerTests.SameDirectionRepeatedInputOverwritesBuffer]'
-      name: SameDirectionRepeatedInputOverwritesBuffer
-      fullName: PlayerControllerTests.SameDirectionRepeatedInputOverwritesBuffer
-      resultStatus: 1
-      duration: 0.0007605
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1005
-      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][PlayerControllerTests][suite]'
-    - id: 1020
-      uniqueId: 'Assembly-CSharp.dll/PlayerControllerTests/[Assembly-CSharp][PlayerControllerTests.SmallNegativeInputMovesLeft]'
-      name: SmallNegativeInputMovesLeft
-      fullName: PlayerControllerTests.SmallNegativeInputMovesLeft
-      resultStatus: 1
-      duration: 0.000647
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1009
-      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][PlayerControllerTests][suite]'
-    - id: 1019
-      uniqueId: 'Assembly-CSharp.dll/PlayerControllerTests/[Assembly-CSharp][PlayerControllerTests.SmallPositiveInputMovesRight]'
-      name: SmallPositiveInputMovesRight
-      fullName: PlayerControllerTests.SmallPositiveInputMovesRight
-      resultStatus: 1
-      duration: 0.0006627
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1009
-      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][PlayerControllerTests][suite]'
-    - id: 1021
-      uniqueId: 'Assembly-CSharp.dll/PlayerControllerTests/[Assembly-CSharp][PlayerControllerTests.SnapCompletesWhenWithinTolerance]'
-      name: SnapCompletesWhenWithinTolerance
-      fullName: PlayerControllerTests.SnapCompletesWhenWithinTolerance
-      resultStatus: 1
-      duration: 0.0008538
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1009
-      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][PlayerControllerTests][suite]'
-    - id: 1035
-      uniqueId: 'Assembly-CSharp.dll/PlayerControllerTests/[Assembly-CSharp][PlayerControllerTests.YAndZPositionPreservedDuringTransition]'
-      name: YAndZPositionPreservedDuringTransition
-      fullName: PlayerControllerTests.YAndZPositionPreservedDuringTransition
-      resultStatus: 1
-      duration: 0.0011347
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1009
-      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][PlayerControllerTests][suite]'
-    - id: 1018
-      uniqueId: 'Assembly-CSharp.dll/PlayerControllerTests/[Assembly-CSharp][PlayerControllerTests.ZeroInputDoesNothing]'
-      name: ZeroInputDoesNothing
-      fullName: PlayerControllerTests.ZeroInputDoesNothing
-      resultStatus: 1
-      duration: 0.0007306
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1009
-      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][PlayerControllerTests][suite]'
-    - id: 1050
-      uniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][SpawnerTests][suite]'
-      name: SpawnerTests
-      fullName: SpawnerTests
-      resultStatus: 0
-      duration: 0
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 1
-      categories: []
-      parentId: 1060
-      parentUniqueId: '[Assembly-CSharp][D:/Unity/FeriaDeLasFlores/Library/ScriptAssemblies/Assembly-CSharp.dll][suite]'
-    - id: 1059
-      uniqueId: 'Assembly-CSharp.dll/SpawnerTests/[Assembly-CSharp][SpawnerTests.ColocarFlorConTagDesconocidoRetornaSinError]'
-      name: ColocarFlorConTagDesconocidoRetornaSinError
-      fullName: SpawnerTests.ColocarFlorConTagDesconocidoRetornaSinError
-      resultStatus: 0
-      duration: 0
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1050
-      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][SpawnerTests][suite]'
-    - id: 1056
-      uniqueId: 'Assembly-CSharp.dll/SpawnerTests/[Assembly-CSharp][SpawnerTests.InstanciadorCreaPoolEnAwake]'
-      name: InstanciadorCreaPoolEnAwake
-      fullName: SpawnerTests.InstanciadorCreaPoolEnAwake
-      resultStatus: 0
-      duration: 0
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1050
-      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][SpawnerTests][suite]'
-    - id: 1052
-      uniqueId: 'Assembly-CSharp.dll/SpawnerTests/[Assembly-CSharp][SpawnerTests.ObstaclesAreParentedToNonVisibleFloor]'
-      name: ObstaclesAreParentedToNonVisibleFloor
-      fullName: SpawnerTests.ObstaclesAreParentedToNonVisibleFloor
-      resultStatus: 0
-      duration: 0
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1050
-      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][SpawnerTests][suite]'
-    - id: 1053
-      uniqueId: 'Assembly-CSharp.dll/SpawnerTests/[Assembly-CSharp][SpawnerTests.ObstacleSpawnerFindsPlayerControllerViaFallback]'
-      name: ObstacleSpawnerFindsPlayerControllerViaFallback
-      fullName: SpawnerTests.ObstacleSpawnerFindsPlayerControllerViaFallback
-      resultStatus: 0
-      duration: 0
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1050
-      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][SpawnerTests][suite]'
-    - id: 1055
-      uniqueId: 'Assembly-CSharp.dll/SpawnerTests/[Assembly-CSharp][SpawnerTests.ObstaclesSpawnAcrossMultipleLanes]'
-      name: ObstaclesSpawnAcrossMultipleLanes
-      fullName: SpawnerTests.ObstaclesSpawnAcrossMultipleLanes
-      resultStatus: 0
-      duration: 0
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1050
-      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][SpawnerTests][suite]'
-    - id: 1051
-      uniqueId: 'Assembly-CSharp.dll/SpawnerTests/[Assembly-CSharp][SpawnerTests.ObstaclesSpawnAtLaneXPositions]'
-      name: ObstaclesSpawnAtLaneXPositions
-      fullName: SpawnerTests.ObstaclesSpawnAtLaneXPositions
-      resultStatus: 0
-      duration: 0
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1050
-      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][SpawnerTests][suite]'
-    - id: 1054
-      uniqueId: 'Assembly-CSharp.dll/SpawnerTests/[Assembly-CSharp][SpawnerTests.ObstaclesUseIndependentRandomLanesNotSequential]'
-      name: ObstaclesUseIndependentRandomLanesNotSequential
-      fullName: SpawnerTests.ObstaclesUseIndependentRandomLanesNotSequential
-      resultStatus: 0
-      duration: 0
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1050
-      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][SpawnerTests][suite]'
-    - id: 1058
-      uniqueId: 'Assembly-CSharp.dll/SpawnerTests/[Assembly-CSharp][SpawnerTests.OnTriggerEnterDesactivaEnLugarDeDestruir]'
-      name: OnTriggerEnterDesactivaEnLugarDeDestruir
-      fullName: SpawnerTests.OnTriggerEnterDesactivaEnLugarDeDestruir
-      resultStatus: 0
-      duration: 0
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1050
-      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][SpawnerTests][suite]'
-    - id: 1057
-      uniqueId: 'Assembly-CSharp.dll/SpawnerTests/[Assembly-CSharp][SpawnerTests.SpawnFlowersActivaFloresEnZ200]'
-      name: SpawnFlowersActivaFloresEnZ200
-      fullName: SpawnerTests.SpawnFlowersActivaFloresEnZ200
-      resultStatus: 0
-      duration: 0
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1050
-      parentUniqueId: 'Assembly-CSharp.dll/[Assembly-CSharp][SpawnerTests][suite]'
-    m_ResultText: 'JumpArcPeaksAtMidpoint (0,001s)
-
-      ---
-
-      Jump performed'
+    m_ResultText: PlayerControllerTests (44 tests)  6 tests failed (0,054s)
     m_ResultStacktrace: 
     m_TestListState:
       scrollPos: {x: 0, y: 12}
-      m_SelectedIDs: 97e1dab6
-      m_LastClickedID: -1227169385
+      m_SelectedIDs: 4bc83315
+      m_LastClickedID: 355715147
       m_ExpandedIDs: 8bbd25d273c98ed24bc83315ffffff7f
       m_RenameOverlay:
         m_UserAcceptedRename: 0
@@ -3180,7 +3208,7 @@ MonoBehaviour:
     m_SelectedOption: 0
   - m_Window: {fileID: 0}
     runProgress:
-      RunGuid: fc7c7e97-ffb3-41ac-b54c-40434ac1f2e1
+      RunGuid: b180d362-eff6-4d1e-99c3-91727e9a3c5f
       ExecutionSettings:
         m_TargetPlatform: 0
         m_HasTargetPlatform: 0
@@ -3207,7 +3235,7 @@ MonoBehaviour:
           disableNestedEnumeratorBugfix: 0
         randomOrderSeed: 0
       HasFinished: 1
-      Progress: 0.99999964
+      Progress: 0.9999999
       CurrentStepName: Unlock Reload Assemblies
       CurrentStageName: 
     m_NewResultList: []

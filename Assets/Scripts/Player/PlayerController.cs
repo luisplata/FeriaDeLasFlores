@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class PlayerController : IntEventInvoker
 {
     private float speed = 5f;
-    [SerializeField] internal float jumpHeight = 2f;
+    [SerializeField] public float jumpHeight = 2f;
 
     private Rigidbody rigidBody;
     public bool isGrounded => !isJumping;
@@ -22,27 +22,29 @@ public class PlayerController : IntEventInvoker
     public int FlorEnPorcenajeParaEscribir => (int)(flowerCompletionPercentage * 100);
     public float FlorEnPorcentajeParaUi => flowerCompletionPercentage;
 
-    [SerializeField] internal Transform leftPosition, centerPosition, rightPosition;
+    [SerializeField] public Transform leftPosition;
+    [SerializeField] public Transform centerPosition;
+    [SerializeField] public Transform rightPosition;
 
     [Header("Config")] [SerializeField] public PlayerConfigSO playerConfig;
 
     private Animator animator;
 
     // ── Lane movement fields ──────────────────────────────────────
-    [SerializeField] internal int currentLane = 1; // 0=left, 1=center, 2=right
-    internal Vector3 targetPosition;
-    [SerializeField] internal bool isSwitchingLane;
-    internal int? bufferedLane; // null when no buffer
-    [SerializeField] internal float laneSwitchSpeed;
-    private float lastInputX; // for filtering held-key repeats
+    [SerializeField] public int currentLane = 1; // 0=left, 1=center, 2=right
+    [SerializeField] public Vector3 targetPosition;
+    [SerializeField] public bool isSwitchingLane;
+    public int? bufferedLane; // null when no buffer
+    [SerializeField] public float laneSwitchSpeed;
+    private float lastInputX; // for filtering held-key repeats (only when not switching)
     // ──────────────────────────────────────────────────────────────
 
     // ── Jump fields ───────────────────────────────────────────────
-    [SerializeField] internal bool isJumping;
-    internal float jumpStartY;
+    [SerializeField] public bool isJumping;
+    public float jumpStartY;
     private float jumpTimer;
     private float jumpDuration = 0.5f;
-    [SerializeField] internal bool isFastFalling;
+    [SerializeField] public bool isFastFalling;
     private float fastFallMultiplier = 2f;
     // ─────────────────────────────────────────────────────────────
 
@@ -78,13 +80,13 @@ public class PlayerController : IntEventInvoker
         animator.enabled = false;
     }
 
-    internal void Update()
+    public void Update()
     {
         UpdateLaneMovement(Time.deltaTime);
         if (isJumping) UpdateJump(Time.deltaTime);
     }
 
-    internal void UpdateLaneMovement(float deltaTime)
+    public void UpdateLaneMovement(float deltaTime)
     {
         if (!isSwitchingLane) return;
 
@@ -103,6 +105,8 @@ public class PlayerController : IntEventInvoker
             transform.position = new Vector3(targetPosition.x, pos.y, pos.z);
             isSwitchingLane = false;
             currentLane = GetLaneIndexForPosition(targetPosition);
+            // Reset lastInputX to allow new input in same direction
+            lastInputX = 0;
 
             if (bufferedLane.HasValue)
             {
@@ -118,7 +122,7 @@ public class PlayerController : IntEventInvoker
     /// Advances the jump arc each frame. Parabolic curve: 0 → peak → 0.
     /// When t >= 1.0, snaps Y to jumpStartY and clears isJumping.
     /// </summary>
-    internal void UpdateJump(float deltaTime)
+    public void UpdateJump(float deltaTime)
     {
         float rawT = jumpTimer / jumpDuration;
         bool inDescent = rawT > 0.5f;
@@ -144,7 +148,7 @@ public class PlayerController : IntEventInvoker
 
     // ── Lane system initialisation ────────────────────────────────
 
-    internal void InitializeLaneSystem()
+    public void InitializeLaneSystem()
     {
         currentLane = 1;
         laneSwitchSpeed = playerConfig != null
@@ -153,6 +157,7 @@ public class PlayerController : IntEventInvoker
         isSwitchingLane = false;
         bufferedLane = null;
         targetPosition = GetLaneTransform(currentLane).position;
+        lastInputX = 0;
     }
 
     // ── Input handler ─────────────────────────────────────────────
@@ -188,7 +193,7 @@ public class PlayerController : IntEventInvoker
     }
 
     /// <summary>
-    /// Internal jump gating logic. Returns true if the jump was initiated,
+    /// public jump gating logic. Returns true if the jump was initiated,
     /// false if already jumping. Testable without constructing InputAction.CallbackContext.
     /// </summary>
     public bool TryPerformJump()
@@ -211,20 +216,24 @@ public class PlayerController : IntEventInvoker
             return;
         }
 
-        // Ignore held-key repeats (same value as last processed)
-        if (Mathf.Approximately(x, lastInputX)) return;
-        lastInputX = x;
-
         int direction = x > 0 ? 1 : -1;
 
         if (!isSwitchingLane)
         {
+            // Ignore held-key repeats only when not switching
+            if (Mathf.Approximately(x, lastInputX)) return;
+            lastInputX = x;
+
             int targetLane = Mathf.Clamp(currentLane + direction, 0, 2);
             if (targetLane != currentLane)
                 StartLaneTransition(targetLane);
         }
         else
         {
+            // Allow input even if same as last (so we can buffer)
+            // But we don't update lastInputX here, it remains for next time we are not switching
+            // (we could update it, but it doesn't matter because we ignore it in else)
+
             // Determine which way we're currently moving
             float moveDir = targetPosition.x - transform.position.x;
             bool movingRight = moveDir > 0f;
@@ -232,28 +241,51 @@ public class PlayerController : IntEventInvoker
             if ((direction == 1 && !movingRight) || (direction == -1 && movingRight))
             {
                 // Opposite direction: cancel current transition, go back
-                StartLaneTransition(currentLane);
+                // Cancel smoothly by stopping current transition and snapping to current position
+                // Then move in the new direction
+                isSwitchingLane = false; // stop transition
+                // Snap to current position (but we want to stay at current X)
+                // Actually, we need to reset to current lane's position? No, keep current position.
+                // But currentLane hasn't changed yet, so we can just start a new transition from where we are.
+                // However, we should update currentLane to the lane we are actually closest to,
+                // to avoid weird snapping. Let's recalculate current lane based on current position.
+                int actualLane = GetLaneIndexForPosition(transform.position);
+                currentLane = actualLane;
+                // Now move in the new direction
+                int targetLane = Mathf.Clamp(currentLane + direction, 0, 2);
+                if (targetLane != currentLane)
+                    StartLaneTransition(targetLane);
+                else
+                {
+                    // If we are at the edge and trying to go further, do nothing
+                    // Reset lastInputX? Not needed because we are not switching
+                }
             }
             else
             {
                 // Same direction: buffer next lane (if there is one)
-                int targetLane = Mathf.Clamp(currentLane + direction, 0, 2);
-                if (targetLane != currentLane)
-                    bufferedLane = targetLane;
+                // Use targetLane (the one we are moving towards) as base
+                int nextLane = Mathf.Clamp(GetLaneIndexForPosition(targetPosition) + direction, 0, 2);
+                // But if we are already at the edge, nextLane might equal current target, so no change.
+                if (nextLane != GetLaneIndexForPosition(targetPosition))
+                {
+                    bufferedLane = nextLane;
+                }
+                // else, we are at edge and cannot buffer further, so ignore
             }
         }
     }
 
     // ── Helpers ───────────────────────────────────────────────────
 
-    internal void StartLaneTransition(int laneIndex)
+    public void StartLaneTransition(int laneIndex)
     {
         Vector3 lane = GetLaneTransform(laneIndex).position;
         targetPosition = new Vector3(lane.x, transform.position.y, transform.position.z);
         isSwitchingLane = true;
     }
 
-    internal Transform GetLaneTransform(int index) => index switch
+    public Transform GetLaneTransform(int index) => index switch
     {
         0 => leftPosition,
         1 => centerPosition,
@@ -261,7 +293,7 @@ public class PlayerController : IntEventInvoker
         _ => centerPosition
     };
 
-    internal int GetLaneIndexForPosition(Vector3 pos)
+    public int GetLaneIndexForPosition(Vector3 pos)
     {
         float d0 = Vector3.Distance(pos, leftPosition.position);
         float d1 = Vector3.Distance(pos, centerPosition.position);

@@ -3,18 +3,18 @@ using UnityEngine;
 
 public class InstanciadorDeFlores : MonoBehaviour
 {
-    [SerializeField] internal List<GameObject> listaDeFLoresParaInstanciar;
-    [SerializeField] internal List<Material> listaDeMaterialesParaLasFlores;
-    [SerializeField] internal PlayerController playerController;
-    [SerializeField] internal float escalar;
-    [SerializeField] internal int poolSize = 24;
+    [SerializeField] public List<GameObject> listaDeFLoresParaInstanciar;
+    [SerializeField] public List<Material> listaDeMaterialesParaLasFlores;
+    [SerializeField] public PlayerController playerController;
+    [SerializeField] public float escalar;
+    [SerializeField] public int poolSize = 24;
     [SerializeField] internal int spawnCount = 6;
     [SerializeField] internal int groups = 3;
     [SerializeField] internal float groupSpacing = 100f;
-    [SerializeField] internal float spawnZ = 200f;
+    [SerializeField] public float spawnZ = 200f;
     [SerializeField] internal float spawnZSpread = 30f;
     [SerializeField] internal float recycleZ = -50f;
-    [SerializeField] internal float spawnY = 0f;
+    [SerializeField] public float spawnY = 0f;
 
     private Queue<GameObject> flowerPool;
     private bool initialized;
@@ -63,7 +63,7 @@ public class InstanciadorDeFlores : MonoBehaviour
     /// <summary>
     /// Spawns flowers from the pool at lane positions with Z = spawnZ.
     /// </summary>
-    internal void SpawnFlowers(int count = 4)
+    public void SpawnFlowers(int count = 4)
     {
         if (!initialized) return;
         if (playerController == null)

@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class ObstacleSpawner : MonoBehaviour
 {
-    [SerializeField] internal EnvironmentMovement environmentMovement;
-    [SerializeField] internal PlayerController playerController;
+    [SerializeField] public EnvironmentMovement environmentMovement;
+    [SerializeField] public PlayerController playerController;
     [SerializeField] private List<GameObject> obstaclesPrefabs = new List<GameObject>();
 
     private int poolObjectsInstances = 10;
     private float spawnSecondsMin = 2f;
     private float spawnSecondsMax = 3f;
     private List<ObstaclePool> obstacles = new List<ObstaclePool>();
-    internal class ObstaclePool
+
+    public class ObstaclePool
     {
         public List<GameObject> objectPool;
         private ObstacleSpawner obstacleSpawner;
@@ -80,7 +81,7 @@ public class ObstacleSpawner : MonoBehaviour
         }
     }
 
-    internal void SpawnObstacles(ObstaclePool obstacle)
+    public void SpawnObstacles(ObstaclePool obstacle)
     {
         if (playerController == null)
             playerController = FindObjectOfType<PlayerController>();
