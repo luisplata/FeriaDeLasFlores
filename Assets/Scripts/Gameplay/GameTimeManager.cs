@@ -8,7 +8,10 @@ public class GameTimeManager : MonoBehaviour
     private void Start()
     {
         initialFloorMovementSpeed = ConfigurationUtils.FloorMovementSpeed;
-        gameTimer = gameObject.AddComponent<GameTimer>();
+        if(gameTimer == null)
+        {
+            gameTimer = gameObject.AddComponent<GameTimer>();
+        }
         gameTimer.Run();
     }
 

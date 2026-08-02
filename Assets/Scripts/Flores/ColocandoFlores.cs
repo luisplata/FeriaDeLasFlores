@@ -20,7 +20,7 @@ public class ColocandoFlores : MonoBehaviour
             List<GameObject> lista = new List<GameObject>();
             foreach(GameObject florEncontrada in GameObject.FindGameObjectsWithTag(tagFlor))
             {
-                florEncontrada.GetComponent<MeshRenderer>().enabled = false;
+                // florEncontrada.GetComponent<MeshRenderer>().enabled = false;
                 lista.Add(florEncontrada);
                 totalFlowers++;
             }
@@ -32,7 +32,9 @@ public class ColocandoFlores : MonoBehaviour
 
     public void ColocarFlor(string tagDeLaFlor)
     {
-        listasDeFlores.TryGetValue(tagDeLaFlor, out List<GameObject> listaRecuperada);
+        if (listasDeFlores == null) return;
+        if (!listasDeFlores.TryGetValue(tagDeLaFlor, out List<GameObject> listaRecuperada))
+            return;
         if (RevisarSiPuedoColocarUnaNuevaFlorDeEseTag(listaRecuperada))
         {
             int posicionParaTomar = 0;

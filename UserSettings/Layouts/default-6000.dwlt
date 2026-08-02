@@ -19,38 +19,12 @@ MonoBehaviour:
     width: 1920
     height: 997
   m_ShowMode: 4
-  m_Title: Scene
-  m_RootView: {fileID: 3}
+  m_Title: Inspector
+  m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
   m_Maximized: 1
 --- !u!114 &2
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: SimulatorWindow
-  m_EditorClassIdentifier: UnityEditor.dll::UnityEditor.DockArea
-  m_Children: []
-  m_Position:
-    serializedVersion: 2
-    x: 1093
-    y: 0
-    width: 316
-    height: 342
-  m_MinSize: {x: 202, y: 226}
-  m_MaxSize: {x: 4002, y: 4026}
-  m_ActualView: {fileID: 23}
-  m_Panes:
-  - {fileID: 23}
-  m_Selected: 0
-  m_LastSelected: 0
---- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -63,9 +37,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Children:
-  - {fileID: 4}
-  - {fileID: 6}
+  - {fileID: 3}
   - {fileID: 5}
+  - {fileID: 4}
   m_Position:
     serializedVersion: 2
     x: 0
@@ -78,7 +52,7 @@ MonoBehaviour:
   m_TopViewHeight: 36
   m_UseBottomView: 1
   m_BottomViewHeight: 20
---- !u!114 &4
+--- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -99,8 +73,8 @@ MonoBehaviour:
     height: 36
   m_MinSize: {x: 50, y: 50}
   m_MaxSize: {x: 4000, y: 4000}
-  m_ActualView: {fileID: 15}
---- !u!114 &5
+  m_ActualView: {fileID: 16}
+--- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -121,6 +95,33 @@ MonoBehaviour:
     height: 20
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
+--- !u!114 &5
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children:
+  - {fileID: 6}
+  - {fileID: 13}
+  - {fileID: 14}
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 36
+    width: 1920
+    height: 941
+  m_MinSize: {x: 400, y: 112}
+  m_MaxSize: {x: 32384, y: 16192}
+  vertical: 0
+  controlID: 31051
+  draggingID: 0
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -135,17 +136,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Children:
   - {fileID: 7}
-  - {fileID: 14}
+  - {fileID: 10}
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 36
-    width: 1920
+    y: 0
+    width: 974
     height: 941
-  m_MinSize: {x: 400, y: 112}
-  m_MaxSize: {x: 32384, y: 16192}
-  vertical: 0
-  controlID: 48
+  m_MinSize: {x: 200, y: 112}
+  m_MaxSize: {x: 16192, y: 16192}
+  vertical: 1
+  controlID: 31097
   draggingID: 0
 --- !u!114 &7
 MonoBehaviour:
@@ -161,45 +162,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Children:
   - {fileID: 8}
-  - {fileID: 11}
-  m_Position:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1409
-    height: 941
-  m_MinSize: {x: 300, y: 112}
-  m_MaxSize: {x: 24288, y: 16192}
-  vertical: 1
-  controlID: 49
-  draggingID: 0
---- !u!114 &8
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 1
-  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Children:
   - {fileID: 9}
-  - {fileID: 10}
   m_Position:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1409
-    height: 599
+    width: 974
+    height: 340
   m_MinSize: {x: 200, y: 56}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 50
+  controlID: 31098
   draggingID: 0
---- !u!114 &9
+--- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -216,16 +191,16 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 339
-    height: 599
-  m_MinSize: {x: 201, y: 226}
-  m_MaxSize: {x: 4001, y: 4026}
-  m_ActualView: {fileID: 16}
+    width: 247
+    height: 340
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 17}
   m_Panes:
-  - {fileID: 16}
+  - {fileID: 17}
   m_Selected: 0
   m_LastSelected: 0
---- !u!114 &10
+--- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -240,18 +215,18 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 339
+    x: 247
     y: 0
-    width: 1070
-    height: 599
+    width: 727
+    height: 340
   m_MinSize: {x: 202, y: 226}
   m_MaxSize: {x: 4002, y: 4026}
-  m_ActualView: {fileID: 17}
+  m_ActualView: {fileID: 18}
   m_Panes:
-  - {fileID: 17}
+  - {fileID: 18}
   m_Selected: 0
   m_LastSelected: 0
---- !u!114 &11
+--- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -264,21 +239,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Children:
+  - {fileID: 11}
   - {fileID: 12}
-  - {fileID: 13}
-  - {fileID: 2}
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 599
-    width: 1409
-    height: 342
-  m_MinSize: {x: 300, y: 56}
-  m_MaxSize: {x: 24288, y: 8096}
+    y: 340
+    width: 974
+    height: 601
+  m_MinSize: {x: 200, y: 56}
+  m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 61
+  controlID: 31162
   draggingID: 0
---- !u!114 &12
+--- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -295,16 +269,16 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 939
-    height: 342
+    width: 536
+    height: 601
   m_MinSize: {x: 231, y: 276}
   m_MaxSize: {x: 10001, y: 10026}
-  m_ActualView: {fileID: 18}
+  m_ActualView: {fileID: 19}
   m_Panes:
-  - {fileID: 18}
+  - {fileID: 19}
   m_Selected: 0
   m_LastSelected: 0
---- !u!114 &13
+--- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -319,19 +293,45 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 939
+    x: 536
     y: 0
-    width: 154
-    height: 342
+    width: 438
+    height: 601
   m_MinSize: {x: 102, y: 126}
   m_MaxSize: {x: 4002, y: 4026}
-  m_ActualView: {fileID: 19}
+  m_ActualView: {fileID: 20}
   m_Panes:
-  - {fileID: 19}
   - {fileID: 20}
   - {fileID: 21}
+  - {fileID: 22}
   m_Selected: 0
-  m_LastSelected: 2
+  m_LastSelected: 1
+--- !u!114 &13
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: SimulatorWindow
+  m_EditorClassIdentifier: UnityEditor.dll::UnityEditor.DockArea
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 974
+    y: 0
+    width: 508
+    height: 941
+  m_MinSize: {x: 202, y: 226}
+  m_MaxSize: {x: 4002, y: 4026}
+  m_ActualView: {fileID: 15}
+  m_Panes:
+  - {fileID: 15}
+  m_Selected: 0
+  m_LastSelected: 0
 --- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -347,18 +347,95 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 1409
+    x: 1482
     y: 0
-    width: 511
+    width: 438
     height: 941
   m_MinSize: {x: 276, y: 76}
   m_MaxSize: {x: 4001, y: 4026}
-  m_ActualView: {fileID: 22}
+  m_ActualView: {fileID: 23}
   m_Panes:
-  - {fileID: 22}
+  - {fileID: 23}
+  - {fileID: 24}
   m_Selected: 0
   m_LastSelected: 1
 --- !u!114 &15
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 13974, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEditor.dll::UnityEditor.DeviceSimulation.SimulatorWindow
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Simulator
+    m_Image: {fileID: 8720083202187608617, guid: 0000000000000000d000000000000000,
+      type: 0}
+    m_Tooltip: 
+    m_TextWithWhitespace: "Simulator\u200B"
+  m_Pos:
+    serializedVersion: 2
+    x: 974
+    y: 79
+    width: 506
+    height: 915
+  m_SerializedDataModeController:
+    m_DataMode: 0
+    m_PreferredDataMode: 0
+    m_SupportedDataModes: 
+    isAutomatic: 1
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+    m_ContainerData: []
+    m_DynamicPanelContainerData: []
+    m_OverlaysVisible: 1
+    m_DynamicPanelBehavior: 0
+  m_SerializedViewNames:
+  - UnityEditor.GameView
+  m_SerializedViewValues:
+  - D:\Unity\FeriaDeLasFlores\Library\PlayModeViewStates\4da56f82162d8d246bfa74a2cc4da69e
+  m_PlayModeViewName: Device Simulator
+  m_ShowGizmos: 0
+  m_TargetDisplay: 0
+  m_ClearColor: {r: 0, g: 0, b: 0, a: 1}
+  m_TargetSize: {x: 1080, y: 2280}
+  m_TextureFilterMode: 0
+  m_TextureHideFlags: 61
+  m_RenderIMGUI: 1
+  m_EnterPlayModeBehavior: 2
+  m_UseMipMap: 0
+  m_SimulatorState:
+    controlPanelVisible: 0
+    controlPanelWidth: 0
+    controlPanelFoldoutKeys:
+    - UnityEditor.AdaptivePerformance.Editor.AdaptivePerformanceUIExtension
+    - UnityEditor.DeviceSimulation.ApplicationSettingsPlugin
+    controlPanelFoldoutValues: 0000
+    pluginNames:
+    - UnityEditor.AdaptivePerformance.Editor.AdaptivePerformanceUIExtension
+    - UnityEditor.DeviceSimulation.ApplicationSettingsPlugin
+    - UnityEngine.InputSystem.Editor.InputSystemPlugin
+    pluginStates:
+    - '{"m_SerializationStates":{"thermalFoldout":false,"performanceFoldout":false,"developerFoldout":false,"indexerFoldout":false,"scalersFoldout":false,"deviceSettingsFoldout":false}}'
+    - '{}'
+    - '{}'
+    scale: 37
+    fitToScreenEnabled: 1
+    rotationDegree: 0
+    highlightSafeAreaEnabled: 0
+    friendlyName: Samsung Galaxy S10e
+    screenIndex: 0
+    networkReachability: 1
+    systemLanguage: 10
+--- !u!114 &16
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -464,7 +541,7 @@ MonoBehaviour:
       sizeOverridden: 0
     - dockPosition: 0
       containerId: overlay-toolbar__top
-      displayed: 0
+      displayed: 1
       id: Services/AI
       index: 5
       contents: '{"m_Layout":4,"m_Collapsed":false,"m_Folded":false,"m_Floating":false,"m_FloatingSnapOffset":{"x":0.0,"y":0.0},"m_SnapOffsetDelta":{"x":0.0,"y":0.0},"m_FloatingSnapCorner":0,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
@@ -602,15 +679,29 @@ MonoBehaviour:
       layout: 4
       size: {x: 0, y: 0}
       sizeOverridden: 0
+    - dockPosition: 1
+      containerId: overlay-toolbar__top
+      displayed: 0
+      id: Services/Environment
+      index: 8
+      contents: '{"m_Layout":4,"m_Collapsed":false,"m_Folded":false,"m_Floating":false,"m_FloatingSnapOffset":{"x":0.0,"y":0.0},"m_SnapOffsetDelta":{"x":0.0,"y":0.0},"m_FloatingSnapCorner":0,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
+      floating: 0
+      collapsed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverridden: 0
     - dockPosition: 2
       containerId: overlay-toolbar__top
       displayed: 1
       id: Play Mode Controls
       index: 0
-      contents: '{"m_Layout":4,"m_Collapsed":false,"m_Folded":false,"m_Floating":false,"m_FloatingSnapOffset":{"x":0.0,"y":0.0},"m_SnapOffsetDelta":{"x":0.0,"y":0.0},"m_FloatingSnapCorner":0,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
+      contents: '{"m_Layout":4,"m_Collapsed":false,"m_Folded":false,"m_Floating":false,"m_FloatingSnapOffset":{"x":48.0,"y":0.0},"m_SnapOffsetDelta":{"x":0.0,"y":0.0},"m_FloatingSnapCorner":0,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
       floating: 0
       collapsed: 0
-      snapOffset: {x: 0, y: 0}
+      snapOffset: {x: 48, y: 0}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       layout: 4
@@ -624,7 +715,7 @@ MonoBehaviour:
     m_DynamicPanelContainerData: []
     m_OverlaysVisible: 1
     m_DynamicPanelBehavior: 0
---- !u!114 &16
+--- !u!114 &17
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -648,8 +739,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 79
-    width: 338
-    height: 573
+    width: 246
+    height: 314
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -666,11 +757,43 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: []
+      m_SelectedIDs:
+      - m_Data: 52376
       m_LastClickedID:
         m_Data: 0
       m_ExpandedIDs:
-      - m_Data: -1286
+      - m_Data: -229716
+      - m_Data: -229572
+      - m_Data: -229294
+      - m_Data: -229266
+      - m_Data: -225696
+      - m_Data: -225560
+      - m_Data: -224482
+      - m_Data: -224338
+      - m_Data: -223988
+      - m_Data: -223948
+      - m_Data: -220366
+      - m_Data: -220218
+      - m_Data: -204880
+      - m_Data: -196806
+      - m_Data: -195812
+      - m_Data: -195668
+      - m_Data: -195330
+      - m_Data: -195302
+      - m_Data: -191732
+      - m_Data: -191596
+      - m_Data: -153684
+      - m_Data: -152806
+      - m_Data: -149782
+      - m_Data: -149370
+      - m_Data: -148636
+      - m_Data: -147956
+      - m_Data: -96480
+      - m_Data: -85114
+      - m_Data: -72062
+      - m_Data: -51130
+      - m_Data: -20364
+      - m_Data: -1292
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -688,7 +811,7 @@ MonoBehaviour:
         m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_TrimLeadingAndTrailingWhitespace: 0
-        m_ClientGUIView: {fileID: 9}
+        m_ClientGUIView: {fileID: 8}
       m_SearchString: 
     m_ExpandedScenes: []
     m_CurrenRootInstanceID: 0
@@ -696,7 +819,7 @@ MonoBehaviour:
       m_IsLocked: 0
     m_CurrentSortingName: TransformSorting
   m_WindowGUID: 4c969a2b90040154d917609493e03593
---- !u!114 &17
+--- !u!114 &18
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -718,10 +841,10 @@ MonoBehaviour:
     m_TextWithWhitespace: "Scene\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 339
+    x: 247
     y: 79
-    width: 1068
-    height: 573
+    width: 725
+    height: 314
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1326,7 +1449,7 @@ MonoBehaviour:
   m_WindowGUID: cc27987af1a868c49b0894db9c0f5429
   m_Gizmos: 1
   m_OverrideSceneCullingMask: 6917529027641081856
-  m_SceneIsLit: 0
+  m_SceneIsLit: 1
   m_SceneLighting: 1
   m_2DMode: 0
   m_isRotationLocked: 0
@@ -1334,9 +1457,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: -3.5295486, y: 3.7104068, z: -17.81633}
+    m_Target: {x: -5.0364795, y: 9.50784, z: 1.0405383}
     speed: 2
-    m_Value: {x: -4.1271563, y: -40.152725, z: 43.118553}
+    m_Value: {x: -5.0364795, y: 9.50784, z: 1.0405383}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1382,13 +1505,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.23431371, y: -0.44876426, z: 0.12332936, w: -0.85388297}
+    m_Target: {x: -0.24072166, y: -0.5040064, z: 0.14863984, w: -0.81613225}
     speed: 2
-    m_Value: {x: -0.46785328, y: 0.024459895, z: -0.01277223, w: -0.8837141}
+    m_Value: {x: -0.24070542, y: -0.5039724, z: 0.14862981, w: -0.8160772}
   m_Size:
-    m_Target: 0.9031639
+    m_Target: 1.776279
     speed: 2
-    m_Value: 67.314384
+    m_Value: 1.776279
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -1406,10 +1529,10 @@ MonoBehaviour:
     m_FarClip: 10000
     m_DynamicClip: 1
     m_OcclusionCulling: 0
-  m_LastSceneViewRotation: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
+  m_LastSceneViewRotation: {x: -0.20844562, y: 0.17091663, z: -0.037045363, w: -0.9623408}
   m_LastSceneViewOrtho: 0
   m_Viewpoint:
-    m_SceneView: {fileID: 17}
+    m_SceneView: {fileID: 18}
     m_CameraOverscanSettings:
       m_Opacity: 50
       m_Scale: 1
@@ -1422,7 +1545,7 @@ MonoBehaviour:
     name: Contributors / Receivers
     section: Lighting
   m_ViewIsLockedToObject: 0
---- !u!114 &18
+--- !u!114 &19
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1445,9 +1568,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 678
-    width: 938
-    height: 316
+    y: 419
+    width: 535
+    height: 575
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1480,26 +1603,30 @@ MonoBehaviour:
     m_ImportLogFlags: 0
     m_FilterByTypeIntersection: 0
   m_ViewMode: 1
-  m_StartGridSize: 58
+  m_StartGridSize: 16
   m_LastFolders:
   - Assets/Prefabs
-  m_LastFoldersGridSize: 58
-  m_LastProjectPath: G:\Git\test\FeriaDeLasFlores
+  m_LastFoldersGridSize: 16
+  m_LastProjectPath: D:\Unity\FeriaDeLasFlores
   m_LockTracker:
     m_IsLocked: 0
   m_LastLocalAssetsSearchArea: 1
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 76}
+    scrollPos: {x: 0, y: 47}
     m_SelectedIDs:
-    - m_Data: 35046
+    - m_Data: 50766
     m_LastClickedID:
-      m_Data: 35046
+      m_Data: 50766
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 34902
-    - m_Data: 34904
-    - m_Data: 34906
-    - m_Data: 35044
+    - m_Data: 50754
+    - m_Data: 50756
+    - m_Data: 50758
+    - m_Data: 50760
+    - m_Data: 50762
+    - m_Data: 50764
+    - m_Data: 50766
+    - m_Data: 50906
     - m_Data: 1000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1518,7 +1645,7 @@ MonoBehaviour:
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_TrimLeadingAndTrailingWhitespace: 0
-      m_ClientGUIView: {fileID: 12}
+      m_ClientGUIView: {fileID: 11}
     m_SearchString: 
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
@@ -1533,9 +1660,15 @@ MonoBehaviour:
       m_Data: 0
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 34902
-    - m_Data: 34904
-    - m_Data: 34906
+    - m_Data: 50754
+    - m_Data: 50758
+    - m_Data: 50760
+    - m_Data: 50762
+    - m_Data: 50764
+    - m_Data: 50766
+    - m_Data: 50888
+    - m_Data: 50906
+    - m_Data: 1000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1562,16 +1695,18 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: []
-    m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_SelectedInstanceIDs:
+    - m_Data: 52376
+    m_LastClickedInstanceID: 52376
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs:
     - m_Data: 60754
     - m_Data: 125512
+    - m_Data: 26712
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: CalibrateEnvironment
+      m_OriginalName: CalibrateEnvironment
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
@@ -1579,13 +1714,13 @@ MonoBehaviour:
         width: 0
         height: 0
       m_UserData:
-        m_Data: 0
+        m_Data: 52378
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 4
       m_IsRenamingFilename: 1
       m_TrimLeadingAndTrailingWhitespace: 0
-      m_ClientGUIView: {fileID: 12}
+      m_ClientGUIView: {fileID: 11}
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -1594,10 +1729,10 @@ MonoBehaviour:
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
     m_ScrollPosition: {x: 0, y: 0}
-    m_GridSize: 58
+    m_GridSize: 16
   m_SkipHiddenPackages: 0
-  m_DirectoriesAreaWidth: 207
---- !u!114 &19
+  m_DirectoriesAreaWidth: 209
+--- !u!114 &20
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1619,10 +1754,10 @@ MonoBehaviour:
     m_TextWithWhitespace: "Console\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 939
-    y: 678
-    width: 152
-    height: 316
+    x: 536
+    y: 419
+    width: 436
+    height: 575
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1636,7 +1771,7 @@ MonoBehaviour:
     m_DynamicPanelContainerData: []
     m_OverlaysVisible: 1
     m_DynamicPanelBehavior: 0
---- !u!114 &20
+--- !u!114 &21
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1658,10 +1793,10 @@ MonoBehaviour:
     m_TextWithWhitespace: "Animation\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 485
-    y: 711
-    width: 888
-    height: 283
+    x: 447
+    y: 419
+    width: 814
+    height: 575
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1678,7 +1813,7 @@ MonoBehaviour:
   m_LockTracker:
     m_IsLocked: 0
   m_LastSelectedObjectID: 0
---- !u!114 &21
+--- !u!114 &22
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1700,10 +1835,10 @@ MonoBehaviour:
     m_TextWithWhitespace: "Animator\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 500
-    y: 711
-    width: 908
-    height: 283
+    x: 387
+    y: 419
+    width: 706
+    height: 575
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1720,15 +1855,32 @@ MonoBehaviour:
   m_ViewTransforms:
     m_KeySerializationHelper:
     - {fileID: -4314266446018032208, guid: 53232408f2aa443438015192c87b8d59, type: 2}
+    - {fileID: -6104786452265684374, guid: dff87740847be7c41b1f104dacdb019f, type: 2}
     m_ValueSerializationHelper:
     - e00: 1
       e01: 0
       e02: 0
-      e03: 0
+      e03: -9
       e10: 0
       e11: 1
       e12: 0
-      e13: 0
+      e13: 168
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 0.5494737
+      e01: 0
+      e02: 0
+      e03: -12.473694
+      e10: 0
+      e11: 0.5494737
+      e12: 0
+      e13: 185.57895
       e20: 0
       e21: 0
       e22: 1
@@ -1755,7 +1907,7 @@ MonoBehaviour:
   m_CurrentEditor: 0
   m_LayerEditor:
     m_SelectedLayerIndex: 0
---- !u!114 &22
+--- !u!114 &23
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1777,9 +1929,9 @@ MonoBehaviour:
     m_TextWithWhitespace: "Inspector\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 1409
+    x: 1482
     y: 79
-    width: 510
+    width: 437
     height: 915
   m_SerializedDataModeController:
     m_DataMode: 0
@@ -1807,7 +1959,7 @@ MonoBehaviour:
   m_LockTracker:
     m_IsLocked: 0
   m_PreviewWindow: {fileID: 0}
---- !u!114 &23
+--- !u!114 &24
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1816,23 +1968,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 13974, guid: 0000000000000000e000000000000000, type: 0}
+  m_Script: {fileID: 13401, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
-  m_EditorClassIdentifier: 
-  m_MinSize: {x: 200, y: 200}
+  m_EditorClassIdentifier: UnityEditor.TestRunner.dll::UnityEditor.TestTools.TestRunner.TestRunnerWindow
+  m_MinSize: {x: 50, y: 50}
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
-    m_Text: Simulator
-    m_Image: {fileID: 8720083202187608617, guid: 0000000000000000d000000000000000,
-      type: 0}
-    m_Tooltip: 
-    m_TextWithWhitespace: "Simulator\u200B"
+    m_Text: Test Runner
+    m_Image: {fileID: 0}
+    m_Tooltip: Test framework for running Edit mode and Play mode tests in Unity.
+      Part of the com.unity.test-framework package.
+    m_TextWithWhitespace: "Test Runner\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 1093
-    y: 678
-    width: 314
-    height: 316
+    x: 1483
+    y: 79
+    width: 436
+    height: 915
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1846,40 +1998,1277 @@ MonoBehaviour:
     m_DynamicPanelContainerData: []
     m_OverlaysVisible: 1
     m_DynamicPanelBehavior: 0
-  m_SerializedViewNames:
-  - UnityEditor.GameView
-  m_SerializedViewValues:
-  - D:\Unity\FeriaDeLasFlores\Library\PlayModeViewStates\6617732f1ba3822418ecb2c18e0eeff7
-  m_PlayModeViewName: Device Simulator
-  m_ShowGizmos: 0
-  m_TargetDisplay: 0
-  m_ClearColor: {r: 0, g: 0, b: 0, a: 1}
-  m_TargetSize: {x: 1170, y: 2532}
-  m_TextureFilterMode: 0
-  m_TextureHideFlags: 61
-  m_RenderIMGUI: 1
-  m_EnterPlayModeBehavior: 2
-  m_UseMipMap: 0
-  m_SimulatorState:
-    controlPanelVisible: 0
-    controlPanelWidth: 0
-    controlPanelFoldoutKeys:
-    - UnityEditor.AdaptivePerformance.Editor.AdaptivePerformanceUIExtension
-    - UnityEditor.DeviceSimulation.ApplicationSettingsPlugin
-    controlPanelFoldoutValues: 0000
-    pluginNames:
-    - UnityEditor.AdaptivePerformance.Editor.AdaptivePerformanceUIExtension
-    - UnityEditor.DeviceSimulation.ApplicationSettingsPlugin
-    - UnityEngine.InputSystem.Editor.InputSystemPlugin
-    pluginStates:
-    - '{"m_SerializationStates":{"thermalFoldout":false,"performanceFoldout":false,"developerFoldout":false,"indexerFoldout":false,"scalersFoldout":false,"deviceSettingsFoldout":false}}'
-    - '{}'
-    - '{}'
-    scale: 11
-    fitToScreenEnabled: 1
-    rotationDegree: 0
-    highlightSafeAreaEnabled: 0
-    friendlyName: Apple iPhone 12
-    screenIndex: 0
-    networkReachability: 1
-    systemLanguage: 10
+  m_Spl:
+    ID: 33750
+    splitterInitialOffset: 0
+    currentActiveSplitter: -1
+    realSizes:
+    - 634
+    - 211
+    relativeSizes:
+    - 0.75
+    - 0.25
+    minSizes:
+    - 32
+    - 32
+    maxSizes:
+    - 0
+    - 0
+    lastTotalSize: 845
+    splitSize: 6
+    xOffset: 0
+    m_Version: 1
+    oldRealSizes: 
+    oldMinSizes: 
+    oldMaxSizes: 
+    oldSplitSize: 0
+  m_TestTypeToolbarIndex: 0
+  m_TestListGUIs:
+  - m_Window: {fileID: 24}
+    runProgress:
+      RunGuid: b180d362-eff6-4d1e-99c3-91727e9a3c5f
+      ExecutionSettings:
+        m_TargetPlatform: 0
+        m_HasTargetPlatform: 0
+        filter:
+          testMode: 0
+          testNames: []
+          groupNames: []
+          categoryNames: []
+          assemblyNames: []
+        filters:
+        - testMode: 2
+          testNames: []
+          groupNames: []
+          categoryNames: []
+          assemblyNames: []
+        runSynchronously: 0
+        playerHeartbeatTimeout: 600
+        orderedTestNames: []
+        ignoreTests: []
+        featureFlags:
+          fileCleanUpCheck: 0
+          requiresSplashScreen: 0
+          strictDomainReload: 0
+          disableNestedEnumeratorBugfix: 0
+        randomOrderSeed: 0
+      HasFinished: 1
+      Progress: 0.9999999
+      CurrentStepName: Unlock Reload Assemblies
+      CurrentStageName: 
+    m_NewResultList:
+    - id: 1003
+      uniqueId: '[Feriadeflores][suite]'
+      name: Feriadeflores
+      fullName: Feriadeflores
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 
+      parentUniqueId: 
+    - id: 1063
+      uniqueId: '[Feria.Tests.EditMode][D:/Unity/FeriaDeLasFlores/Library/ScriptAssemblies/Feria.Tests.EditMode.dll][suite]'
+      name: Feria.Tests.EditMode.dll
+      fullName: D:/Unity/FeriaDeLasFlores/Library/ScriptAssemblies/Feria.Tests.EditMode.dll
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1003
+      parentUniqueId: '[Feriadeflores][suite]'
+    - id: 1004
+      uniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][ConfigDataTests][suite]'
+      name: ConfigDataTests
+      fullName: ConfigDataTests
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1063
+      parentUniqueId: '[Feria.Tests.EditMode][D:/Unity/FeriaDeLasFlores/Library/ScriptAssemblies/Feria.Tests.EditMode.dll][suite]'
+    - id: 1007
+      uniqueId: 'Feria.Tests.EditMode.dll/ConfigDataTests/[Feria.Tests.EditMode][ConfigDataTests.PlayerLaneSwitchSpeedAccessorReturnsPositiveValue]'
+      name: PlayerLaneSwitchSpeedAccessorReturnsPositiveValue
+      fullName: ConfigDataTests.PlayerLaneSwitchSpeedAccessorReturnsPositiveValue
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1004
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][ConfigDataTests][suite]'
+    - id: 1006
+      uniqueId: 'Feria.Tests.EditMode.dll/ConfigDataTests/[Feria.Tests.EditMode][ConfigDataTests.PlayerLaneSwitchSpeedDefaultIsFive]'
+      name: PlayerLaneSwitchSpeedDefaultIsFive
+      fullName: ConfigDataTests.PlayerLaneSwitchSpeedDefaultIsFive
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1004
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][ConfigDataTests][suite]'
+    - id: 1005
+      uniqueId: 'Feria.Tests.EditMode.dll/ConfigDataTests/[Feria.Tests.EditMode][ConfigDataTests.PlayerLaneSwitchSpeedEnumValueExists]'
+      name: PlayerLaneSwitchSpeedEnumValueExists
+      fullName: ConfigDataTests.PlayerLaneSwitchSpeedEnumValueExists
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1004
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][ConfigDataTests][suite]'
+    - id: 1008
+      uniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+      name: PlayerControllerTests
+      fullName: PlayerControllerTests
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1063
+      parentUniqueId: '[Feria.Tests.EditMode][D:/Unity/FeriaDeLasFlores/Library/ScriptAssemblies/Feria.Tests.EditMode.dll][suite]'
+    - id: 1027
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.BufferedInputFiresAfterSnap]'
+      name: BufferedInputFiresAfterSnap
+      fullName: PlayerControllerTests.BufferedInputFiresAfterSnap
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1035
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.BufferedInputFiresAfterTransition]'
+      name: BufferedInputFiresAfterTransition
+      fullName: PlayerControllerTests.BufferedInputFiresAfterTransition
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1026
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.BufferIsNullWhenNoInputDuringTransition]'
+      name: BufferIsNullWhenNoInputDuringTransition
+      fullName: PlayerControllerTests.BufferIsNullWhenNoInputDuringTransition
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1021
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.DoesNotSnapWhenOutsideTolerance]'
+      name: DoesNotSnapWhenOutsideTolerance
+      fullName: PlayerControllerTests.DoesNotSnapWhenOutsideTolerance
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1047
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.FastFallAcceleratesDescent]'
+      name: FastFallAcceleratesDescent
+      fullName: PlayerControllerTests.FastFallAcceleratesDescent
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1048
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.FastFallClearedMidDescentRestoresNormalSpeed]'
+      name: FastFallClearedMidDescentRestoresNormalSpeed
+      fullName: PlayerControllerTests.FastFallClearedMidDescentRestoresNormalSpeed
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1049
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.FastFallIgnoredDuringAscent]'
+      name: FastFallIgnoredDuringAscent
+      fullName: PlayerControllerTests.FastFallIgnoredDuringAscent
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1050
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.FastFallMultiplierAdvancesTimerFaster]'
+      name: FastFallMultiplierAdvancesTimerFaster
+      fullName: PlayerControllerTests.FastFallMultiplierAdvancesTimerFaster
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1034
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.FullTransitionCenterToRight]'
+      name: FullTransitionCenterToRight
+      fullName: PlayerControllerTests.FullTransitionCenterToRight
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1033
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.FullTransitionCompletesToCorrectLane]'
+      name: FullTransitionCompletesToCorrectLane
+      fullName: PlayerControllerTests.FullTransitionCompletesToCorrectLane
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1032
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.GetLaneIndexForPositionMidpoint]'
+      name: GetLaneIndexForPositionMidpoint
+      fullName: PlayerControllerTests.GetLaneIndexForPositionMidpoint
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1031
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.GetLaneIndexForPositionReturnsClosestLane]'
+      name: GetLaneIndexForPositionReturnsClosestLane
+      fullName: PlayerControllerTests.GetLaneIndexForPositionReturnsClosestLane
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1030
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.GetLaneTransformInvalidIndexReturnsCenter]'
+      name: GetLaneTransformInvalidIndexReturnsCenter
+      fullName: PlayerControllerTests.GetLaneTransformInvalidIndexReturnsCenter
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1029
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.GetLaneTransformReturnsCorrectTransform]'
+      name: GetLaneTransformReturnsCorrectTransform
+      fullName: PlayerControllerTests.GetLaneTransformReturnsCorrectTransform
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1010
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.InitialIsNotSwitchingLane]'
+      name: InitialIsNotSwitchingLane
+      fullName: PlayerControllerTests.InitialIsNotSwitchingLane
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1009
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.InitialLaneIsCenter]'
+      name: InitialLaneIsCenter
+      fullName: PlayerControllerTests.InitialLaneIsCenter
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1012
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.InitialTargetPositionIsCenter]'
+      name: InitialTargetPositionIsCenter
+      fullName: PlayerControllerTests.InitialTargetPositionIsCenter
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1023
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.InputDuringTransitionIsBuffered]'
+      name: InputDuringTransitionIsBuffered
+      fullName: PlayerControllerTests.InputDuringTransitionIsBuffered
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1040
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.JumpAllowedAfterLanding]'
+      name: JumpAllowedAfterLanding
+      fullName: PlayerControllerTests.JumpAllowedAfterLanding
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1043
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.JumpArcClampsTGreaterThanOne]'
+      name: JumpArcClampsTGreaterThanOne
+      fullName: PlayerControllerTests.JumpArcClampsTGreaterThanOne
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1041
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.JumpArcPeaksAtMidpoint]'
+      name: JumpArcPeaksAtMidpoint
+      fullName: PlayerControllerTests.JumpArcPeaksAtMidpoint
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1044
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.JumpArcSmallDeltaTimeProducesSmallOffset]'
+      name: JumpArcSmallDeltaTimeProducesSmallOffset
+      fullName: PlayerControllerTests.JumpArcSmallDeltaTimeProducesSmallOffset
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1045
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.JumpDuringLaneTransitionPreservesY]'
+      name: JumpDuringLaneTransitionPreservesY
+      fullName: PlayerControllerTests.JumpDuringLaneTransitionPreservesY
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1038
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.JumpFiresOnPerformedWhenNotJumping]'
+      name: JumpFiresOnPerformedWhenNotJumping
+      fullName: PlayerControllerTests.JumpFiresOnPerformedWhenNotJumping
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1039
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.JumpIgnoredWhenAlreadyJumping]'
+      name: JumpIgnoredWhenAlreadyJumping
+      fullName: PlayerControllerTests.JumpIgnoredWhenAlreadyJumping
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1042
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.JumpLandsAtStartY]'
+      name: JumpLandsAtStartY
+      fullName: PlayerControllerTests.JumpLandsAtStartY
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1051
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.LandingWorksWithFastFallHeldThroughout]'
+      name: LandingWorksWithFastFallHeldThroughout
+      fullName: PlayerControllerTests.LandingWorksWithFastFallHeldThroughout
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1052
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.LandingWorksWithFastFallReleasedMidDescent]'
+      name: LandingWorksWithFastFallReleasedMidDescent
+      fullName: PlayerControllerTests.LandingWorksWithFastFallReleasedMidDescent
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1046
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.LaneSwitchDuringJumpPreservesY]'
+      name: LaneSwitchDuringJumpPreservesY
+      fullName: PlayerControllerTests.LaneSwitchDuringJumpPreservesY
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1011
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.LaneSwitchSpeedSetFromConfig]'
+      name: LaneSwitchSpeedSetFromConfig
+      fullName: PlayerControllerTests.LaneSwitchSpeedSetFromConfig
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1022
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.LaneTransitionPreservesYAndZ]'
+      name: LaneTransitionPreservesYAndZ
+      fullName: PlayerControllerTests.LaneTransitionPreservesYAndZ
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1015
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.LeftInputAtLeftmostBoundaryStaysAtLaneZero]'
+      name: LeftInputAtLeftmostBoundaryStaysAtLaneZero
+      fullName: PlayerControllerTests.LeftInputAtLeftmostBoundaryStaysAtLaneZero
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1013
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.LeftInputFromCenterBeginsTransitionToLaneZero]'
+      name: LeftInputFromCenterBeginsTransitionToLaneZero
+      fullName: PlayerControllerTests.LeftInputFromCenterBeginsTransitionToLaneZero
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1025
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.OppositeDirectionCancelsTransition]'
+      name: OppositeDirectionCancelsTransition
+      fullName: PlayerControllerTests.OppositeDirectionCancelsTransition
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1028
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.OppositeInputCancelsTransition]'
+      name: OppositeInputCancelsTransition
+      fullName: PlayerControllerTests.OppositeInputCancelsTransition
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1037
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.RapidInputAtBoundaryDoesNotLeaveBounds]'
+      name: RapidInputAtBoundaryDoesNotLeaveBounds
+      fullName: PlayerControllerTests.RapidInputAtBoundaryDoesNotLeaveBounds
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1016
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.RightInputAtRightmostBoundaryStaysAtLaneTwo]'
+      name: RightInputAtRightmostBoundaryStaysAtLaneTwo
+      fullName: PlayerControllerTests.RightInputAtRightmostBoundaryStaysAtLaneTwo
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1014
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.RightInputFromCenterBeginsTransitionToLaneTwo]'
+      name: RightInputFromCenterBeginsTransitionToLaneTwo
+      fullName: PlayerControllerTests.RightInputFromCenterBeginsTransitionToLaneTwo
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1024
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.SameDirectionRepeatedInputOverwritesBuffer]'
+      name: SameDirectionRepeatedInputOverwritesBuffer
+      fullName: PlayerControllerTests.SameDirectionRepeatedInputOverwritesBuffer
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1019
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.SmallNegativeInputMovesLeft]'
+      name: SmallNegativeInputMovesLeft
+      fullName: PlayerControllerTests.SmallNegativeInputMovesLeft
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1018
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.SmallPositiveInputMovesRight]'
+      name: SmallPositiveInputMovesRight
+      fullName: PlayerControllerTests.SmallPositiveInputMovesRight
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1020
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.SnapCompletesWhenWithinTolerance]'
+      name: SnapCompletesWhenWithinTolerance
+      fullName: PlayerControllerTests.SnapCompletesWhenWithinTolerance
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1036
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.YAndZPositionPreservedDuringTransition]'
+      name: YAndZPositionPreservedDuringTransition
+      fullName: PlayerControllerTests.YAndZPositionPreservedDuringTransition
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1017
+      uniqueId: 'Feria.Tests.EditMode.dll/PlayerControllerTests/[Feria.Tests.EditMode][PlayerControllerTests.ZeroInputDoesNothing]'
+      name: ZeroInputDoesNothing
+      fullName: PlayerControllerTests.ZeroInputDoesNothing
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][PlayerControllerTests][suite]'
+    - id: 1053
+      uniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][SpawnerTests][suite]'
+      name: SpawnerTests
+      fullName: SpawnerTests
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1063
+      parentUniqueId: '[Feria.Tests.EditMode][D:/Unity/FeriaDeLasFlores/Library/ScriptAssemblies/Feria.Tests.EditMode.dll][suite]'
+    - id: 1062
+      uniqueId: 'Feria.Tests.EditMode.dll/SpawnerTests/[Feria.Tests.EditMode][SpawnerTests.ColocarFlorConTagDesconocidoRetornaSinError]'
+      name: ColocarFlorConTagDesconocidoRetornaSinError
+      fullName: SpawnerTests.ColocarFlorConTagDesconocidoRetornaSinError
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1053
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][SpawnerTests][suite]'
+    - id: 1059
+      uniqueId: 'Feria.Tests.EditMode.dll/SpawnerTests/[Feria.Tests.EditMode][SpawnerTests.InstanciadorCreaPoolEnAwake]'
+      name: InstanciadorCreaPoolEnAwake
+      fullName: SpawnerTests.InstanciadorCreaPoolEnAwake
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1053
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][SpawnerTests][suite]'
+    - id: 1055
+      uniqueId: 'Feria.Tests.EditMode.dll/SpawnerTests/[Feria.Tests.EditMode][SpawnerTests.ObstaclesAreParentedToNonVisibleFloor]'
+      name: ObstaclesAreParentedToNonVisibleFloor
+      fullName: SpawnerTests.ObstaclesAreParentedToNonVisibleFloor
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1053
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][SpawnerTests][suite]'
+    - id: 1056
+      uniqueId: 'Feria.Tests.EditMode.dll/SpawnerTests/[Feria.Tests.EditMode][SpawnerTests.ObstacleSpawnerFindsPlayerControllerViaFallback]'
+      name: ObstacleSpawnerFindsPlayerControllerViaFallback
+      fullName: SpawnerTests.ObstacleSpawnerFindsPlayerControllerViaFallback
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1053
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][SpawnerTests][suite]'
+    - id: 1058
+      uniqueId: 'Feria.Tests.EditMode.dll/SpawnerTests/[Feria.Tests.EditMode][SpawnerTests.ObstaclesSpawnAcrossMultipleLanes]'
+      name: ObstaclesSpawnAcrossMultipleLanes
+      fullName: SpawnerTests.ObstaclesSpawnAcrossMultipleLanes
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1053
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][SpawnerTests][suite]'
+    - id: 1054
+      uniqueId: 'Feria.Tests.EditMode.dll/SpawnerTests/[Feria.Tests.EditMode][SpawnerTests.ObstaclesSpawnAtLaneXPositions]'
+      name: ObstaclesSpawnAtLaneXPositions
+      fullName: SpawnerTests.ObstaclesSpawnAtLaneXPositions
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1053
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][SpawnerTests][suite]'
+    - id: 1057
+      uniqueId: 'Feria.Tests.EditMode.dll/SpawnerTests/[Feria.Tests.EditMode][SpawnerTests.ObstaclesUseIndependentRandomLanesNotSequential]'
+      name: ObstaclesUseIndependentRandomLanesNotSequential
+      fullName: SpawnerTests.ObstaclesUseIndependentRandomLanesNotSequential
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1053
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][SpawnerTests][suite]'
+    - id: 1061
+      uniqueId: 'Feria.Tests.EditMode.dll/SpawnerTests/[Feria.Tests.EditMode][SpawnerTests.OnTriggerEnterDesactivaEnLugarDeDestruir]'
+      name: OnTriggerEnterDesactivaEnLugarDeDestruir
+      fullName: SpawnerTests.OnTriggerEnterDesactivaEnLugarDeDestruir
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1053
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][SpawnerTests][suite]'
+    - id: 1060
+      uniqueId: 'Feria.Tests.EditMode.dll/SpawnerTests/[Feria.Tests.EditMode][SpawnerTests.SpawnFlowersActivaFloresEnZ200]'
+      name: SpawnFlowersActivaFloresEnZ200
+      fullName: SpawnerTests.SpawnFlowersActivaFloresEnZ200
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1053
+      parentUniqueId: 'Feria.Tests.EditMode.dll/[Feria.Tests.EditMode][SpawnerTests][suite]'
+    m_ResultText: 
+    m_ResultStacktrace: 
+    m_TestListState:
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 73c98ed2ffffff7f
+      m_RenameOverlay:
+        m_UserAcceptedRename: 0
+        m_Name: 
+        m_OriginalName: 
+        m_EditFieldRect:
+          serializedVersion: 2
+          x: 0
+          y: 0
+          width: 0
+          height: 0
+        m_UserData: 0
+        m_IsWaitingForDelay: 0
+        m_IsRenaming: 0
+        m_OriginalEventType: 11
+        m_IsRenamingFilename: 0
+        m_TrimLeadingAndTrailingWhitespace: 0
+        m_ClientGUIView: {fileID: 0}
+      m_SearchString: 
+    m_TestRunnerUIFilter:
+      PassedHidden: 0
+      FailedHidden: 0
+      NotRunHidden: 0
+      m_SearchString: 
+      selectedCategories: []
+      availableCategories:
+      - Uncategorized
+    m_SelectedOption: 0
+  - m_Window: {fileID: 24}
+    runProgress:
+      RunGuid: b180d362-eff6-4d1e-99c3-91727e9a3c5f
+      ExecutionSettings:
+        m_TargetPlatform: 0
+        m_HasTargetPlatform: 0
+        filter:
+          testMode: 0
+          testNames: []
+          groupNames: []
+          categoryNames: []
+          assemblyNames: []
+        filters:
+        - testMode: 2
+          testNames: []
+          groupNames: []
+          categoryNames: []
+          assemblyNames: []
+        runSynchronously: 0
+        playerHeartbeatTimeout: 600
+        orderedTestNames: []
+        ignoreTests: []
+        featureFlags:
+          fileCleanUpCheck: 0
+          requiresSplashScreen: 0
+          strictDomainReload: 0
+          disableNestedEnumeratorBugfix: 0
+        randomOrderSeed: 0
+      HasFinished: 1
+      Progress: 0.9999999
+      CurrentStepName: Unlock Reload Assemblies
+      CurrentStageName: 
+    m_NewResultList:
+    - id: 1065
+      uniqueId: '[Feriadeflores][suite]'
+      name: Feriadeflores
+      fullName: Feriadeflores
+      resultStatus: 2
+      duration: 0.12452321
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 
+      parentUniqueId: 
+    m_ResultText: PlayerControllerTests (44 tests)  6 tests failed (0,054s)
+    m_ResultStacktrace: 
+    m_TestListState:
+      scrollPos: {x: 0, y: 12}
+      m_SelectedIDs: 4bc83315
+      m_LastClickedID: 355715147
+      m_ExpandedIDs: 8bbd25d273c98ed24bc83315ffffff7f
+      m_RenameOverlay:
+        m_UserAcceptedRename: 0
+        m_Name: 
+        m_OriginalName: 
+        m_EditFieldRect:
+          serializedVersion: 2
+          x: 0
+          y: 0
+          width: 0
+          height: 0
+        m_UserData: 0
+        m_IsWaitingForDelay: 0
+        m_IsRenaming: 0
+        m_OriginalEventType: 11
+        m_IsRenamingFilename: 0
+        m_TrimLeadingAndTrailingWhitespace: 0
+        m_ClientGUIView: {fileID: 0}
+      m_SearchString: 
+    m_TestRunnerUIFilter:
+      PassedHidden: 0
+      FailedHidden: 0
+      NotRunHidden: 0
+      m_SearchString: 
+      selectedCategories: []
+      availableCategories:
+      - Uncategorized
+    m_SelectedOption: 0
+  - m_Window: {fileID: 0}
+    runProgress:
+      RunGuid: b180d362-eff6-4d1e-99c3-91727e9a3c5f
+      ExecutionSettings:
+        m_TargetPlatform: 0
+        m_HasTargetPlatform: 0
+        filter:
+          testMode: 0
+          testNames: []
+          groupNames: []
+          categoryNames: []
+          assemblyNames: []
+        filters:
+        - testMode: 2
+          testNames: []
+          groupNames: []
+          categoryNames: []
+          assemblyNames: []
+        runSynchronously: 0
+        playerHeartbeatTimeout: 600
+        orderedTestNames: []
+        ignoreTests: []
+        featureFlags:
+          fileCleanUpCheck: 0
+          requiresSplashScreen: 0
+          strictDomainReload: 0
+          disableNestedEnumeratorBugfix: 0
+        randomOrderSeed: 0
+      HasFinished: 1
+      Progress: 0.9999999
+      CurrentStepName: Unlock Reload Assemblies
+      CurrentStageName: 
+    m_NewResultList: []
+    m_ResultText: 
+    m_ResultStacktrace: 
+    m_TestListState:
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 
+      m_RenameOverlay:
+        m_UserAcceptedRename: 0
+        m_Name: 
+        m_OriginalName: 
+        m_EditFieldRect:
+          serializedVersion: 2
+          x: 0
+          y: 0
+          width: 0
+          height: 0
+        m_UserData: 0
+        m_IsWaitingForDelay: 0
+        m_IsRenaming: 0
+        m_OriginalEventType: 11
+        m_IsRenamingFilename: 0
+        m_TrimLeadingAndTrailingWhitespace: 0
+        m_ClientGUIView: {fileID: 0}
+      m_SearchString: 
+    m_TestRunnerUIFilter:
+      PassedHidden: 0
+      FailedHidden: 0
+      NotRunHidden: 0
+      m_SearchString: 
+      selectedCategories: []
+      availableCategories: []
+    m_SelectedOption: 0

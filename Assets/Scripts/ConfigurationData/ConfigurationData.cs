@@ -92,6 +92,30 @@ public class ConfigurationData
         set { values[ConfigurationDataValueName.FloorMovementSpeed] = value; }
     }
 
+    /// <summary>
+    /// Player lane switch speed in units per second
+    /// </summary>
+    public float PlayerLaneSwitchSpeed
+    {
+        get { return values[ConfigurationDataValueName.PlayerLaneSwitchSpeed]; }
+    }
+
+    /// <summary>
+    /// Player jump duration in seconds (full arc: 0 → peak → 0)
+    /// </summary>
+    public float PlayerJumpDuration
+    {
+        get { return values[ConfigurationDataValueName.PlayerJumpDuration]; }
+    }
+
+    /// <summary>
+    /// Multiplier for descent speed when holding down mid-jump
+    /// </summary>
+    public float PlayerFastFallMultiplier
+    {
+        get { return values[ConfigurationDataValueName.PlayerFastFallMultiplier]; }
+    }
+
     #endregion
 
     #region Constructor
@@ -150,6 +174,9 @@ public class ConfigurationData
         values.Add(ConfigurationDataValueName.PlayerJumpHeight, 3);
         values.Add(ConfigurationDataValueName.PlayerMovementTolerance, 0.05f);
         values.Add(ConfigurationDataValueName.FloorMovementSpeed, -30f);
+        values.Add(ConfigurationDataValueName.PlayerLaneSwitchSpeed, 5f);
+        values.Add(ConfigurationDataValueName.PlayerJumpDuration, 0.5f);
+        values.Add(ConfigurationDataValueName.PlayerFastFallMultiplier, 2f);
     }
 
     #endregion

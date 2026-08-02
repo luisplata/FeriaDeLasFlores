@@ -15,5 +15,8 @@ public enum ConfigurationDataValueName
     PlayerMovementSpeed,
     PlayerJumpHeight,
     PlayerMovementTolerance,
-    FloorMovementSpeed
+    FloorMovementSpeed,
+    PlayerLaneSwitchSpeed,
+    PlayerJumpDuration,
+    PlayerFastFallMultiplier
 }
